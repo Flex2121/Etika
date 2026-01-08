@@ -11,7 +11,10 @@ class QuizApp {
         this.answers = [];
         this.startTime = null;
         this.hintUsed = false;
+        this.hintUsed = false;
         this.answered = false;
+        this.ttsEnabled = false;
+        this.voice = null;
 
         // DOM Elements
         this.screens = {
@@ -28,7 +31,66 @@ class QuizApp {
         this.loadFailedQuestions();
         this.populateCategories();
         this.updateStats();
+        this.loadFailedQuestions();
+        this.populateCategories();
+        this.initTTS();
+        this.updateStats();
         this.bindEvents();
+    }
+
+    initTTS() {
+        const ttsToggle = document.getElementById('tts-toggle');
+
+        // Load saved state
+        const savedState = localStorage.getItem('ttsEnabled');
+        this.ttsEnabled = savedState === 'true';
+        if (ttsToggle) ttsToggle.checked = this.ttsEnabled;
+
+        // Toggle event
+        if (ttsToggle) {
+            ttsToggle.addEventListener('change', (e) => {
+                this.ttsEnabled = e.target.checked;
+                localStorage.setItem('ttsEnabled', this.ttsEnabled);
+                if (!this.ttsEnabled) {
+                    this.stopSpeech();
+                }
+            });
+        }
+
+        // Init voices
+        if ('speechSynthesis' in window) {
+            const loadVoices = () => {
+                const voices = window.speechSynthesis.getVoices();
+                // Prefer Czech voice
+                this.voice = voices.find(v => v.lang.includes('cs') || v.lang.includes('cz'));
+                // Fallback to first available if no CS (or keep null to use default)
+                if (!this.voice && voices.length > 0) this.voice = voices[0];
+            };
+
+            window.speechSynthesis.onvoiceschanged = loadVoices;
+            loadVoices();
+        }
+    }
+
+    speak(text) {
+        if (!this.ttsEnabled || !('speechSynthesis' in window)) return;
+
+        this.stopSpeech();
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        if (this.voice) {
+            utterance.voice = this.voice;
+        }
+        utterance.lang = 'cs-CZ';
+        utterance.rate = 1.0;
+
+        window.speechSynthesis.speak(utterance);
+    }
+
+    stopSpeech() {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+        }
     }
 
     // LocalStorage for failed questions
@@ -182,6 +244,7 @@ class QuizApp {
 
         if (screenName === 'home') {
             this.loadFailedQuestions();
+            this.stopSpeech();
         }
     }
 
@@ -271,6 +334,9 @@ class QuizApp {
         // Update question text
         document.getElementById('question-text').textContent = question.question;
 
+        // TTS
+        this.speak(question.question);
+
         // Shuffle answers
         const answerIndices = [0, 1, 2, 3];
         const shuffledIndices = this.shuffle(answerIndices);
@@ -310,20 +376,10 @@ class QuizApp {
     selectAnswer(buttonIndex) {
         if (this.answered) return;
 
+        const selectedBtn = document.querySelectorAll('.answer-btn')[buttonIndex];
+        const originalIndex = parseInt(selectedBtn.dataset.originalIndex);
         const question = this.questions[this.currentIndex];
-        const answerBtns = document.querySelectorAll('.answer-btn');
-        const selectedBtn = answerBtns[buttonIndex];
-        const selectedOriginalIndex = parseInt(selectedBtn.dataset.originalIndex);
-
-        const isCorrect = selectedOriginalIndex === question.correct;
-
-        // Store answer
-        this.answers.push({
-            questionId: question.id,
-            selectedIndex: selectedOriginalIndex,
-            correct: isCorrect,
-            hintUsed: this.hintUsed
-        });
+        const isCorrect = originalIndex === question.correct;
 
         // Update score
         if (isCorrect) {
@@ -347,6 +403,7 @@ class QuizApp {
             setTimeout(() => {
                 this.nextQuestion();
             }, 300);
+            this.stopSpeech();
         }
     }
 
@@ -396,6 +453,7 @@ class QuizApp {
     }
 
     showResults() {
+        this.stopSpeech();
         const totalTime = Math.floor((Date.now() - this.startTime) / 1000);
         const minutes = Math.floor(totalTime / 60);
         const seconds = totalTime % 60;

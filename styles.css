@@ -7,38 +7,38 @@
     --bg-secondary: #12121a;
     --bg-card: #1a1a25;
     --bg-card-hover: #22222f;
-    
+
     /* Gradient Accents */
     --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --gradient-success: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
     --gradient-danger: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
     --gradient-warning: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     --gradient-info: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    
+
     /* Text */
     --text-primary: #ffffff;
     --text-secondary: #a0a0b0;
     --text-muted: #6a6a7a;
-    
+
     /* Borders */
     --border-color: rgba(255, 255, 255, 0.1);
     --border-radius: 16px;
     --border-radius-sm: 12px;
     --border-radius-lg: 24px;
-    
+
     /* Shadows */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
     --shadow-glow: 0 0 30px rgba(102, 126, 234, 0.3);
-    
+
     /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 0.75rem;
     --spacing-md: 1rem;
     --spacing-lg: 1.5rem;
     --spacing-xl: 2rem;
-    
+
     /* Typography */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-size-xs: 0.75rem;
@@ -47,7 +47,7 @@
     --font-size-lg: 1.125rem;
     --font-size-xl: 1.5rem;
     --font-size-2xl: 2rem;
-    
+
     /* Transitions */
     --transition-fast: 150ms ease;
     --transition-normal: 250ms ease;
@@ -57,7 +57,9 @@
 /* ==========================================
    BASE STYLES
    ========================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -158,8 +160,15 @@ body::before {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ==========================================
@@ -242,10 +251,21 @@ body::before {
     transition: opacity var(--transition-normal);
 }
 
-.mode-btn--practice::before { background: var(--gradient-primary); }
-.mode-btn--test::before { background: var(--gradient-warning); }
-.mode-btn--random::before { background: var(--gradient-info); }
-.mode-btn--failed::before { background: var(--gradient-danger); }
+.mode-btn--practice::before {
+    background: var(--gradient-primary);
+}
+
+.mode-btn--test::before {
+    background: var(--gradient-warning);
+}
+
+.mode-btn--random::before {
+    background: var(--gradient-info);
+}
+
+.mode-btn--failed::before {
+    background: var(--gradient-danger);
+}
 
 .mode-btn:hover {
     background: var(--bg-card-hover);
@@ -490,8 +510,15 @@ body::before {
 }
 
 @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Explanation Container */
@@ -581,8 +608,15 @@ body::before {
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 .results__title {
@@ -697,11 +731,11 @@ body::before {
     .home__stats {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .results__actions {
         flex-direction: row;
     }
-    
+
     .results__actions .action-btn {
         flex: 1;
     }
@@ -713,11 +747,11 @@ body::before {
         --font-size-xl: 1.25rem;
         --font-size-2xl: 1.5rem;
     }
-    
+
     .main {
         padding: var(--spacing-md);
     }
-    
+
     .quiz__question {
         font-size: var(--font-size-base);
         padding: var(--spacing-md);
@@ -729,4 +763,46 @@ body::before {
     .main {
         padding-bottom: calc(var(--spacing-xl) + env(safe-area-inset-bottom));
     }
+}
+
+/* Settings Toggle */
+.setting--toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.setting__checkbox {
+    display: none;
+}
+
+.setting__slider {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background-color: var(--surface-light);
+    border-radius: 99px;
+    transition: 0.3s;
+}
+
+.setting__slider::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--text-secondary);
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.setting__checkbox:checked+.setting__slider {
+    background-color: var(--primary);
+}
+
+.setting__checkbox:checked+.setting__slider::before {
+    transform: translateX(20px);
+    background-color: white;
 }
