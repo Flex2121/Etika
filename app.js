@@ -163,6 +163,7 @@ class QuizApp {
         const utterance = new SpeechSynthesisUtterance(text);
         if (this.voice) {
             utterance.voice = this.voice;
+            utterance.lang = this.voice.lang;
         }
         utterance.rate = this.rate;
 
