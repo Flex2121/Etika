@@ -109,8 +109,22 @@ class QuizApp {
                 if (voiceSelect) {
                     voiceSelect.innerHTML = '';
 
-                    // Filter strictly for Czech voices
-                    const csVoices = voices.filter(v => v.lang.includes('cs') || v.lang.includes('cz'));
+                    // Filter strictly for Czech voices (by lang OR name)
+                    let csVoices = voices.filter(v =>
+                        v.lang.includes('cs') ||
+                        v.lang.includes('cz') ||
+                        v.name.includes('Czech') ||
+                        v.name.includes('Čeština')
+                    );
+
+                    // Sort: Prioritize "Google" voices (usually higher quality/female), then others
+                    csVoices.sort((a, b) => {
+                        const isGoogleA = a.name.includes('Google');
+                        const isGoogleB = b.name.includes('Google');
+                        if (isGoogleA && !isGoogleB) return -1;
+                        if (!isGoogleA && isGoogleB) return 1;
+                        return a.name.localeCompare(b.name);
+                    });
 
                     if (csVoices.length === 0) {
                         const option = document.createElement('option');
