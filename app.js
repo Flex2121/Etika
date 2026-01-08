@@ -34,34 +34,58 @@ class QuizApp {
     // LocalStorage for failed questions
     getFailedQuestions() {
         const stored = localStorage.getItem('failedQuestions');
-        return stored ? JSON.parse(stored) : [];
+        if (!stored) return {};
+
+        let parsed = JSON.parse(stored);
+
+        // Migration: Array to Object
+        if (Array.isArray(parsed)) {
+            const migrated = {};
+            parsed.forEach(id => {
+                migrated[id] = 0;
+            });
+            localStorage.setItem('failedQuestions', JSON.stringify(migrated));
+            return migrated;
+        }
+
+        return parsed;
     }
 
-    saveFailedQuestion(questionId) {
+    handleIncorrectAnswer(questionId) {
         const failed = this.getFailedQuestions();
-        if (!failed.includes(questionId)) {
-            failed.push(questionId);
+        // Always reset count to 0 on error
+        failed[questionId] = 0;
+        localStorage.setItem('failedQuestions', JSON.stringify(failed));
+    }
+
+    handleCorrectAnswer(questionId) {
+        const failed = this.getFailedQuestions();
+        // Only track if it was already in failed list
+        if (failed.hasOwnProperty(questionId)) {
+            // Increment success count
+            failed[questionId] = (failed[questionId] || 0) + 1;
+
+            // Remove only after 3 successful attempts
+            if (failed[questionId] >= 3) {
+                delete failed[questionId];
+            }
+
             localStorage.setItem('failedQuestions', JSON.stringify(failed));
         }
     }
 
-    removeFailedQuestion(questionId) {
-        let failed = this.getFailedQuestions();
-        failed = failed.filter(id => id !== questionId);
-        localStorage.setItem('failedQuestions', JSON.stringify(failed));
-    }
-
     loadFailedQuestions() {
         const failed = this.getFailedQuestions();
-        document.getElementById('failed-count').textContent = failed.length;
+        const count = Object.keys(failed).length;
+        document.getElementById('failed-count').textContent = count;
 
         const failedBtn = document.getElementById('btn-failed');
-        if (failed.length === 0) {
+        if (count === 0) {
             failedBtn.disabled = true;
             failedBtn.querySelector('.mode-btn__desc').textContent = 'Žádné chyby';
         } else {
             failedBtn.disabled = false;
-            failedBtn.querySelector('.mode-btn__desc').textContent = `${failed.length} otázek k procvičení`;
+            failedBtn.querySelector('.mode-btn__desc').textContent = `${count} otázek k procvičení`;
         }
     }
 
@@ -182,7 +206,9 @@ class QuizApp {
         let availableQuestions = [...QUESTIONS];
 
         if (mode === 'failed') {
-            const failedIds = this.getFailedQuestions();
+            const failedState = this.getFailedQuestions();
+            // Convert string keys to numbers for comparison
+            const failedIds = Object.keys(failedState).map(Number);
             availableQuestions = QUESTIONS.filter(q => failedIds.includes(q.id));
         }
 
@@ -302,11 +328,11 @@ class QuizApp {
         // Update score
         if (isCorrect) {
             this.score++;
-            // Remove from failed if correct
-            this.removeFailedQuestion(question.id);
+            // Handle spaced repetition
+            this.handleCorrectAnswer(question.id);
         } else {
-            // Add to failed
-            this.saveFailedQuestion(question.id);
+            // Add to failed / Reset count
+            this.handleIncorrectAnswer(question.id);
         }
 
         // Visual feedback based on mode
