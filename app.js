@@ -329,9 +329,22 @@ class QuizApp {
             this.startQuiz(this.mode);
         });
 
+
         document.getElementById('home-btn').addEventListener('click', () => {
             this.showScreen('home');
         });
+
+        // Explanation toggle button
+        const explanationBtn = document.getElementById('explanation-toggle-btn');
+        if (explanationBtn) {
+            explanationBtn.addEventListener('click', () => {
+                const container = document.getElementById('explanation-container');
+                container.classList.toggle('hidden');
+                if (!container.classList.contains('hidden')) {
+                    container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+        }
     }
 
     showScreen(screenName) {
@@ -566,9 +579,10 @@ class QuizApp {
             }
         });
 
-        // Show explanation
+
+        // Show feedback (don't show explanation automatically)
         document.getElementById('explanation-text').textContent = question.explanation;
-        document.getElementById('explanation-container').classList.remove('hidden');
+        document.getElementById('explanation-container').classList.add('hidden'); // Ensure hidden initially
 
         // Update score display
         document.getElementById('score-display').textContent = `Skóre: ${this.score}`;

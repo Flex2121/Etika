@@ -798,6 +798,119 @@ body::before {
     transition: 0.3s;
 }
 
+/* Mobile Optimizations */
+@media (max-width: 480px) {
+    :root {
+        --spacing-md: 0.75rem;
+        --spacing-lg: 0.75rem;
+        --spacing-xl: 1rem;
+        --font-size-2xl: 1.25rem;
+        --font-size-xl: 1.125rem;
+        --font-size-lg: 0.95rem;
+        --font-size-base: 0.85rem;
+        --font-size-sm: 0.75rem;
+        --border-radius: 12px;
+        --border-radius-lg: 16px;
+    }
+
+    .header {
+        padding: 0.5rem var(--spacing-md);
+    }
+
+    .header__title {
+        font-size: 1.1rem;
+    }
+
+    .header__subtitle {
+        font-size: 0.7rem;
+    }
+
+    .main {
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        max-width: 100%;
+    }
+
+    /* Home screen adjustments */
+    .home__stats {
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .stat-card {
+        padding: 0.75rem;
+    }
+
+    .mode-buttons {
+        gap: 0.5rem;
+    }
+
+    .mode-btn {
+        padding: 0.75rem;
+        gap: 0 0.5rem;
+    }
+
+    .mode-btn__icon {
+        font-size: 1.5rem;
+    }
+
+    /* Quiz adjustments */
+    .quiz__question {
+        margin-bottom: 0.75rem;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+        line-height: 1.35;
+    }
+
+    .quiz__answers {
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .answer-btn {
+        padding: 0.6rem 0.75rem;
+        gap: 0.5rem;
+        min-height: auto;
+    }
+
+    .answer-btn__letter {
+        width: 24px;
+        height: 24px;
+        font-size: 0.7rem;
+        border-radius: 4px;
+    }
+
+    .answer-btn__text {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+
+    /* Screen specific optimizations */
+    .screen--quiz {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .quiz {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .quiz__actions {
+        margin-top: auto;
+        padding-top: 0.5rem;
+    }
+
+    .action-btn {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+}
+
 .setting__checkbox:checked+.setting__slider {
     background-color: var(--primary);
 }
