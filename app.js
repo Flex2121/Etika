@@ -26,6 +26,7 @@ class QuizApp {
 
     init() {
         this.loadFailedQuestions();
+        this.populateCategories();
         this.updateStats();
         this.bindEvents();
     }
@@ -66,6 +67,41 @@ class QuizApp {
 
     updateStats() {
         document.getElementById('total-questions').textContent = QUESTIONS.length;
+    }
+
+    populateCategories() {
+        const categorySelect = document.getElementById('category-select');
+        const uniqueCategories = [...new Set(QUESTIONS.map(q => q.category))];
+
+        // Define syllabus order
+        const categoryOrder = [
+            "ÚVOD | PROČ třídíme",
+            "CO třídíme",
+            "ČÍM třídíme I.",
+            "ČÍM třídíme II.",
+            "JAK třídíme I.",
+            "JAK třídíme II.",
+            "Univerzální systémy organizace informací",
+            "Oborové a specializované systémy organizace informací",
+            "JAK s tříděnými informacemi NAKLÁDÁME",
+            "K ČEMU se tříděním DOBÍRÁME",
+            "Minulost, současnost a budoucnost organizace informací"
+        ];
+
+        // Sort categories based on the defined order
+        uniqueCategories.sort((a, b) => {
+            const indexA = categoryOrder.indexOf(a);
+            const indexB = categoryOrder.indexOf(b);
+            // If category is not in the list, put it at the end
+            return (indexA === -1 ? 999 : indexA) - (indexB === -1 ? 999 : indexB);
+        });
+
+        uniqueCategories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category;
+            option.textContent = category;
+            categorySelect.appendChild(option);
+        });
     }
 
     bindEvents() {
@@ -148,6 +184,12 @@ class QuizApp {
         if (mode === 'failed') {
             const failedIds = this.getFailedQuestions();
             availableQuestions = QUESTIONS.filter(q => failedIds.includes(q.id));
+        }
+
+        // Filter by category
+        const categorySelect = document.getElementById('category-select');
+        if (categorySelect && categorySelect.value !== 'all') {
+            availableQuestions = availableQuestions.filter(q => q.category === categorySelect.value);
         }
 
         // Shuffle for random mode or always shuffle

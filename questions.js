@@ -5,7 +5,7 @@ const QUESTIONS = [
     // Tematický blok 1: Teorie a Základní pojmy (1-5)
     {
         id: 1,
-        category: "Teorie a Základní pojmy",
+        category: "ÚVOD | PROČ třídíme",
         question: "Jaký je vztah mezi znakem a věcí v sémiotickém trojúhelníku?",
         answers: [
             "Přímý a kauzální (znak vzniká z podstaty věci).",
@@ -19,7 +19,7 @@ const QUESTIONS = [
     },
     {
         id: 2,
-        category: "Teorie a Základní pojmy",
+        category: "ÚVOD | PROČ třídíme",
         question: "Která definice nejlépe vystihuje 'znalost' v hierarchii data-informace-znalost?",
         answers: [
             "Zaznamenaná symbolická reprezentace reálného světa.",
@@ -33,7 +33,7 @@ const QUESTIONS = [
     },
     {
         id: 3,
-        category: "Teorie a Základní pojmy",
+        category: "ÚVOD | PROČ třídíme",
         question: "Co představuje Popperův 'Svět 3' (P-III)?",
         answers: [
             "Svět fyzických objektů a jevů.",
@@ -47,7 +47,7 @@ const QUESTIONS = [
     },
     {
         id: 4,
-        category: "Teorie a Základní pojmy",
+        category: "ÚVOD | PROČ třídíme",
         question: "Informační deprivace (neuróza) je definována jako:",
         answers: [
             "Objektivní nedostatek informačních zdrojů v dané lokalitě.",
@@ -61,7 +61,7 @@ const QUESTIONS = [
     },
     {
         id: 5,
-        category: "Teorie a Základní pojmy",
+        category: "ÚVOD | PROČ třídíme",
         question: "Co je hlavním účelem obsahové analýzy dokumentu?",
         answers: [
             "Vytvoření formálního bibliografického záznamu (autor, název).",
@@ -76,7 +76,7 @@ const QUESTIONS = [
     // Tematický blok 2: Selekční jazyky (6-10)
     {
         id: 6,
-        category: "Selekční jazyky",
+        category: "ČÍM třídíme I.",
         question: "Jaký je zásadní rozdíl mezi systematickým (SSJ) a předmětovým (PSJ) selekčním jazykem?",
         answers: [
             "SSJ používá slova, PSJ používá číselné kódy.",
@@ -90,7 +90,7 @@ const QUESTIONS = [
     },
     {
         id: 7,
-        category: "Selekční jazyky",
+        category: "ČÍM třídíme I.",
         question: "Co je typickou vlastností 'postkoordinovaného' selekčního jazyka?",
         answers: [
             "Pojmy jsou spojeny do složitých celků už při tvorbě slovníku (např. 'dovozní daň na auta').",
@@ -104,7 +104,7 @@ const QUESTIONS = [
     },
     {
         id: 8,
-        category: "Selekční jazyky",
+        category: "ČÍM třídíme I.",
         question: "Který z následujících systémů je příkladem prekoordinovaného systematického jazyka?",
         answers: [
             "Klíčová slova z názvu.",
@@ -118,7 +118,7 @@ const QUESTIONS = [
     },
     {
         id: 9,
-        category: "Selekční jazyky",
+        category: "ČÍM třídíme I.",
         question: "Co označuje termín 'notace' v kontextu klasifikačních systémů?",
         answers: [
             "Slovní vyjádření obsahu dokumentu.",
@@ -132,7 +132,7 @@ const QUESTIONS = [
     },
     {
         id: 10,
-        category: "Selekční jazyky",
+        category: "ČÍM třídíme I.",
         question: "Jaký typ notace představuje zápis 'A11.1.01'?",
         answers: [
             "Lineární notace.",
@@ -147,7 +147,7 @@ const QUESTIONS = [
     // Tematický blok 3: Tezaury a Vztahy (11-15)
     {
         id: 11,
-        category: "Tezaury a Vztahy",
+        category: "ČÍM třídíme II.",
         question: "Zkratka 'UF' (Used For) se v tezaurech používá pro:",
         answers: [
             "Označení nadřazeného termínu (Broader Term).",
@@ -161,7 +161,7 @@ const QUESTIONS = [
     },
     {
         id: 12,
-        category: "Tezaury a Vztahy",
+        category: "ČÍM třídíme II.",
         question: "Jaký sémantický vztah je mezi pojmy 'Les' a 'Strom'?",
         answers: [
             "Generický (rod-druh).",
@@ -175,7 +175,7 @@ const QUESTIONS = [
     },
     {
         id: 13,
-        category: "Tezaury a Vztahy",
+        category: "ČÍM třídíme II.",
         question: "Co je to 'homografie'?",
         answers: [
             "Slova znějí stejně, ale píší se jinak.",
@@ -189,7 +189,7 @@ const QUESTIONS = [
     },
     {
         id: 14,
-        category: "Tezaury a Vztahy",
+        category: "ČÍM třídíme II.",
         question: "Co je úkolem 'relátoru' v řízeném slovníku?",
         answers: [
             "Spojovat dva různé deskriptory do fráze.",
@@ -203,7 +203,7 @@ const QUESTIONS = [
     },
     {
         id: 15,
-        category: "Tezaury a Vztahy",
+        category: "ČÍM třídíme II.",
         question: "Která z následujících možností NENÍ typickým příkladem synkategorematického substantiva?",
         answers: [
             "Umělé (ve spojení umělé květiny).",
@@ -218,7 +218,7 @@ const QUESTIONS = [
     // Tematický blok 4: Konkrétní systémy a Historie (16-20)
     {
         id: 16,
-        category: "Konkrétní systémy a Historie",
+        category: "Univerzální systémy organizace informací",
         question: "Kdo je autorem systému UNITERM?",
         answers: [
             "Melvil Dewey.",
@@ -232,7 +232,7 @@ const QUESTIONS = [
     },
     {
         id: 17,
-        category: "Konkrétní systémy a Historie",
+        category: "Univerzální systémy organizace informací",
         question: "Co znamená zkratka PMEST v Dvojtečkovém třídění?",
         answers: [
             "Primary, Main, Elementary, Secondary, Tertiary.",
@@ -246,7 +246,7 @@ const QUESTIONS = [
     },
     {
         id: 18,
-        category: "Konkrétní systémy a Historie",
+        category: "Univerzální systémy organizace informací",
         question: "Který klasifikační systém využívá 'enumerativní' (výčtový) charakter a je orientován pragmaticky na americké reálie?",
         answers: [
             "MDT (Mezinárodní desetinné třídění).",
@@ -260,7 +260,7 @@ const QUESTIONS = [
     },
     {
         id: 19,
-        category: "Konkrétní systémy a Historie",
+        category: "Univerzální systémy organizace informací",
         question: "Co je systém AGROVOC?",
         answers: [
             "Klasifikace ekonomických činností EU.",
@@ -274,7 +274,7 @@ const QUESTIONS = [
     },
     {
         id: 20,
-        category: "Konkrétní systémy a Historie",
+        category: "Univerzální systémy organizace informací",
         question: "Klasifikace NACE je primárně určena pro:",
         answers: [
             "Třídění matematické literatury.",
@@ -289,7 +289,7 @@ const QUESTIONS = [
     // Tematický blok 5: Indexace a Metriky vyhledávání (21-25)
     {
         id: 21,
-        category: "Indexace a Metriky",
+        category: "JAK třídíme I.",
         question: "Jaký je vzorec pro výpočet PŘESNOSTI (Precision)?",
         answers: [
             "a/(a+b) (relevantní nalezené / všechny relevantní).",
@@ -303,7 +303,7 @@ const QUESTIONS = [
     },
     {
         id: 22,
-        category: "Indexace a Metriky",
+        category: "JAK třídíme I.",
         question: "Pokud se při vyhledávání zvyšuje úplnost (Recall), co se obvykle děje s přesností (Precision)?",
         answers: [
             "Zvyšuje se také.",
@@ -317,7 +317,7 @@ const QUESTIONS = [
     },
     {
         id: 23,
-        category: "Indexace a Metriky",
+        category: "JAK třídíme I.",
         question: "Konzistence indexace mezi dvěma indexátory se vypočítá jako:",
         answers: [
             "Součet všech přidělených znaků dělený dvěma.",
@@ -331,7 +331,7 @@ const QUESTIONS = [
     },
     {
         id: 24,
-        category: "Indexace a Metriky",
+        category: "JAK třídíme I.",
         question: "Mezi faktory, které negativně ovlivňují kvalitu indexace, patří 'opominutí hledisek'. O jaký typ chyby jde?",
         answers: [
             "Chyba snižující především přesnost vyhledávání.",
@@ -345,7 +345,7 @@ const QUESTIONS = [
     },
     {
         id: 25,
-        category: "Indexace a Metriky",
+        category: "JAK třídíme I.",
         question: "Co je to KWIC rejstřík?",
         answers: [
             "Rejstřík autorů seřazený podle data narození.",
@@ -360,7 +360,7 @@ const QUESTIONS = [
     // Tematický blok 6: Pokročilé koncepty (26-35)
     {
         id: 26,
-        category: "Pokročilé koncepty",
+        category: "JAK třídíme II.",
         question: "Co znamená termín 'Ontologie' v kontextu moderní organizace informací?",
         answers: [
             "Věda o bytí v klasické filosofii bez vztahu k IT.",
@@ -374,7 +374,7 @@ const QUESTIONS = [
     },
     {
         id: 27,
-        category: "Pokročilé koncepty",
+        category: "JAK třídíme II.",
         question: "Co je to 'Taxonomie'?",
         answers: [
             "Věda zabývající se teorií a praxí klasifikace (původně organismů).",
@@ -388,7 +388,7 @@ const QUESTIONS = [
     },
     {
         id: 28,
-        category: "Pokročilé koncepty",
+        category: "JAK třídíme II.",
         question: "Jaký je rozdíl mezi extraktem a abstraktem?",
         answers: [
             "Extrakt je psaný autorem, abstrakt knihovníkem.",
@@ -402,7 +402,7 @@ const QUESTIONS = [
     },
     {
         id: 29,
-        category: "Pokročilé koncepty",
+        category: "JAK třídíme II.",
         question: "Co znamená 'granularita' v organizaci informací?",
         answers: [
             "Fyzická zrnitost papíru starých tisků.",
@@ -416,7 +416,7 @@ const QUESTIONS = [
     },
     {
         id: 30,
-        category: "Pokročilé koncepty",
+        category: "JAK třídíme II.",
         question: "Která metoda čtení se nazývá 'kurzorické'?",
         answers: [
             "Důkladné slovo od slova.",
@@ -430,7 +430,7 @@ const QUESTIONS = [
     },
     {
         id: 31,
-        category: "Pokročilé koncepty",
+        category: "JAK třídíme II.",
         question: "Pokud mám dokument o 'dovozní dani na ojetá auta' a systém mi přidělí jeden kód 336.1, jde o přístup:",
         answers: [
             "Prekoordinovaný.",
@@ -444,7 +444,7 @@ const QUESTIONS = [
     },
     {
         id: 32,
-        category: "Pokročilé koncepty",
+        category: "JAK třídíme II.",
         question: "'Backbone thesaurus' slouží primárně k:",
         answers: [
             "Klasifikaci anatomie obratlovců.",
@@ -458,7 +458,7 @@ const QUESTIONS = [
     },
     {
         id: 33,
-        category: "Pokročilé koncepty",
+        category: "JAK třídíme II.",
         question: "Vztah mezi pojmy 'Pes' a 'Jezevčík' je:",
         answers: [
             "Partitivní (celek-část).",
@@ -472,7 +472,7 @@ const QUESTIONS = [
     },
     {
         id: 34,
-        category: "Pokročilé koncepty",
+        category: "JAK třídíme II.",
         question: "Co znamená zkratka GLAM?",
         answers: [
             "Global Libraries and Museums.",
@@ -486,7 +486,7 @@ const QUESTIONS = [
     },
     {
         id: 35,
-        category: "Pokročilé koncepty",
+        category: "JAK třídíme II.",
         question: "Kdy používáme 'invertovaný slovosled' v předmětovém hesle?",
         answers: [
             "Vždy, když je heslo v angličtině.",
@@ -501,7 +501,7 @@ const QUESTIONS = [
     // Tematický blok 8: Typologie dokumentů (36-45)
     {
         id: 36,
-        category: "Typologie dokumentů",
+        category: "CO třídíme",
         question: "Co je podle Arthura Schopenhauera (1851) důležitější než velikost knihovny?",
         answers: [
             "Počet vzácných rukopisů a prvotisků.",
@@ -515,7 +515,7 @@ const QUESTIONS = [
     },
     {
         id: 37,
-        category: "Typologie dokumentů",
+        category: "CO třídíme",
         question: "Jaký je rozdíl mezi 'explicitní' a 'tacitní' znalostí?",
         answers: [
             "Explicitní je v počítači, tacitní je na papíře.",
@@ -529,7 +529,7 @@ const QUESTIONS = [
     },
     {
         id: 38,
-        category: "Typologie dokumentů",
+        category: "CO třídíme",
         question: "V příkladu informačních objektů je uveden objekt 'Enuma Eliš'. Jaký je jeho nosič (médium)?",
         answers: [
             "Kámen.",
@@ -543,7 +543,7 @@ const QUESTIONS = [
     },
     {
         id: 39,
-        category: "Typologie dokumentů",
+        category: "CO třídíme",
         question: "Co označuje pojem 'synkategorematické substantivum' v kontextu indexace?",
         answers: [
             "Slovo, které má více než pět slabik.",
@@ -557,7 +557,7 @@ const QUESTIONS = [
     },
     {
         id: 40,
-        category: "Typologie dokumentů",
+        category: "CO třídíme",
         question: "Která z následujících definic nejlépe vystihuje 'informační objekt'?",
         answers: [
             "Generický pojem pro jakýkoli fyzický či virtuální objekt nesoucí libovolný typ či formát informace.",
@@ -571,7 +571,7 @@ const QUESTIONS = [
     },
     {
         id: 41,
-        category: "Metody čtení",
+        category: "JAK třídíme I.",
         question: "Co je cílem 'statarického čtení' při obsahové analýze?",
         answers: [
             "Rychlé prolistování pro zjištění struktury.",
@@ -585,7 +585,7 @@ const QUESTIONS = [
     },
     {
         id: 42,
-        category: "Metody čtení",
+        category: "JAK třídíme I.",
         question: "Jak se liší 'resumé' od 'abstraktu'?",
         answers: [
             "Resumé píše vždy recenzent, abstrakt autor.",
@@ -599,7 +599,7 @@ const QUESTIONS = [
     },
     {
         id: 43,
-        category: "Metody čtení",
+        category: "JAK třídíme I.",
         question: "Metoda 'kurzorického čtení' (diagonálního) slouží k:",
         answers: [
             "Hloubkové analýze gramatiky.",
@@ -613,7 +613,7 @@ const QUESTIONS = [
     },
     {
         id: 44,
-        category: "Metody čtení",
+        category: "JAK třídíme I.",
         question: "Pokud vytvoříme 'extrakt' dokumentu, co přesně uděláme?",
         answers: [
             "Napíšeme kritické zhodnocení textu.",
@@ -627,7 +627,7 @@ const QUESTIONS = [
     },
     {
         id: 45,
-        category: "Indexace",
+        category: "JAK třídíme I.",
         question: "Podle normy ČSN ISO 5963 se proces indexace skládá ze tří fází. Která mezi ně NEPATŘÍ?",
         answers: [
             "Analýza dokumentu.",
@@ -641,7 +641,7 @@ const QUESTIONS = [
     },
     {
         id: 46,
-        category: "Indexace",
+        category: "JAK třídíme I.",
         question: "Co je považováno za 'sémantický rozklad' a proč se obvykle nedoporučuje?",
         answers: [
             "Rozklad sousloví 'lodní motor' na 'loď' a 'motor' (je doporučený).",
@@ -655,7 +655,7 @@ const QUESTIONS = [
     },
     {
         id: 47,
-        category: "Indexace",
+        category: "JAK třídíme I.",
         question: "Která chyba při indexaci je podle statistik nejčastější (cca 18,6 %)?",
         answers: [
             "Použití špatného rodu podstatného jména.",
@@ -669,7 +669,7 @@ const QUESTIONS = [
     },
     {
         id: 48,
-        category: "Indexace",
+        category: "JAK třídíme I.",
         question: "Co se stane s výsledky vyhledávání, pokud indexátor udělá 'komplexní chybu snižující úplnost'?",
         answers: [
             "Uživatel najde příliš mnoho dokumentů.",
@@ -683,7 +683,7 @@ const QUESTIONS = [
     },
     {
         id: 49,
-        category: "Indexace",
+        category: "JAK třídíme I.",
         question: "Výpočet konzistence indexace pro skupinu více než dvou indexátorů se provádí jako:",
         answers: [
             "Součet všech chyb.",
@@ -697,7 +697,7 @@ const QUESTIONS = [
     },
     {
         id: 50,
-        category: "Indexace",
+        category: "JAK třídíme I.",
         question: "Který faktor NEPATŘÍ mezi 'pracovní podmínky' ovlivňující kvalitu indexace?",
         answers: [
             "Produktivita práce.",
@@ -711,7 +711,7 @@ const QUESTIONS = [
     },
     {
         id: 51,
-        category: "Konkrétní systémy",
+        category: "Oborové a specializované systémy organizace informací",
         question: "Jakou notaci používá klasifikace MSC (Mathematics Subject Classification) na první úrovni?",
         answers: [
             "Čistě numerickou (00-99) s vynechávkami pro budoucí doplnění.",
@@ -725,7 +725,7 @@ const QUESTIONS = [
     },
     {
         id: 52,
-        category: "Konkrétní systémy",
+        category: "Oborové a specializované systémy organizace informací",
         question: "Klasifikace NACE dělí ekonomické činnosti do specifických úrovní. Jaké to jsou?",
         answers: [
             "Kniha, Kapitola, Odstavec.",
@@ -739,7 +739,7 @@ const QUESTIONS = [
     },
     {
         id: 53,
-        category: "Konkrétní systémy",
+        category: "Oborové a specializované systémy organizace informací",
         question: "Mezinárodní klasifikace patentů (IPC) má specifickou strukturu notace na 4. úrovni. Čím je typická?",
         answers: [
             "Používá pouze římské číslice.",
@@ -753,7 +753,7 @@ const QUESTIONS = [
     },
     {
         id: 54,
-        category: "Konkrétní systémy",
+        category: "Oborové a specializované systémy organizace informací",
         question: "K čemu slouží tezaurus 'Backbone Thesaurus'?",
         answers: [
             "K popisu anatomie páteře.",
@@ -767,7 +767,7 @@ const QUESTIONS = [
     },
     {
         id: 55,
-        category: "Konkrétní systémy",
+        category: "Oborové a specializované systémy organizace informací",
         question: "Co je hlavním problémem tezauru EuroVoc podle studijního materiálu?",
         answers: [
             "Je pouze v angličtině.",
@@ -781,7 +781,7 @@ const QUESTIONS = [
     },
     {
         id: 56,
-        category: "Budoucnost a AI",
+        category: "Minulost, současnost a budoucnost organizace informací",
         question: "Co znamená zkratka AXI v kontextu budoucnosti organizace informací?",
         answers: [
             "Artificial X-ray Indexing.",
@@ -795,7 +795,7 @@ const QUESTIONS = [
     },
     {
         id: 57,
-        category: "Budoucnost a AI",
+        category: "Minulost, současnost a budoucnost organizace informací",
         question: "Co je myšleno principem 'Black box' v uživatelských rozhraních budoucnosti?",
         answers: [
             "Uživatel musí zadat heslo do černé skříňky.",
@@ -809,7 +809,7 @@ const QUESTIONS = [
     },
     {
         id: 58,
-        category: "Budoucnost a AI",
+        category: "Minulost, současnost a budoucnost organizace informací",
         question: "Jaká je role ontologií v budoucnosti organizace informací?",
         answers: [
             "Budou zcela nahrazeny klíčovými slovy.",
@@ -823,7 +823,7 @@ const QUESTIONS = [
     },
     {
         id: 59,
-        category: "Budoucnost a AI",
+        category: "Minulost, současnost a budoucnost organizace informací",
         question: "Co je to 'granularita' informace?",
         answers: [
             "Zrnitost tisku na papíře.",
@@ -837,7 +837,7 @@ const QUESTIONS = [
     },
     {
         id: 60,
-        category: "Budoucnost a AI",
+        category: "Minulost, současnost a budoucnost organizace informací",
         question: "Jaký trend se očekává v oblasti 'jazykových technologií' (AI)?",
         answers: [
             "Úplně nahradí lidské indexátory do roku 2025.",
@@ -851,7 +851,7 @@ const QUESTIONS = [
     },
     {
         id: 61,
-        category: "Jazykové jevy",
+        category: "JAK třídíme II.",
         question: "Co znamená 'asymetrie jazyka' při vyhledávání v plném textu?",
         answers: [
             "Text je zarovnán doleva.",
@@ -865,7 +865,7 @@ const QUESTIONS = [
     },
     {
         id: 62,
-        category: "Jazykové jevy",
+        category: "JAK třídíme II.",
         question: "Jaký problém řeší 'derivátor slovních tvarů'?",
         answers: [
             "Problém flexe (skloňování a časování) v plnotextovém vyhledávání.",
@@ -879,7 +879,7 @@ const QUESTIONS = [
     },
     {
         id: 63,
-        category: "Jazykové jevy",
+        category: "JAK třídíme II.",
         question: "Co jsou to 'proximitní operátory'?",
         answers: [
             "Operátory, které určují, jak blízko sebe se musí nacházet hledaná slova v textu.",
@@ -893,7 +893,7 @@ const QUESTIONS = [
     },
     {
         id: 64,
-        category: "Jazykové jevy",
+        category: "JAK třídíme II.",
         question: "Jaký je rozdíl mezi 'výběrovou indexací' a 'úplnou indexací' (exhaustive)?",
         answers: [
             "Výběrová je levnější, úplná je dražší.",
@@ -907,7 +907,7 @@ const QUESTIONS = [
     },
     {
         id: 65,
-        category: "Jazykové jevy",
+        category: "JAK třídíme II.",
         question: "Co je 'Vektorové vyhledávání'?",
         answers: [
             "Hledání obrázků ve formátu SVG.",
@@ -921,7 +921,7 @@ const QUESTIONS = [
     },
     {
         id: 66,
-        category: "Historie a Vývoj",
+        category: "Minulost, současnost a budoucnost organizace informací",
         question: "Kdy vzniklo Deweyho desetinné třídění (DDC)?",
         answers: [
             "1851.",
@@ -935,7 +935,7 @@ const QUESTIONS = [
     },
     {
         id: 67,
-        category: "Historie a Vývoj",
+        category: "Minulost, současnost a budoucnost organizace informací",
         question: "Kdy vzniklo Dvojtečkové třídění (CC) S. R. Ranganathana?",
         answers: [
             "1876.",
@@ -949,7 +949,7 @@ const QUESTIONS = [
     },
     {
         id: 68,
-        category: "Historie a Vývoj",
+        category: "Minulost, současnost a budoucnost organizace informací",
         question: "Kdo je autorem výroku o 'informační explozi' a potřebě uspořádané knihovny z roku 1851?",
         answers: [
             "Melvil Dewey.",
@@ -963,7 +963,7 @@ const QUESTIONS = [
     },
     {
         id: 69,
-        category: "Historie a Vývoj",
+        category: "Minulost, současnost a budoucnost organizace informací",
         question: "Ve kterém desetiletí vznikly 'Unitermy' (předchůdce tezaurů)?",
         answers: [
             "90. léta 19. století.",
@@ -977,7 +977,7 @@ const QUESTIONS = [
     },
     {
         id: 70,
-        category: "Historie a Vývoj",
+        category: "Minulost, současnost a budoucnost organizace informací",
         question: "Co je typické pro 'Blissovo bibliografické třídění' (BC)?",
         answers: [
             "Je to nejrozšířenější systém na světě.",
@@ -991,7 +991,7 @@ const QUESTIONS = [
     },
     {
         id: 71,
-        category: "Notace a Struktura",
+        category: "ČÍM třídíme II.",
         question: "Co je 'lineární notace'?",
         answers: [
             "Znaky následují za sebou (A1, A2, A3) bez vyjádření vnitřní hierarchie.",
@@ -1005,7 +1005,7 @@ const QUESTIONS = [
     },
     {
         id: 72,
-        category: "Notace a Struktura",
+        category: "ČÍM třídíme II.",
         question: "Co znamená pojem 'pohostinnost notace' (expanzivita)?",
         answers: [
             "Schopnost knihovníka být milý k uživatelům.",
@@ -1019,7 +1019,7 @@ const QUESTIONS = [
     },
     {
         id: 73,
-        category: "Notace a Struktura",
+        category: "ČÍM třídíme II.",
         question: "Jaký typ notace používá systém, který kombinuje písmena a čísla (např. A65, ŽIII.X)?",
         answers: [
             "Numerická.",
@@ -1033,7 +1033,7 @@ const QUESTIONS = [
     },
     {
         id: 74,
-        category: "Notace a Struktura",
+        category: "ČÍM třídíme II.",
         question: "Co je 'separátor notace'?",
         answers: [
             "Člověk, který třídí knihy.",
@@ -1047,7 +1047,7 @@ const QUESTIONS = [
     },
     {
         id: 75,
-        category: "Notace a Struktura",
+        category: "ČÍM třídíme II.",
         question: "Binární notace v kontextu klasifikace (např. MSC nebo NACE 1. úroveň) znamená:",
         answers: [
             "Použití pouze nul a jedniček (počítačový kód).",
@@ -1061,7 +1061,7 @@ const QUESTIONS = [
     },
     {
         id: 76,
-        category: "Vztahy v tezauru",
+        category: "ČÍM třídíme II.",
         question: "Co znamená vztah 'asociace' (RT - Related Term) v tezauru?",
         answers: [
             "Nadřazený pojem.",
@@ -1075,7 +1075,7 @@ const QUESTIONS = [
     },
     {
         id: 77,
-        category: "Vztahy v tezauru",
+        category: "ČÍM třídíme II.",
         question: "Co je 'kvazisynonymie'?",
         answers: [
             "Úplná shoda významů.",
@@ -1089,7 +1089,7 @@ const QUESTIONS = [
     },
     {
         id: 78,
-        category: "Vztahy v tezauru",
+        category: "ČÍM třídíme II.",
         question: "Co je 'deskriptorový odstavec'?",
         answers: [
             "Fyzický odstavec textu v knize.",
@@ -1103,7 +1103,7 @@ const QUESTIONS = [
     },
     {
         id: 79,
-        category: "Vztahy v tezauru",
+        category: "ČÍM třídíme II.",
         question: "Který z uvedených vztahů je 'paradigmatický' (apriorní)?",
         answers: [
             "Vztah, který vznikne až ve větě (např. 'pes kousl pošťáka').",
@@ -1117,7 +1117,7 @@ const QUESTIONS = [
     },
     {
         id: 80,
-        category: "Vztahy v tezauru",
+        category: "ČÍM třídíme II.",
         question: "Co znamená zkratka 'NT' v tezauru?",
         answers: [
             "New Term (nový termín).",
@@ -1131,7 +1131,7 @@ const QUESTIONS = [
     },
     {
         id: 81,
-        category: "Různé systémy",
+        category: "Oborové a specializované systémy organizace informací",
         question: "Jaký typ systému je 'TaDiRaH'?",
         answers: [
             "Tezaurus pro vaření.",
@@ -1145,7 +1145,7 @@ const QUESTIONS = [
     },
     {
         id: 82,
-        category: "Různé systémy",
+        category: "Oborové a specializované systémy organizace informací",
         question: "V systému MDT (Mezinárodní desetinné třídění) znamenají pomocné znaky:",
         answers: [
             "Že je notace chybná.",
@@ -1159,7 +1159,7 @@ const QUESTIONS = [
     },
     {
         id: 83,
-        category: "Různé systémy",
+        category: "Oborové a specializované systémy organizace informací",
         question: "Co je výhodou 'Předmětových hesel Kongresové knihovny' (LCSH) oproti tezaurům?",
         answers: [
             "Jsou menší a jednodušší.",
@@ -1173,7 +1173,7 @@ const QUESTIONS = [
     },
     {
         id: 84,
-        category: "Různé systémy",
+        category: "Oborové a specializované systémy organizace informací",
         question: "Jaký je hlavní rozdíl mezi 'identifikací pojmů' a 'výběrem znaků SJ'?",
         answers: [
             "Identifikace se děje v hlavě indexátora, výběr znaků je překlad do jazyka systému.",
@@ -1187,7 +1187,7 @@ const QUESTIONS = [
     },
     {
         id: 85,
-        category: "Různé systémy",
+        category: "Oborové a specializované systémy organizace informací",
         question: "Co znamená pojem 'přechodová předmětová hesla'?",
         answers: [
             "Hesla, která se používají jen dočasně.",
@@ -1202,7 +1202,7 @@ const QUESTIONS = [
     // Tematický blok 16: Statistika a Experimenty (86-100)
     {
         id: 86,
-        category: "Statistika a Chyby",
+        category: "JAK třídíme I.",
         question: "Klasifikace NACE používá na 1. úrovni notaci:",
         answers: ["Desetinnou (číselnou).", "Binární (dvoucifernou 00-99).", "Alfabetickou (A-Z).", "Římskou (I-XX)."],
         correct: 2,
@@ -1211,7 +1211,7 @@ const QUESTIONS = [
     },
     {
         id: 87,
-        category: "Konkrétní systémy",
+        category: "Oborové a specializované systémy organizace informací",
         question: "Systém ICS (International Classification for Standards) slouží k popisu:",
         answers: ["Patentů.", "Technických norem.", "Internetových protokolů.", "Obchodních smluv."],
         correct: 1,
@@ -1220,7 +1220,7 @@ const QUESTIONS = [
     },
     {
         id: 88,
-        category: "Konkrétní systémy",
+        category: "Oborové a specializované systémy organizace informací",
         question: "Klasifikace MSC používá 'přidružovací odkazy'. Jak jsou označeny?",
         answers: ["'Viz též' (See also).", "Šipkou ->.", "Hvězdičkou *.", "Rovnítkem =."],
         correct: 0,
@@ -1229,7 +1229,7 @@ const QUESTIONS = [
     },
     {
         id: 89,
-        category: "Konkrétní systémy",
+        category: "Oborové a specializované systémy organizace informací",
         question: "Co je typické pro 'Backbone Thesaurus' z hlediska jeho obsahu?",
         answers: ["Je velmi specifický a detailní.", "Je velmi obecný a povrchní, pojmy jsou použitelné napříč systémy.", "Obsahuje pouze jména autorů.", "Je zaměřen na medicínu."],
         correct: 1,
@@ -1238,7 +1238,7 @@ const QUESTIONS = [
     },
     {
         id: 90,
-        category: "Statistika a Chyby",
+        category: "JAK třídíme I.",
         question: "Podle analýzy indexačních chyb, kolik procent chyb tvořilo 'nesprávné stanovení významu deskriptoru'?",
         answers: ["18,6 %.", "12,3 %.", "42,3 %.", "5,5 %."],
         correct: 1,
@@ -1247,7 +1247,7 @@ const QUESTIONS = [
     },
     {
         id: 91,
-        category: "Statistika a Chyby",
+        category: "JAK třídíme I.",
         question: "Která fáze indexace je podle statistik největším zdrojem chyb (42,3 %)?",
         answers: ["Obsahová analýza.", "Identifikace pojmů.", "Výběr deskriptorů z tezauru.", "Zápis do databáze."],
         correct: 1,
@@ -1256,7 +1256,7 @@ const QUESTIONS = [
     },
     {
         id: 92,
-        category: "Informační objekty",
+        category: "CO třídíme",
         question: "Pokud je informačním objektem 'gramofonová deska', jaký je formát obsahu?",
         answers: ["Text.", "Zvuk.", "Data.", "Obraz."],
         correct: 1,
@@ -1265,7 +1265,7 @@ const QUESTIONS = [
     },
     {
         id: 93,
-        category: "Informační objekty",
+        category: "CO třídíme",
         question: "Co je nosičem (médiem) informačního objektu 'Trajánův sloup'?",
         answers: ["Papír.", "Kámen.", "Hlína.", "Digitální médium."],
         correct: 1,
@@ -1274,7 +1274,7 @@ const QUESTIONS = [
     },
     {
         id: 94,
-        category: "Informační objekty",
+        category: "CO třídíme",
         question: "Jaký je rozdíl mezi dokumentem 'primárním' a 'sekundárním'?",
         answers: ["Primární je originál, sekundární je kopie.", "Primární nese původní informace, sekundární o nich informuje.", "Primární je tištěný, sekundární je digitální.", "Primární je důležitější."],
         correct: 1,
@@ -1283,7 +1283,7 @@ const QUESTIONS = [
     },
     {
         id: 95,
-        category: "Vztahy v tezauru",
+        category: "ČÍM třídíme II.",
         question: "Jaký je rozdíl mezi 'monohierarchickým' a 'polyhierarchickým' vztahem?",
         answers: ["Monohierarchie má jeden kořen, polyhierarchie více kořenů.", "V polyhierarchii může být jeden pojem podřazen více nadřazeným pojmům současně.", "Monohierarchie se používá v knihovnách, polyhierarchie na internetu.", "Polyhierarchie je zakázána."],
         correct: 1,
@@ -1292,7 +1292,7 @@ const QUESTIONS = [
     },
     {
         id: 96,
-        category: "Indexace",
+        category: "JAK třídíme I.",
         question: "Co vyjadřuje zkratka 'KWOC'?",
         answers: ["Keyword Out of Context.", "Key Word On Computer.", "Knowledge Within Organization Context.", "Keep Without Classification."],
         correct: 0,
@@ -1301,7 +1301,7 @@ const QUESTIONS = [
     },
     {
         id: 97,
-        category: "Audio přednášky",
+        category: "ÚVOD | PROČ třídíme",
         question: "Příklad s 'horou Říp' (460,8 m n. m.) se používá k demonstraci:",
         answers: ["Rozdílu mezi numerickou a alfanumerickou notací.", "Transformace Data -> Informace -> Znalost.", "Chybovosti v geografických klasifikacích.", "Vývoje českého knihovnictví."],
         correct: 1,
@@ -1310,7 +1310,7 @@ const QUESTIONS = [
     },
     {
         id: 98,
-        category: "Audio přednášky",
+        category: "ÚVOD | PROČ třídíme",
         question: "Kdo jsou autoři konceptu 'Sémiotického trojúhelníku'?",
         answers: ["Dewey a Ranganathan.", "Ogden a Richards.", "Marx a Engels.", "Popper a Kuhn."],
         correct: 1,
@@ -1319,7 +1319,7 @@ const QUESTIONS = [
     },
     {
         id: 99,
-        category: "Audio přednášky",
+        category: "ÚVOD | PROČ třídíme",
         question: "V přednášce o věcném pořádání se rozlišuje mezi 'aboutness' a 'isness'. Příkladem 'isness' je:",
         answers: ["Téma knihy (např. Dějiny Francie).", "Forma/Žánr dokumentu (např. Slovník, Encyklopedie).", "Jméno autora.", "Počet stránek."],
         correct: 1,
@@ -1328,7 +1328,7 @@ const QUESTIONS = [
     },
     {
         id: 100,
-        category: "Audio přednášky",
+        category: "ÚVOD | PROČ třídíme",
         question: "Melvil Dewey (DDC) je v přednáškách často charakterizován jako:",
         answers: ["Filosof a teoretik.", "Pragmatik a obchodník, který chtěl zefektivnit práci v knihovně.", "Umělec a básník.", "Vědec v oblasti biologie."],
         correct: 1,
@@ -1337,7 +1337,7 @@ const QUESTIONS = [
     },
     {
         id: 101,
-        category: "Audio přednášky",
+        category: "ÚVOD | PROČ třídíme",
         question: "Termín 'Literární záruka' (Literary Warrant) znamená:",
         answers: ["Že kniha je pojištěná.", "Že termíny vznikají na základě toho, že o nich existuje literatura.", "Že autor ručí za kvalitu textu.", "Že knihovna musí knihu koupit."],
         correct: 1,
@@ -1346,7 +1346,7 @@ const QUESTIONS = [
     },
     {
         id: 102,
-        category: "Audio přednášky",
+        category: "ÚVOD | PROČ třídíme",
         question: "V přednášce o 'Precision a Recall' se používá přirovnání k:",
         answers: ["Houpačce (když jedna jde nahoru, druhá jde dolů).", "Jízdě na kole.", "Vaření polévky.", "Hraní šachů."],
         correct: 0,
@@ -1355,7 +1355,7 @@ const QUESTIONS = [
     },
     {
         id: 103,
-        category: "Audio přednášky",
+        category: "ÚVOD | PROČ třídíme",
         question: "Co je v audiu zmíněno jako 'Cutterovo číslo' (Cutter number)?",
         answers: ["Telefonní číslo na autora.", "Alfanumerický kód pro řazení knih v rámci jedné třídy.", "Počet stran knihy.", "Identifikátor digitálního objektu."],
         correct: 1,
@@ -1364,7 +1364,7 @@ const QUESTIONS = [
     },
     {
         id: 104,
-        category: "Audio přednášky",
+        category: "ÚVOD | PROČ třídíme",
         question: "V přednášce o Semantic Web se mluví o trojici:",
         answers: ["Subjekt – Predikát – Objekt (RDF trojice).", "Otec – Syn – Duch svatý.", "Vstup – Proces – Výstup.", "Autor – Název – Rok."],
         correct: 0,
@@ -1373,7 +1373,7 @@ const QUESTIONS = [
     },
     {
         id: 105,
-        category: "Audio přednášky",
+        category: "ÚVOD | PROČ třídíme",
         question: "Co znamená, že tezaurus je 'živý organismus'?",
         answers: ["Že je vyroben z buněk.", "Že musí být neustále aktualizován, jinak zastarává.", "Že se sám rozmnožuje.", "Že ho napadají viry."],
         correct: 1,
@@ -1382,7 +1382,7 @@ const QUESTIONS = [
     },
     {
         id: 106,
-        category: "Audio přednášky",
+        category: "ÚVOD | PROČ třídíme",
         question: "V souvislosti s indexací obrázků se mluví o problému:",
         answers: ["Že obrázky zabírají moc místa.", "'Sémantické propasti' – počítač vidí pixely, člověk vidí význam.", "Že fotoaparáty jsou drahé.", "Že obrázky nemají autory."],
         correct: 1,
@@ -1391,7 +1391,7 @@ const QUESTIONS = [
     },
     {
         id: 107,
-        category: "Audio přednášky",
+        category: "ÚVOD | PROČ třídíme",
         question: "Jaký příklad se používá pro vysvětlení 'Folksonomie'?",
         answers: ["Katalogizace v Národní knihovně.", "Flickr nebo Delicious - uživatelé sami lepí štítky.", "Třídění pošty.", "Seznam léků."],
         correct: 1,
@@ -1400,7 +1400,7 @@ const QUESTIONS = [
     },
     {
         id: 108,
-        category: "Audio přednášky",
+        category: "ÚVOD | PROČ třídíme",
         question: "V audiu se mluví o 'Stop-slovech' (Stop words). Co to je?",
         answers: ["Slova, která zastaví vyhledávání.", "Gramatická slova s malým významem, která systém ignoruje.", "Zakázaná slova.", "Klíčová slova na konci věty."],
         correct: 1,
@@ -1409,7 +1409,7 @@ const QUESTIONS = [
     },
     {
         id: 109,
-        category: "Audio přednášky",
+        category: "ÚVOD | PROČ třídíme",
         question: "Co je zmíněno jako výhoda 'Systematického pořádání' na regále?",
         answers: ["Serendipity - efekt náhodného objevu sousední relevantní knihy.", "Knihy jsou seřazeny podle barvy.", "Uživatel nemusí umět číst.", "Knihy se méně práší."],
         correct: 0,
@@ -1418,7 +1418,7 @@ const QUESTIONS = [
     },
     {
         id: 110,
-        category: "Audio přednášky",
+        category: "ÚVOD | PROČ třídíme",
         question: "V kontextu historie se mluví o 'Lístkovém katalogu'. Co ho nahradilo?",
         answers: ["Sešitový katalog.", "OPAC (Online Public Access Catalog).", "Mikrofiše.", "Nic, zrušil se."],
         correct: 1,
@@ -1427,7 +1427,7 @@ const QUESTIONS = [
     },
     {
         id: 111,
-        category: "Teorie",
+        category: "K ČEMU se tříděním DOBÍRÁME",
         question: "Co je 'Query Expansion' (rozšiřování dotazu)?",
         answers: ["Uživatel napíše delší větu.", "Systém rozšíří dotaz o synonyma z řízeného slovníku.", "Zvětšení písma na obrazovce.", "Překlad dotazu do angličtiny."],
         correct: 1,
@@ -1436,7 +1436,7 @@ const QUESTIONS = [
     },
     {
         id: 112,
-        category: "Teorie",
+        category: "K ČEMU se tříděním DOBÍRÁME",
         question: "Co je 'Latentní sémantické vyhledávání' (LSI)?",
         answers: ["Hledání skrytých zpráv v textu.", "Pokročilá metoda založená na statistických modelech textu.", "Manuální indexace dokumentů.", "Vyhledávání pouze v nadpisech."],
         correct: 1,
@@ -1445,7 +1445,7 @@ const QUESTIONS = [
     },
     {
         id: 113,
-        category: "Indexace",
+        category: "JAK třídíme I.",
         question: "'Úplná indexace' (Exhaustive Indexing) vede k:",
         answers: ["Vyšší přesnosti a nižší úplnosti.", "Vyšší úplnosti (Recall), ale může snížit přesnost.", "Rychlejšímu zpracování.", "Menší databázi."],
         correct: 1,
@@ -1454,7 +1454,7 @@ const QUESTIONS = [
     },
     {
         id: 114,
-        category: "Teorie",
+        category: "JAK třídíme I.",
         question: "Co je 'referát' ve srovnání s abstraktem?",
         answers: ["Je kratší.", "Je delší a přibližuje i výsledky a metody výzkumu.", "Je to totéž.", "Referát se jen přednáší ústně."],
         correct: 1,
@@ -1463,7 +1463,7 @@ const QUESTIONS = [
     },
     {
         id: 115,
-        category: "Teorie",
+        category: "Minulost, současnost a budoucnost organizace informací",
         question: "Co znamená zkratka 'LOD' v kontextu budoucnosti?",
         answers: ["Library of Data.", "Linked Open Data.", "Logical Object Definition.", "Large Online Database."],
         correct: 1,
@@ -1472,7 +1472,7 @@ const QUESTIONS = [
     },
     {
         id: 116,
-        category: "Teorie",
+        category: "JAK třídíme II.",
         question: "Co je 'derivátor slovních tvarů'?",
         answers: ["Nástroj, který řeší problém flexe (pes, psa, psovi).", "Nástroj pro překlad.", "Nástroj pro tvorbu citací.", "Nástroj pro opravu hrubek."],
         correct: 0,
@@ -1481,7 +1481,7 @@ const QUESTIONS = [
     },
     {
         id: 117,
-        category: "Teorie",
+        category: "JAK třídíme I.",
         question: "Co je 'reindexace'?",
         answers: ["Proces nového indexování dokumentů při změně systému.", "Zrušení indexace.", "Kontrola pravopisu.", "Vyřazení dokumentu."],
         correct: 0,
@@ -1490,7 +1490,7 @@ const QUESTIONS = [
     },
     {
         id: 118,
-        category: "Teorie",
+        category: "JAK třídíme I.",
         question: "Který systém využívá 'číselníky' (enumerace všech položek)?",
         answers: ["NACE a státní správa.", "Klíčová slova.", "Tezaurus UNESCO.", "Plnotextové vyhledávání."],
         correct: 0,
@@ -1499,7 +1499,7 @@ const QUESTIONS = [
     },
     {
         id: 119,
-        category: "Teorie",
+        category: "JAK třídíme I.",
         question: "Co je 'supervize' v procesu kontroly indexace?",
         answers: ["Automatická kontrola počítačem.", "Kontrola správnosti nadřízeným pracovníkem.", "Náhodný výběr.", "Anketa mezi uživateli."],
         correct: 1,
@@ -1508,7 +1508,7 @@ const QUESTIONS = [
     },
     {
         id: 120,
-        category: "Teorie",
+        category: "ÚVOD | PROČ třídíme",
         question: "Jaký je vztah mezi 'Data' a 'Údaj' v textu?",
         answers: ["Údaj představuje pouze řetězec znaků (část dat).", "Jsou to synonyma.", "Údaj je nadřazený datům.", "Údaj je pouze v analogové formě."],
         correct: 0,
@@ -1518,7 +1518,7 @@ const QUESTIONS = [
     // Tematický blok 18: Teorie a Praxe II (121-140)
     {
         id: 121,
-        category: "Teorie",
+        category: "ÚVOD | PROČ třídíme",
         question: "Co je hlavním cílem 'informační vědy'?",
         answers: ["Zkoumat vlastnosti a chování informací, síly řídící jejich tok a prostředky jejich zpracování.", "Opravovat počítače.", "Tvořit webové stránky.", "Učit lidi číst."],
         correct: 0,
@@ -1527,7 +1527,7 @@ const QUESTIONS = [
     },
     {
         id: 122,
-        category: "Teorie",
+        category: "CO třídíme",
         question: "Jaký je rozdíl mezi 'faktografickou' a 'bibliografickou' informací?",
         answers: ["Faktografická obsahuje přímo fakt (např. bod tání železa), bibliografická odkazuje na dokument.", "Bibliografická je pravdivější.", "Faktografická je v číslech, bibliografická v písmenech.", "Žádný rozdíl není."],
         correct: 0,
@@ -1536,7 +1536,7 @@ const QUESTIONS = [
     },
     {
         id: 123,
-        category: "Teorie",
+        category: "K ČEMU se tříděním DOBÍRÁME",
         question: "Co znamená pojem 'Informační gramotnost'?",
         answers: ["Schopnost rychle psát na klávesnici.", "Schopnost uvědomit si informační potřebu, vyhledat, vyhodnotit a efektivně využít informace.", "Znalost programování.", "Schopnost číst v cizím jazyce."],
         correct: 1,
@@ -1545,7 +1545,7 @@ const QUESTIONS = [
     },
     {
         id: 124,
-        category: "Konkrétní systémy",
+        category: "Oborové a specializované systémy organizace informací",
         question: "Který klasifikační systém je známý svou 'fazetovou' strukturou už od počátku?",
         answers: ["Deweyho desetinné třídění.", "Dvojtečkové třídění (Colon Classification).", "LCC.", "MDT."],
         correct: 1,
@@ -1554,7 +1554,7 @@ const QUESTIONS = [
     },
     {
         id: 125,
-        category: "Konkrétní systémy",
+        category: "Oborové a specializované systémy organizace informací",
         question: "Co je 'MeSH' (Medical Subject Headings)?",
         answers: ["Lékařský slovník pro překladatele.", "Řízený slovník (tezaurus) pro indexování a vyhledávání v medicíně (PubMed).", "Seznam lékařů v USA.", "Klasifikace nemocí pro pojišťovny."],
         correct: 1,
@@ -1563,7 +1563,7 @@ const QUESTIONS = [
     },
     {
         id: 126,
-        category: "Konkrétní systémy",
+        category: "Oborové a specializované systémy organizace informací",
         question: "K čemu slouží 'PACS' (Physics and Astronomy Classification Scheme)?",
         answers: ["K třídění literatury z fyziky a astronomie.", "K balení knih.", "K výpočtu dráhy planet.", "K archivaci fotografií."],
         correct: 0,
@@ -1572,7 +1572,7 @@ const QUESTIONS = [
     },
     {
         id: 127,
-        category: "Teorie",
+        category: "K ČEMU se tříděním DOBÍRÁME",
         question: "Co je 'dokumentografický informační systém'?",
         answers: ["Systém, který ukládá plné texty dokumentů.", "Systém, který ukládá zástupné záznamy (metadata) o dokumentech.", "Systém na skartaci dokumentů.", "Systém pro tisk dokumentů."],
         correct: 1,
@@ -1581,7 +1581,7 @@ const QUESTIONS = [
     },
     {
         id: 128,
-        category: "Teorie",
+        category: "K ČEMU se tříděním DOBÍRÁME",
         question: "Jaký je vztah mezi 'šumem' a 'tichem' ve vyhledávání?",
         answers: ["Šum jsou nerelevantní nalezené, ticho jsou relevantní nenalezené.", "Šum je hlasitý, ticho ne.", "Šum zvyšuje přesnost, ticho úplnost.", "Jsou to synonyma."],
         correct: 0,
@@ -1590,7 +1590,7 @@ const QUESTIONS = [
     },
     {
         id: 129,
-        category: "Teorie",
+        category: "K ČEMU se tříděním DOBÍRÁME",
         question: "Co znamená pojem 'Relevance'?",
         answers: ["Shoda mezi dotazem a dokumentem z pohledu systému nebo uživatele.", "Délka dokumentu.", "Počet citací.", "Jazyk dokumentu."],
         correct: 0,
@@ -1599,7 +1599,7 @@ const QUESTIONS = [
     },
     {
         id: 130,
-        category: "Teorie",
+        category: "K ČEMU se tříděním DOBÍRÁME",
         question: "Co je 'Pertinence'?",
         answers: ["Objektivní shoda dotazu a dokumentu.", "Subjektivní hodnocení uživatele, zda dokument uspokojil jeho potřebu.", "Technická chyba systému.", "Rychlost vyhledávání."],
         correct: 1,
@@ -1608,7 +1608,7 @@ const QUESTIONS = [
     },
     {
         id: 131,
-        category: "Historie",
+        category: "Minulost, současnost a budoucnost organizace informací",
         question: "Kdo založil 'Mundaneum'?",
         answers: ["Paul Otlet a Henri La Fontaine.", "Melvil Dewey.", "Tim Berners-Lee.", "S. R. Ranganathan."],
         correct: 0,
@@ -1617,7 +1617,7 @@ const QUESTIONS = [
     },
     {
         id: 132,
-        category: "Historie",
+        category: "Minulost, současnost a budoucnost organizace informací",
         question: "Co bylo cílem Paul Otleta?",
         answers: ["Vytvořit univerzální bibliografický repertor. (světový katalog vědění).", "Zničit všechny knihy.", "Vymyslet internet.", "Napsat nejdelší knihu na světě."],
         correct: 0,
@@ -1626,7 +1626,7 @@ const QUESTIONS = [
     },
     {
         id: 133,
-        category: "Teorie",
+        category: "ČÍM třídíme II.",
         question: "Co je 'autoritní soubor'?",
         answers: ["Seznam zakázaných knih.", "Seznam unifikovaných forem jmen (osob, korporací) pro zajištění konzistence.", "Seznam autorů bestsellerů.", "Soubor s hesly administrátorů."],
         correct: 1,
@@ -1635,7 +1635,7 @@ const QUESTIONS = [
     },
     {
         id: 134,
-        category: "Teorie",
+        category: "ČÍM třídíme II.",
         question: "Co je 'ISBN'?",
         answers: ["International Standard Book Number.", "Internet System for Book Names.", "Internal Serial Book Number.", "Index System for Big Novels."],
         correct: 0,
@@ -1644,7 +1644,7 @@ const QUESTIONS = [
     },
     {
         id: 135,
-        category: "Teorie",
+        category: "ČÍM třídíme II.",
         question: "Co je 'ISSN'?",
         answers: ["International Standard Serial Number.", "Internet Standard Search Name.", "International System required for Navigation.", "Index of Super Scientific Novels."],
         correct: 0,
@@ -1653,7 +1653,7 @@ const QUESTIONS = [
     },
     {
         id: 136,
-        category: "Teorie",
+        category: "ČÍM třídíme II.",
         question: "Co je 'DOI'?",
         answers: ["Digital Object Identifier.", "Data Over Internet.", "Document Of Interest.", "Digital Online Index."],
         correct: 0,
@@ -1662,7 +1662,7 @@ const QUESTIONS = [
     },
     {
         id: 137,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co znamená 'Open Access'?",
         answers: ["Knihovna má otevřeno nonstop.", "Volný a bezplatný přístup k vědeckým informacím na internetu.", "Otevřený software.", "Přístup pouze pro registrované."],
         correct: 1,
@@ -1671,7 +1671,7 @@ const QUESTIONS = [
     },
     {
         id: 138,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'Impakt faktor'?",
         answers: ["Míra citovanosti časopisu.", "Síla nárazu knihy na zem.", "Počet autorů článku.", "Cena časopisu."],
         correct: 0,
@@ -1680,7 +1680,7 @@ const QUESTIONS = [
     },
     {
         id: 139,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'H-index' (Hiršův index)?",
         answers: ["Míra produktivity a citovanosti konkrétního vědce.", "Index hloubky indexace.", "Hodnocení humoristických knih.", "Index hustoty textu."],
         correct: 0,
@@ -1689,7 +1689,7 @@ const QUESTIONS = [
     },
     {
         id: 140,
-        category: "Selekční jazyky",
+        category: "ČÍM třídíme I.",
         question: "Jaký je rozdíl mezi 'deskriptorem' a 'klíčovým slovem'?",
         answers: ["Deskriptor je z řízeného slovníku, klíčové slovo je z přirozeného jazyka.", "Deskriptor je anglicky, klíčové slovo česky.", "Deskriptor je číslo, klíčové slovo text.", "Žádný."],
         correct: 0,
@@ -1699,7 +1699,7 @@ const QUESTIONS = [
     // Tematický blok 19: Technologie a Formáty (141-160)
     {
         id: 141,
-        category: "Technologie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'MARC 21'?",
         answers: ["Formát pro výměnu bibliografických dat.", "Program pro psaní knih.", "Typ čtečky čárových kódů.", "Norma pro stavbu regálů."],
         correct: 0,
@@ -1708,7 +1708,7 @@ const QUESTIONS = [
     },
     {
         id: 142,
-        category: "Technologie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'Dublin Core'?",
         answers: ["Jednoduchý metadatový standard (15 prvků) pro popis digitálních objektů.", "Hlavní město Irska.", "Jádro operačního systému.", "Typ vazby knihy."],
         correct: 0,
@@ -1717,7 +1717,7 @@ const QUESTIONS = [
     },
     {
         id: 143,
-        category: "Technologie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'OAI-PMH'?",
         answers: ["Protokol pro sklízení metadat (Open Archives Initiative).", "Zkratka pro umělou inteligenci.", "Operační systém pro knihovny.", "Formát obrázků."],
         correct: 0,
@@ -1726,7 +1726,7 @@ const QUESTIONS = [
     },
     {
         id: 144,
-        category: "Technologie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'Z39.50'?",
         answers: ["Komunikační protokol pro vyhledávání v distribuovaných databázích.", "Cena knihy.", "Typ počítače.", "Rok 3950."],
         correct: 0,
@@ -1735,7 +1735,7 @@ const QUESTIONS = [
     },
     {
         id: 145,
-        category: "Technologie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'OPAC'?",
         answers: ["Online Public Access Catalog.", "Organization of People Against Cats.", "Old Public Archive Center.", "Online Paper And Cards."],
         correct: 0,
@@ -1744,7 +1744,7 @@ const QUESTIONS = [
     },
     {
         id: 146,
-        category: "Technologie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'RFID' v knihovně?",
         answers: ["Radio Frequency Identification - technologie pro identifikaci a zabezpečení fondu.", "Really Fast Information Delivery.", "Red File In Database.", "Robot For Indexing Data."],
         correct: 0,
@@ -1753,7 +1753,7 @@ const QUESTIONS = [
     },
     {
         id: 147,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'digitální knihovna'?",
         answers: ["Organizace, která zpřístupňuje digitální zdroje s odpovídajícími službami.", "Složka s PDF soubory na disku.", "Webová stránka se seznamem odkazů.", "E-shop s e-knihami."],
         correct: 0,
@@ -1762,7 +1762,7 @@ const QUESTIONS = [
     },
     {
         id: 148,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co znamená 'Born-digital'?",
         answers: ["Dokument vznikl přímo v digitální podobě (nemá tištěný předobraz).", "Dokument byl naskenován.", "Dokument o digitálních technologiích.", "Autor se narodil v digitální době."],
         correct: 0,
@@ -1771,7 +1771,7 @@ const QUESTIONS = [
     },
     {
         id: 149,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'digitalizace'?",
         answers: ["Převod analogového dokumentu do digitální podoby.", "Psaní na počítači.", "Počítání na prstech.", "Nákup počítačů."],
         correct: 0,
@@ -1780,7 +1780,7 @@ const QUESTIONS = [
     },
     {
         id: 150,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'OCR'?",
         answers: ["Optical Character Recognition.", "Online Catalog Reading.", "Old Czech Records.", "Only Computer Readable."],
         correct: 0,
@@ -1789,7 +1789,7 @@ const QUESTIONS = [
     },
     {
         id: 151,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'dlouhodobá archivace' (LTP - Long Term Preservation)?",
         answers: ["Zajištění dostupnosti a čitelnosti digitálních dat v dlouhém časovém horizontu.", "Uložení knih do sklepa.", "Zálohování na USB disk.", "Tisk emailů."],
         correct: 0,
@@ -1798,7 +1798,7 @@ const QUESTIONS = [
     },
     {
         id: 152,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'emulace' v kontextu archivace?",
         answers: ["Simulace starého prostředí (HW/SW) na novém počítači.", "Kopírování dat.", "Konverze formátu.", "Oprava poškozeného CD."],
         correct: 0,
@@ -1807,7 +1807,7 @@ const QUESTIONS = [
     },
     {
         id: 153,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'migrace' v kontextu archivace?",
         answers: ["Převod dat ze starého formátu do nového (např. DOC -> DOCX).", "Stěhování knihovny.", "Přechod uživatelů k jiné službě.", "Změna barvy webu."],
         correct: 0,
@@ -1816,7 +1816,7 @@ const QUESTIONS = [
     },
     {
         id: 154,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'Creative Commons' (CC)?",
         answers: ["Sada veřejných licencí pro autorská díla.", "Společenská hra.", "Typ softwaru.", "Klub tvořivých lidí."],
         correct: 0,
@@ -1825,7 +1825,7 @@ const QUESTIONS = [
     },
     {
         id: 155,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co znamená licence 'CC0'?",
         answers: ["Public Domain - vzdání se všech práv, dílo je volné.", "Všechna práva vyhrazena.", "Zakázáno kopírovat.", "Použití pouze pro charitu."],
         correct: 0,
@@ -1834,7 +1834,7 @@ const QUESTIONS = [
     },
     {
         id: 156,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co znamená licence 'CC BY'?",
         answers: ["Uveďte autora.", "Nekomerční užití.", "Nezasahujte do díla.", "Sdílejte za stejných podmínek."],
         correct: 0,
@@ -1843,7 +1843,7 @@ const QUESTIONS = [
     },
     {
         id: 157,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'šedá literatura'?",
         answers: ["Dokumenty, které neprošly standardním vydavatelským procesem (disertace, zprávy).", "Staré noviny.", "Literatura pro seniory.", "Špatně vytištěné knihy."],
         correct: 0,
@@ -1852,7 +1852,7 @@ const QUESTIONS = [
     },
     {
         id: 158,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'repozitář'?",
         answers: ["Úložiště digitálních objektů (často institucionální).", "Odpadkový koš.", "Místo pro odpočinek.", "Obchod s knihami."],
         correct: 0,
@@ -1861,7 +1861,7 @@ const QUESTIONS = [
     },
     {
         id: 159,
-        category: "Indexace",
+        category: "JAK třídíme I.",
         question: "Co je to 'prekoordinace'?",
         answers: ["Spojení pojmů do složeného výrazu PŘED samotným vyhledáváním (při tvorbě systému/indexaci).", "Spojení pojmů AŽ při vyhledávání.", "Indexace před vydáním knihy.", "Koordinace práce týmu."],
         correct: 0,
@@ -1870,7 +1870,7 @@ const QUESTIONS = [
     },
     {
         id: 160,
-        category: "Indexace",
+        category: "JAK třídíme I.",
         question: "Co je to 'postkoordinace'?",
         answers: ["Spojení pojmů (např. pomocí AND) AŽ v okamžiku vyhledávání.", "Spojení pojmů předem.", "Posílání koordinátů poštou.", "Koordinace po skončení projektu."],
         correct: 0,
@@ -1880,7 +1880,7 @@ const QUESTIONS = [
     // Tematický blok 20: Doplňkové pojmy (161-180)
     {
         id: 161,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'fulltextové vyhledávání'?",
         answers: ["Prohledávání celého obsahu dokumentů (každého slova).", "Hledání jen v názvu.", "Hledání v plném talíři.", "Čtení celé knihy."],
         correct: 0,
@@ -1889,7 +1889,7 @@ const QUESTIONS = [
     },
     {
         id: 162,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co jsou 'Booleovské operátory'?",
         answers: ["AND, OR, NOT.", "Plus, Mínus, Krát.", "Jeden, Dva, Tři.", "Vlevo, Vpravo, Rovně."],
         correct: 0,
@@ -1898,7 +1898,7 @@ const QUESTIONS = [
     },
     {
         id: 163,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co dělá operátor 'AND'?",
         answers: ["Průnik - musí tam být oba pojmy.", "Sjednocení - stačí jeden z pojmů.", "Vyloučení - první ano, druhý ne.", "Sečte čísla."],
         correct: 0,
@@ -1907,7 +1907,7 @@ const QUESTIONS = [
     },
     {
         id: 164,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co dělá operátor 'OR'?",
         answers: ["Sjednocení - stačí alespoň jeden pojem (rozšiřuje dotaz).", "Průnik - musí být oba.", "Vyloučení.", "Násobení."],
         correct: 0,
@@ -1916,7 +1916,7 @@ const QUESTIONS = [
     },
     {
         id: 165,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co dělá operátor 'NOT'?",
         answers: ["Vyloučení - první pojem ano, druhý nesmí být.", "Negace celého dotazu.", "Nic.", "Potvrzení."],
         correct: 0,
@@ -1925,7 +1925,7 @@ const QUESTIONS = [
     },
     {
         id: 166,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'trunkace' (wildcard)?",
         answers: ["Náhrada části slova znakem (např. *), hledá všechny varianty (počítač* -> počítače, počítačový...).", "Zrušení vyhledávání.", "Vyhledávání v kufru.", "Zkrácení textu."],
         correct: 0,
@@ -1934,7 +1934,7 @@ const QUESTIONS = [
     },
     {
         id: 167,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'frázové vyhledávání'?",
         answers: ["Hledání přesné fráze v uvozovkách.", "Hledání podle frází z filmu.", "Mluvení ve frázích.", "Hledání přísloví."],
         correct: 0,
@@ -1943,7 +1943,7 @@ const QUESTIONS = [
     },
     {
         id: 168,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'Stemming'?",
         answers: ["Algoritmické odtržení koncovek pro převod na kmen slova.", "Pěstování rostlin.", "Zastavení systému.", "Měření času."],
         correct: 0,
@@ -1952,7 +1952,7 @@ const QUESTIONS = [
     },
     {
         id: 169,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'Lemmatizace'?",
         answers: ["Převod slov na základní slovníkový tvar (lemma).", "Výroba limonády.", "Lepení stránek.", "Mytí lemů."],
         correct: 0,
@@ -1961,7 +1961,7 @@ const QUESTIONS = [
     },
     {
         id: 170,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'Rešerše'?",
         answers: ["Soupis informací/dokumentů na dané téma vyhledaný na základě požadavku.", "Rychlé čtení.", "Recenze knihy.", "Oprava v textu."],
         correct: 0,
@@ -1970,7 +1970,7 @@ const QUESTIONS = [
     },
     {
         id: 171,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'MDT'?",
         answers: ["Mezinárodní desetinné třídění.", "Malé domácí třídění.", "Městské divadlo Třebíč.", "Mezinárodní den tisku."],
         correct: 0,
@@ -1979,7 +1979,7 @@ const QUESTIONS = [
     },
     {
         id: 172,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Jaký je hlavní znak MDT?",
         answers: ["Hierarchická desetinná struktura a pomocné znaky.", "Abecední řazení.", "Barevné kódy.", "Používá se jen v ČR."],
         correct: 0,
@@ -1988,7 +1988,7 @@ const QUESTIONS = [
     },
     {
         id: 173,
-        category: "Indexace",
+        category: "JAK třídíme I.",
         question: "Co je 'permutovaný rejstřík'?",
         answers: ["Rejstřík, kde se klíčová slova v názvu cyklicky střídají (např. KWIC).", "Náhodný rejstřík.", "Rejstřík zakázaných slov.", "Rejstřík jmen."],
         correct: 0,
@@ -1997,7 +1997,7 @@ const QUESTIONS = [
     },
     {
         id: 174,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'citační rejstřík'?",
         answers: ["Nástroj sledující, kdo koho cituje (např. Web of Science).", "Seznam citátů slavných lidí.", "Rejstřík citů.", "Seznam literatury v knize."],
         correct: 0,
@@ -2006,7 +2006,7 @@ const QUESTIONS = [
     },
     {
         id: 175,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'Web of Science'?",
         answers: ["Multidisciplinární citační databáze.", "Web o vědě pro děti.", "Sociální síť pro vědce.", "Vyhledávač obrázků."],
         correct: 0,
@@ -2015,7 +2015,7 @@ const QUESTIONS = [
     },
     {
         id: 176,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'Scopus'?",
         answers: ["Velká citační a bibliografická databáze od Elsevieru.", "Dalekohled.", "Latinské slovo pro cíl.", "Časopis."],
         correct: 0,
@@ -2024,7 +2024,7 @@ const QUESTIONS = [
     },
     {
         id: 177,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'Google Scholar'?",
         answers: ["Vyhledávač odborné literatury zdarma.", "Školní Google.", "Google pro učitele.", "Hra od Google."],
         correct: 0,
@@ -2033,7 +2033,7 @@ const QUESTIONS = [
     },
     {
         id: 178,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'peer review'?",
         answers: ["Recenzní řízení - hodnocení kvality článku nezávislými odborníky před vydáním.", "Pohled přes rameno.", "Kamarádská rada.", "Kontrola pravopisu."],
         correct: 0,
@@ -2042,7 +2042,7 @@ const QUESTIONS = [
     },
     {
         id: 179,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'predátorský časopis'?",
         answers: ["Časopis, který zneužívá Open Access model pro zisk bez řádného recenzního řízení.", "Časopis o dravcích.", "Časopis, který krade články.", "Časopis s agresivní reklamou."],
         correct: 0,
@@ -2051,7 +2051,7 @@ const QUESTIONS = [
     },
     {
         id: 180,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'ORCID'?",
         answers: ["Jedinečný identifikátor vědce/autora.", "Druh orchideje.", "Organizace pro citace.", "Kód článku."],
         correct: 0,
@@ -2061,7 +2061,7 @@ const QUESTIONS = [
     // Tematický blok 21: Digitální humanitní vědy a Různé (181-200)
     {
         id: 181,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'Digital Humanities' (Digitální humanitní vědy)?",
         answers: ["Oblast na pomezí humanitních věd a informatiky, využívající digitální metody pro výzkum.", "Psaní básní na počítači.", "Historie internetu.", "Digitální hry."],
         correct: 0,
@@ -2070,7 +2070,7 @@ const QUESTIONS = [
     },
     {
         id: 182,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'Těžba textu' (Text Mining)?",
         answers: ["Automatizované získávání netriviálních informací a vzorů z nestrukturovaného textu.", "Čtení knih v dole.", "Kopírování textu.", "Ruční přepisování textů."],
         correct: 0,
@@ -2079,7 +2079,7 @@ const QUESTIONS = [
     },
     {
         id: 183,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co znamená pojem 'Big Data'?",
         answers: ["Data, která jsou tak velká, rychlá nebo složitá, že je nelze zpracovat tradičními metodami.", "Velký harddisk.", "Dlouhý seznam.", "Velké písmo."],
         correct: 0,
@@ -2088,7 +2088,7 @@ const QUESTIONS = [
     },
     {
         id: 184,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'Vzdálený přístup' (Remote Access) do knihovny?",
         answers: ["Přístup k elektronickým zdrojům knihovny z domova (např. přes proxy/Shibboleth).", "Cesta do knihovny autobusem.", "Telefonování do knihovny.", "Posílání knih poštou."],
         correct: 0,
@@ -2097,7 +2097,7 @@ const QUESTIONS = [
     },
     {
         id: 185,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'Discovery systém'?",
         answers: ["Jedno vyhledávací pole pro prohledávání všech zdrojů knihovny současně (katalog, databáze atd.).", "Televizní kanál.", "Vesmírná loď.", "Systém na objevy."],
         correct: 0,
@@ -2106,7 +2106,7 @@ const QUESTIONS = [
     },
     {
         id: 186,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'SFX' (v knihovnách)?",
         answers: ["Linkovací server - technologie propojující citaci s plným textem.", "Zvukové efekty.", "Speciální efekty ve filmu.", "Formát souboru."],
         correct: 0,
@@ -2115,7 +2115,7 @@ const QUESTIONS = [
     },
     {
         id: 187,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co znamená zkratka 'VPN'?",
         answers: ["Virtual Private Network – bezpečné připojení do sítě instituce.", "Very Personal Note.", "Virtual Public Network.", "Video Phone Number."],
         correct: 0,
@@ -2124,7 +2124,7 @@ const QUESTIONS = [
     },
     {
         id: 188,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'eduroam'?",
         answers: ["Mezinárodní roamingová wi-fi infrastruktura pro akademickou sféru.", "Edukativní hra.", "Cestovní kancelář pro studenty.", "Místnost ve škole."],
         correct: 0,
@@ -2133,7 +2133,7 @@ const QUESTIONS = [
     },
     {
         id: 189,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'MVS'?",
         answers: ["Meziknihovní výpůjční služba.", "Místní veřejná správa.", "Malý velký slovník.", "Mezinárodní vědecká společnost."],
         correct: 0,
@@ -2142,7 +2142,7 @@ const QUESTIONS = [
     },
     {
         id: 190,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'MMVS'?",
         answers: ["Mezinárodní meziknihovní výpůjční služba.", "Městská knihovna.", "Ministerstvo.", "Mobilní síť."],
         correct: 0,
@@ -2151,7 +2151,7 @@ const QUESTIONS = [
     },
     {
         id: 191,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'DDD' (Dodo)?",
         answers: ["Dodej do domu - služba zasílání kopií článků.", "Dlouhá dobrá den.", "Digital Data Disk.", "Druh ptáka."],
         correct: 0,
@@ -2160,7 +2160,7 @@ const QUESTIONS = [
     },
     {
         id: 192,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'reprografie'?",
         answers: ["Kopírování a rozmnožování dokumentů (xerox, sken).", "Oprava grafiky.", "Psaní referátů.", "Tvorba grafů."],
         correct: 0,
@@ -2169,7 +2169,7 @@ const QUESTIONS = [
     },
     {
         id: 193,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'akvizice'?",
         answers: ["Proces doplňování knihovního fondu (nákup, dary, výměna).", "Prodej knih.", "Výpůjčka.", "Ztráta knihy."],
         correct: 0,
@@ -2178,7 +2178,7 @@ const QUESTIONS = [
     },
     {
         id: 194,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'desiderata'?",
         answers: ["Seznam žádaných knih, které knihovna zatím nevlastní.", "Zničené knihy.", "Dezinfekce.", "Desetinné číslo."],
         correct: 0,
@@ -2187,7 +2187,7 @@ const QUESTIONS = [
     },
     {
         id: 195,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'katalogizace'?",
         answers: ["Proces popisu dokumentu a tvorba záznamu do katalogu.", "Čtení katalogu.", "Výroba regálů.", "Prodej podle katalogu."],
         correct: 0,
@@ -2196,7 +2196,7 @@ const QUESTIONS = [
     },
     {
         id: 196,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'sigla'?",
         answers: ["Zkratka označující konkrétní knihovnu v souborném katalogu.", "Podpis autora.", "Značka auta.", "Druh písma."],
         correct: 0,
@@ -2205,7 +2205,7 @@ const QUESTIONS = [
     },
     {
         id: 197,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'souborný katalog'?",
         answers: ["Katalog spojující záznamy z více knihoven (např. CASLIN).", "Katalog všech knih na světě.", "Katalog souborů na disku.", "Tlustý katalog."],
         correct: 0,
@@ -2214,7 +2214,7 @@ const QUESTIONS = [
     },
     {
         id: 198,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'SK ČR'?",
         answers: ["Souborný katalog České republiky.", "Svaz knihovníků.", "Skupina kamarádů.", "Státní kontrola."],
         correct: 0,
@@ -2223,7 +2223,7 @@ const QUESTIONS = [
     },
     {
         id: 199,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'CNB'?",
         answers: ["Česká národní bibliografie.", "Česká národní banka.", "Cena na burze.", "Celosvětová nová bible."],
         correct: 0,
@@ -2232,7 +2232,7 @@ const QUESTIONS = [
     },
     {
         id: 200,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'povinný výtisk'?",
         answers: ["Povinnost vydavatele odevzdat určený počet výtisků vybraným knihovnám.", "Povinná četba.", "Povinnost knihovny tisknout.", "Daň z tisku."],
         correct: 0,
@@ -2242,7 +2242,7 @@ const QUESTIONS = [
     // Tematický blok 22: Závěrečné a Rozšiřující otázky (201-220)
     {
         id: 201,
-        category: "Historie",
+        category: "Minulost, současnost a budoucnost organizace informací",
         question: "Která knihovna byla ve starověku nejznámější?",
         answers: ["Alexandrijská knihovna.", "Městská knihovna v Praze.", "Knihovna Kongresu.", "Bodleian Library."],
         correct: 0,
@@ -2251,7 +2251,7 @@ const QUESTIONS = [
     },
     {
         id: 202,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'kodex'?",
         answers: ["Historická forma knihy (svázané listy), která nahradila svitek.", "Zákoník práce.", "Počítačový kód.", "Tajná šifra."],
         correct: 0,
@@ -2260,7 +2260,7 @@ const QUESTIONS = [
     },
     {
         id: 203,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'inkunábule' (prvotisk)?",
         answers: ["Kniha vytištěná v Evropě do roku 1500.", "Kniha v kolébce.", "Ručně psaná kniha.", "Kniha o inkoustech."],
         correct: 0,
@@ -2269,7 +2269,7 @@ const QUESTIONS = [
     },
     {
         id: 204,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Kdo vynalezl knihtisk v Evropě?",
         answers: ["Johannes Gutenberg.", "Jan Ámos Komenský.", "Leonardo da Vinci.", "Steve Jobs."],
         correct: 0,
@@ -2278,7 +2278,7 @@ const QUESTIONS = [
     },
     {
         id: 205,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'skriptorium'?",
         answers: ["Středověká písařská dílna (obvykle v klášteře).", "Programovací jazyk.", "Místnost na skripta.", "Typ písma."],
         correct: 0,
@@ -2287,7 +2287,7 @@ const QUESTIONS = [
     },
     {
         id: 206,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'iluminace'?",
         answers: ["Výtvarná výzdoba rukopisu (iniciály, miniatury).", "Osvětlení knihovny.", "Zničení knihy.", "Přepis textu."],
         correct: 0,
@@ -2296,7 +2296,7 @@ const QUESTIONS = [
     },
     {
         id: 207,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'exlibris'?",
         answers: ["Knižní značka vlastníka vlepená do knihy.", "Vyřazená kniha.", "Kniha bez obalu.", "Zvenku knihy."],
         correct: 0,
@@ -2305,7 +2305,7 @@ const QUESTIONS = [
     },
     {
         id: 208,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'provenience'?",
         answers: ["Historie vlastnictví a původu knihy.", "Země původu zboží.", "První vydání.", "Procento zisku."],
         correct: 0,
@@ -2314,7 +2314,7 @@ const QUESTIONS = [
     },
     {
         id: 209,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'bibliofilie'?",
         answers: ["Krásná, sběratelská kniha, vydaná s důrazem na úpravu.", "Láska k Bibli.", "Nemoc z knih.", "Levná kniha."],
         correct: 0,
@@ -2323,7 +2323,7 @@ const QUESTIONS = [
     },
     {
         id: 210,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'faksimile'?",
         answers: ["Věrná kopie předlohy (rukopisu, starého tisku).", "Faxová zpráva.", "Falzifikát.", "Levná kopie."],
         correct: 0,
@@ -2332,7 +2332,7 @@ const QUESTIONS = [
     },
     {
         id: 211,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'anotace'?",
         answers: ["Stručná charakteristika obsahu dokumentu.", "Poznámka pod čarou.", "Negativní recenze.", "Jméno autora."],
         correct: 0,
@@ -2341,7 +2341,7 @@ const QUESTIONS = [
     },
     {
         id: 212,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'abstrakt'?",
         answers: ["Výstižné shrnutí obsahu dokumentu (delší než anotace).", "Abstraktní umění.", "Titul knihy.", "Obsah (seznam kapitol)."],
         correct: 0,
@@ -2350,7 +2350,7 @@ const QUESTIONS = [
     },
     {
         id: 213,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'klíčové slovo'?",
         answers: ["Slovo z přirozeného jazyka vystihující obsah.", "Heslo k počítači.", "Slovo, které otevírá dveře.", "První slovo v knize."],
         correct: 0,
@@ -2359,7 +2359,7 @@ const QUESTIONS = [
     },
     {
         id: 214,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'rešeršní strategie'?",
         answers: ["Plán postupu při vyhledávání (volba zdrojů, klíčových slov, operátorů).", "Strategická hra.", "Způsob čtení.", "Plánování nákupu knih."],
         correct: 0,
@@ -2368,7 +2368,7 @@ const QUESTIONS = [
     },
     {
         id: 215,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'informační potřeba'?",
         answers: ["Stav nedostatku informací, který vede k vyhledávání.", "Chuť číst.", "Potřeba mluvit.", "Touha vlastnit knihy."],
         correct: 0,
@@ -2377,7 +2377,7 @@ const QUESTIONS = [
     },
     {
         id: 216,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'informační chování'?",
         answers: ["Způsob, jakým lidé hledají, využívají a sdílejí informace.", "Chování počítače.", "Slušné chování v knihovně.", "Rychlost čtení."],
         correct: 0,
@@ -2386,7 +2386,7 @@ const QUESTIONS = [
     },
     {
         id: 217,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'citační etika'?",
         answers: ["Soubor pravidel pro správné citování a zamezení plagiátorství.", "Slušné chování při citování básní.", "Etika prodeje citátů.", "Zákaz citování."],
         correct: 0,
@@ -2395,7 +2395,7 @@ const QUESTIONS = [
     },
     {
         id: 218,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'plagiátorství'?",
         answers: ["Vydávání cizího díla nebo myšlenky za vlastní.", "Psaní pod pseudonymem.", "Překlad knihy.", "Psaní na stroji."],
         correct: 0,
@@ -2404,7 +2404,7 @@ const QUESTIONS = [
     },
     {
         id: 219,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'samocitace'?",
         answers: ["Citování vlastního dřívějšího díla.", "Mluvení pro sebe.", "Citování sama doma.", "Vymyšlená citace."],
         correct: 0,
@@ -2413,7 +2413,7 @@ const QUESTIONS = [
     },
     {
         id: 220,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'ISO 690'?",
         answers: ["Norma pro bibliografické citace.", "Norma pro velikost papíru.", "Norma pro kvalitu vody.", "Norma pro stavbu knihoven."],
         correct: 0,
@@ -2422,7 +2422,7 @@ const QUESTIONS = [
     },
     {
         id: 221,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'DMP' (Data Management Plan)?",
         answers: ["Plán správy dat - dokument popisující, jak bude nakládáno s daty během výzkumu a po něm.", "Databázový management.", "Druh pojištění.", "Plán na zničení dat."],
         correct: 0,
@@ -2431,7 +2431,7 @@ const QUESTIONS = [
     },
     {
         id: 222,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'FAIR principy'?",
         answers: ["Findable, Accessible, Interoperable, Reusable - zásady pro správu vědeckých dat.", "Férové jednání.", "Festival autorského čtení.", "Four Artificial Intelligent Robots."],
         correct: 0,
@@ -2440,7 +2440,7 @@ const QUESTIONS = [
     },
     {
         id: 223,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'Citizen Science' (občanská věda)?",
         answers: ["Zapojení veřejnosti do vědeckého výzkumu (sběr dat, analýza).", "Věda o občanech.", "Politická věda.", "Věda ve městě."],
         correct: 0,
@@ -2449,7 +2449,7 @@ const QUESTIONS = [
     },
     {
         id: 224,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'Gamifikace'?",
         answers: ["Využití herních prvků v neherním kontextu (např. ve výuce).", "Hraní her v práci.", "Vývoj her.", "Závislost na hrách."],
         correct: 0,
@@ -2458,7 +2458,7 @@ const QUESTIONS = [
     },
     {
         id: 225,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'E-learning'?",
         answers: ["Vzdělávací proces využívající informační a komunikační technologie.", "Elektronická pošta.", "Elektrické vedení.", "Výuka o elektřině."],
         correct: 0,
@@ -2467,7 +2467,7 @@ const QUESTIONS = [
     },
     {
         id: 226,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'MOOC'?",
         answers: ["Massive Open Online Course - hromadné otevřené online kurzy.", "Moc velká kniha.", "Muzeum.", "Ministerstvo kultury."],
         correct: 0,
@@ -2476,7 +2476,7 @@ const QUESTIONS = [
     },
     {
         id: 227,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'OER'?",
         answers: ["Open Educational Resources - otevřené vzdělávací zdroje.", "Organizace pro ekonomický rozvoj.", "Operační systém.", "Obchodní rejstřík."],
         correct: 0,
@@ -2485,7 +2485,7 @@ const QUESTIONS = [
     },
     {
         id: 228,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'Moodle'?",
         answers: ["LMS (Learning Management System) - systém pro řízení výuky.", "Nudle.", "Sociální síť.", "Vyhledávač."],
         correct: 0,
@@ -2494,7 +2494,7 @@ const QUESTIONS = [
     },
     {
         id: 229,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'Wikipedie'?",
         answers: ["Otevřená online encyklopedie tvořená dobrovolníky.", "Vědecká databáze.", "Stránka WikiLeaks.", "Slovník cizích slov."],
         correct: 0,
@@ -2503,7 +2503,7 @@ const QUESTIONS = [
     },
     {
         id: 230,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'Creative Commons Zero' (CC0)?",
         answers: ["Vzdání se autorských práv (Public Domain).", "Zákaz kopírování.", "Povinnost uvést autora.", "Komerční licence."],
         correct: 0,
@@ -2512,7 +2512,7 @@ const QUESTIONS = [
     },
     {
         id: 231,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co znamena 'Public Domain'?",
         answers: ["Volné dílo, na které se nevztahují majetková autorská práva (vypršela nebo se jich autor vzdal).", "Veřejný park.", "Státní majetek.", "Doména na internetu."],
         correct: 0,
@@ -2521,7 +2521,7 @@ const QUESTIONS = [
     },
     {
         id: 232,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'GDPR'?",
         answers: ["Obecné nařízení o ochraně osobních údajů v EU.", "Grafický program.", "Formát dat.", "Zkratka pro Google."],
         correct: 0,
@@ -2530,7 +2530,7 @@ const QUESTIONS = [
     },
     {
         id: 233,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'osobní údaj'?",
         answers: ["Jakákoliv informace týkající se identifikované nebo identifikovatelné fyzické osoby.", "Jen rodné číslo.", "Jen jméno.", "Jen adresa."],
         correct: 0,
@@ -2539,7 +2539,7 @@ const QUESTIONS = [
     },
     {
         id: 234,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'senzitivní údaj' (zvláštní kategorie)?",
         answers: ["Údaj o rase, náboženství, zdravotním stavu, politických názorech apod.", "Telefonní číslo.", "Email.", "Datum narození."],
         correct: 0,
@@ -2548,7 +2548,7 @@ const QUESTIONS = [
     },
     {
         id: 235,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'právo být zapomenut'?",
         answers: ["Právo subjektu údajů na výmaz osobních údajů (za určitých podmínek).", "Ztráta paměti.", "Právo na anonymitu na internetu.", "Zrušení účtu na Facebooku."],
         correct: 0,
@@ -2557,7 +2557,7 @@ const QUESTIONS = [
     },
     {
         id: 236,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'informační bezpečnost'?",
         answers: ["Ochrana informací a systémů před neoprávněným přístupem, použitím, vyzrazením atd.", "Zamykání knihovny.", "Antivirus.", "Heslo."],
         correct: 0,
@@ -2566,7 +2566,7 @@ const QUESTIONS = [
     },
     {
         id: 237,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'phishing'?",
         answers: ["Podvodná technika získávání citlivých údajů (hesel) vydáváním se za důvěryhodnou autoritu v elektronické komunikaci.", "Rybaření.", "Vir v počítači.", "Spam."],
         correct: 0,
@@ -2575,7 +2575,7 @@ const QUESTIONS = [
     },
     {
         id: 238,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'malware'?",
         answers: ["Škodlivý software (viry, trojany, ransomware).", "Malý software.", "Hardware.", "Antivirus."],
         correct: 0,
@@ -2584,7 +2584,7 @@ const QUESTIONS = [
     },
     {
         id: 239,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'ransomware'?",
         answers: ["Vyděračský software, který zašifruje data a požaduje výkupné.", "Software pro běhání.", "Program na úpravu fotek.", "Hra."],
         correct: 0,
@@ -2593,7 +2593,7 @@ const QUESTIONS = [
     },
     {
         id: 240,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'sociální inženýrství' (v bezpečnosti)?",
         answers: ["Manipulace lidí za účelem získání citlivých informací nebo neoprávněného přístupu.", "Stavba mostů.", "Sociologie.", "Práce s lidmi."],
         correct: 0,
@@ -2602,7 +2602,7 @@ const QUESTIONS = [
     },
     {
         id: 241,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'hoax'?",
         answers: ["Poplašná zpráva, podvod, klam šířený internetem.", "Vtip.", "Virus.", "Reklama."],
         correct: 0,
@@ -2611,7 +2611,7 @@ const QUESTIONS = [
     },
     {
         id: 242,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'fake news'?",
         answers: ["Falešné zprávy, dezinformace vydávané za žurnalistiku.", "Novinky ze světa módy.", "Bývalé zprávy.", "Chyba v tisku."],
         correct: 0,
@@ -2620,7 +2620,7 @@ const QUESTIONS = [
     },
     {
         id: 243,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'deepfake'?",
         answers: ["Syntetická média (video/audio) vytvořená AI, kde je tvář/hlas nahrazen někým jiným.", "Hluboká myšlenka.", "Falešný profil.", "Photoshop."],
         correct: 0,
@@ -2629,7 +2629,7 @@ const QUESTIONS = [
     },
     {
         id: 244,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'kybernetická bezpečnost'?",
         answers: ["Ochrana sítí, zařízení a dat před útoky a neoprávněným přístupem v digitálním prostoru.", "Bezpečnost robotů.", "Ochrana před bleskem.", "Zámek na počítači."],
         correct: 0,
@@ -2638,7 +2638,7 @@ const QUESTIONS = [
     },
     {
         id: 245,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'IoT' (Internet of Things)?",
         answers: ["Síť fyzických zařízení ('věcí') vybavených elektronikou a konektivitou pro sběr a výměnu dat.", "Internet pro lidi.", "Webové stránky o věcech.", "Interní obchodní tým."],
         correct: 0,
@@ -2647,7 +2647,7 @@ const QUESTIONS = [
     },
     {
         id: 246,
-        category: "Teorie",
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
         question: "Co je 'AI' (Artificial Intelligence)?",
         answers: ["Schopnost strojů napodobovat lidskou inteligenci (učení, řešení problémů).", "Absolutní jistota.", "Americký idol.", "Automatická instalace."],
         correct: 0,
