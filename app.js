@@ -17,6 +17,7 @@ class QuizApp {
         this.voice = null;
         this.voiceURI = null;
         this.rate = 1.0;
+        this.sessionHistory = [];
 
         // DOM Elements
         this.screens = {
@@ -478,6 +479,13 @@ class QuizApp {
         const question = this.questions[this.currentIndex];
         const isCorrect = originalIndex === question.correct;
 
+        // Track session history for review
+        this.sessionHistory.push({
+            question: question,
+            selectedAnswerIndex: originalIndex,
+            isCorrect: isCorrect
+        });
+
         // Update score
         if (isCorrect) {
             this.score++;
@@ -612,21 +620,69 @@ class QuizApp {
             gradient.appendChild(stop1);
             gradient.appendChild(stop2);
             defs.appendChild(gradient);
-            svg.insertBefore(defs, svg.firstChild);
+            svg.prepend(defs);
+
+            scoreCircle.setAttribute('stroke', 'url(#gradient)');
         }
 
-        scoreCircle.style.strokeDasharray = circumference;
-        scoreCircle.style.strokeDashoffset = circumference;
+        scoreCircle.style.strokeDashoffset = offset;
 
-        // Animate after a short delay
-        setTimeout(() => {
-            scoreCircle.style.strokeDashoffset = offset;
-        }, 100);
-
-        // Update progress bar to 100%
-        document.getElementById('progress-fill').style.width = '100%';
-
+        // Show results screen
         this.showScreen('results');
+
+        // Logic for "Spaced Repetition" - failed mode
+        if (this.mode === 'failed') {
+            // Re-evaluate if any questions remain
+            const failedCount = Object.keys(this.getFailedQuestions()).length;
+            if (failedCount === 0) {
+                document.getElementById('results-title').textContent = "Vše opraveno! 🎉";
+                document.getElementById('results-icon').textContent = "✨";
+            }
+        }
+
+        // Show next button (hidden) and retry actions
+        document.getElementById('quiz-actions').classList.add('hidden');
+
+        // Show detailed review IF there are incorrect answers
+        const reviewContainer = document.getElementById('results-review');
+        if (reviewContainer) {
+            const wrongAnswers = this.sessionHistory.filter(item => !item.isCorrect);
+
+            if (wrongAnswers.length > 0) {
+                let reviewHTML = '<h3 class="review-header">Chybné odpovědi</h3>';
+
+                wrongAnswers.forEach(item => {
+                    const q = item.question;
+                    reviewHTML += `
+                        <div class="review-item">
+                            <div class="review-question">${q.question}</div>
+                            <div class="review-answer review-answer--wrong">
+                                ❌ Vaše odpověď: ${q.answers[item.selectedAnswerIndex]}
+                            </div>
+                            <div class="review-answer review-answer--correct">
+                                ✅ Správná odpověď: ${q.answers[q.correct]}
+                            </div>
+                            <div class="review-explanation">
+                                💡 ${q.explanation}
+                            </div>
+                        </div>
+                    `;
+                });
+
+                reviewContainer.innerHTML = reviewHTML;
+                reviewContainer.classList.remove('hidden');
+            } else {
+                reviewContainer.classList.add('hidden');
+            }
+        }
+    }
+
+    resetQuiz() {
+        this.currentMode = null;
+        this.currentIndex = 0;
+        this.score = 0;
+        this.quizActive = false;
+        this.sessionHistory = [];
     }
 }
 
