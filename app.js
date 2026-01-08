@@ -519,23 +519,31 @@ class QuizApp {
         const AudioContext = window.AudioContext || window.webkitAudioContext;
         const ctx = new AudioContext();
 
-        const oscillator = ctx.createOscillator();
-        const gainNode = ctx.createGain();
+        // C Major Chord (C5, E5, G5) for a pleasant "ding"
+        const frequencies = [523.25, 659.25, 783.99];
+        const now = ctx.currentTime;
 
-        oscillator.connect(gainNode);
-        gainNode.connect(ctx.destination);
+        frequencies.forEach((freq, i) => {
+            const oscillator = ctx.createOscillator();
+            const gainNode = ctx.createGain();
 
-        // "Happy" sound - C5 Major Chord Arpeggio (fast)
-        // Or simple high bell ping
-        oscillator.type = 'sine';
-        oscillator.frequency.setValueAtTime(880, ctx.currentTime); // A5
-        oscillator.frequency.exponentialRampToValueAtTime(440, ctx.currentTime + 0.5); // Slide down slightly
+            oscillator.connect(gainNode);
+            gainNode.connect(ctx.destination);
 
-        gainNode.gain.setValueAtTime(0.1, ctx.currentTime);
-        gainNode.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.5);
+            oscillator.type = 'sine';
+            oscillator.frequency.value = freq;
 
-        oscillator.start(ctx.currentTime);
-        oscillator.stop(ctx.currentTime + 0.5);
+            // Envelope - "Bell" shape
+            // i*0.05 adds a tiny strum effect (arpeggio)
+            const startTime = now + (i * 0.05);
+
+            gainNode.gain.setValueAtTime(0, startTime);
+            gainNode.gain.linearRampToValueAtTime(0.1, startTime + 0.02); // Attack
+            gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + 0.8); // Long Decay
+
+            oscillator.start(startTime);
+            oscillator.stop(startTime + 1);
+        });
     }
 
 
