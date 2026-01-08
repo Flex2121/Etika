@@ -15,6 +15,8 @@ class QuizApp {
         this.answered = false;
         this.ttsEnabled = false;
         this.voice = null;
+        this.voiceURI = null;
+        this.rate = 1.0;
 
         // DOM Elements
         this.screens = {
@@ -40,20 +42,62 @@ class QuizApp {
 
     initTTS() {
         const ttsToggle = document.getElementById('tts-toggle');
+        const voiceSelect = document.getElementById('voice-select');
+        const rateRange = document.getElementById('rate-range');
+        const rateValue = document.getElementById('rate-value');
+        const ttsControls = document.getElementById('tts-controls');
 
         // Load saved state
-        const savedState = localStorage.getItem('ttsEnabled');
-        this.ttsEnabled = savedState === 'true';
+        const savedEnabled = localStorage.getItem('ttsEnabled');
+        this.ttsEnabled = savedEnabled === 'true';
         if (ttsToggle) ttsToggle.checked = this.ttsEnabled;
+        if (ttsControls) {
+            if (this.ttsEnabled) ttsControls.classList.remove('hidden');
+            else ttsControls.classList.add('hidden');
+        }
+
+        const savedVoice = localStorage.getItem('ttsVoiceURI');
+        if (savedVoice) this.voiceURI = savedVoice;
+
+        const savedRate = localStorage.getItem('ttsRate');
+        if (savedRate) {
+            this.rate = parseFloat(savedRate);
+            if (rateRange) rateRange.value = this.rate;
+            if (rateValue) rateValue.textContent = `${this.rate}x`;
+        }
 
         // Toggle event
         if (ttsToggle) {
             ttsToggle.addEventListener('change', (e) => {
                 this.ttsEnabled = e.target.checked;
                 localStorage.setItem('ttsEnabled', this.ttsEnabled);
-                if (!this.ttsEnabled) {
+                if (this.ttsEnabled) {
+                    ttsControls.classList.remove('hidden');
+                } else {
+                    ttsControls.classList.add('hidden');
                     this.stopSpeech();
                 }
+            });
+        }
+
+        // Voice Select Event
+        if (voiceSelect) {
+            voiceSelect.addEventListener('change', (e) => {
+                this.voiceURI = e.target.value;
+                localStorage.setItem('ttsVoiceURI', this.voiceURI);
+
+                // Update current voice object
+                const voices = window.speechSynthesis.getVoices();
+                this.voice = voices.find(v => v.voiceURI === this.voiceURI);
+            });
+        }
+
+        // Rate Range Event
+        if (rateRange) {
+            rateRange.addEventListener('input', (e) => {
+                this.rate = parseFloat(e.target.value);
+                rateValue.textContent = `${this.rate}x`;
+                localStorage.setItem('ttsRate', this.rate);
             });
         }
 
@@ -61,10 +105,34 @@ class QuizApp {
         if ('speechSynthesis' in window) {
             const loadVoices = () => {
                 const voices = window.speechSynthesis.getVoices();
-                // Prefer Czech voice
-                this.voice = voices.find(v => v.lang.includes('cs') || v.lang.includes('cz'));
-                // Fallback to first available if no CS (or keep null to use default)
-                if (!this.voice && voices.length > 0) this.voice = voices[0];
+
+                if (voiceSelect) {
+                    voiceSelect.innerHTML = '';
+
+                    // Filter or sort voices? Let's show all but put Czech first
+                    const csVoices = voices.filter(v => v.lang.includes('cs') || v.lang.includes('cz'));
+                    const otherVoices = voices.filter(v => !v.lang.includes('cs') && !v.lang.includes('cz'));
+                    const sortedVoices = [...csVoices, ...otherVoices];
+
+                    sortedVoices.forEach(v => {
+                        const option = document.createElement('option');
+                        option.value = v.voiceURI;
+                        option.textContent = `${v.name} (${v.lang})`;
+                        if (v.voiceURI === this.voiceURI) {
+                            option.selected = true;
+                        }
+                        voiceSelect.appendChild(option);
+                    });
+
+                    // Set default if not set
+                    if (!this.voiceURI && csVoices.length > 0) {
+                        this.voiceURI = csVoices[0].voiceURI;
+                        voiceSelect.value = this.voiceURI;
+                        this.voice = csVoices[0];
+                    } else if (this.voiceURI) {
+                        this.voice = voices.find(v => v.voiceURI === this.voiceURI);
+                    }
+                }
             };
 
             window.speechSynthesis.onvoiceschanged = loadVoices;
@@ -81,8 +149,7 @@ class QuizApp {
         if (this.voice) {
             utterance.voice = this.voice;
         }
-        utterance.lang = 'cs-CZ';
-        utterance.rate = 1.0;
+        utterance.rate = this.rate;
 
         window.speechSynthesis.speak(utterance);
     }

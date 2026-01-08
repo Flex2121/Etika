@@ -71,6 +71,23 @@
                         <span class="setting__slider"></span>
                     </label>
 
+                    <div id="tts-controls" class="tts-controls hidden"
+                        style="margin-top: 1rem; padding-left: 1rem; border-left: 2px solid var(--border-color);">
+                        <label class="setting">
+                            <span class="setting__label">Hlas:</span>
+                            <select class="setting__select" id="voice-select"
+                                style="width: 100%; margin-top: 0.5rem;"></select>
+                        </label>
+                        <label class="setting" style="display: block; margin-top: 1rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span class="setting__label">Rychlost:</span>
+                                <span id="rate-value" class="setting__value">1.0x</span>
+                            </div>
+                            <input type="range" id="rate-range" min="0.5" max="2.0" step="0.1" value="1.0"
+                                style="width: 100%;">
+                        </label>
+                    </div>
+
                     <label class="setting">
                         <span class="setting__label">Kategorie:</span>
                         <select class="setting__select" id="category-select">
