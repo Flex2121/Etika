@@ -109,20 +109,26 @@ class QuizApp {
                 if (voiceSelect) {
                     voiceSelect.innerHTML = '';
 
-                    // Filter or sort voices? Let's show all but put Czech first
+                    // Filter strictly for Czech voices
                     const csVoices = voices.filter(v => v.lang.includes('cs') || v.lang.includes('cz'));
-                    const otherVoices = voices.filter(v => !v.lang.includes('cs') && !v.lang.includes('cz'));
-                    const sortedVoices = [...csVoices, ...otherVoices];
 
-                    sortedVoices.forEach(v => {
+                    if (csVoices.length === 0) {
                         const option = document.createElement('option');
-                        option.value = v.voiceURI;
-                        option.textContent = `${v.name} (${v.lang})`;
-                        if (v.voiceURI === this.voiceURI) {
-                            option.selected = true;
-                        }
+                        option.textContent = "Nenalezen žádný český hlas";
                         voiceSelect.appendChild(option);
-                    });
+                        voiceSelect.disabled = true;
+                    } else {
+                        csVoices.forEach(v => {
+                            const option = document.createElement('option');
+                            option.value = v.voiceURI;
+                            option.textContent = v.name;
+                            if (v.voiceURI === this.voiceURI) {
+                                option.selected = true;
+                            }
+                            voiceSelect.appendChild(option);
+                        });
+                        voiceSelect.disabled = false;
+                    }
 
                     // Set default if not set
                     if (!this.voiceURI && csVoices.length > 0) {
@@ -130,7 +136,16 @@ class QuizApp {
                         voiceSelect.value = this.voiceURI;
                         this.voice = csVoices[0];
                     } else if (this.voiceURI) {
-                        this.voice = voices.find(v => v.voiceURI === this.voiceURI);
+                        // Verify saved voice still exists
+                        const foundVoice = voices.find(v => v.voiceURI === this.voiceURI);
+                        if (foundVoice) {
+                            this.voice = foundVoice;
+                        } else if (csVoices.length > 0) {
+                            // Fallback to first CS voice if saved one is missing
+                            this.voice = csVoices[0];
+                            this.voiceURI = csVoices[0].voiceURI;
+                            voiceSelect.value = this.voiceURI;
+                        }
                     }
                 }
             };
