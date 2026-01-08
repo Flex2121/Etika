@@ -488,6 +488,7 @@ class QuizApp {
 
         // Update score
         if (isCorrect) {
+            this.playSuccessSound();
             this.score++;
             // Handle spaced repetition
             this.handleCorrectAnswer(question.id);
@@ -511,6 +512,33 @@ class QuizApp {
             this.stopSpeech();
         }
     }
+
+    playSuccessSound() {
+        if (!window.AudioContext && !window.webkitAudioContext) return;
+
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        const ctx = new AudioContext();
+
+        const oscillator = ctx.createOscillator();
+        const gainNode = ctx.createGain();
+
+        oscillator.connect(gainNode);
+        gainNode.connect(ctx.destination);
+
+        // "Happy" sound - C5 Major Chord Arpeggio (fast)
+        // Or simple high bell ping
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(880, ctx.currentTime); // A5
+        oscillator.frequency.exponentialRampToValueAtTime(440, ctx.currentTime + 0.5); // Slide down slightly
+
+        gainNode.gain.setValueAtTime(0.1, ctx.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.5);
+
+        oscillator.start(ctx.currentTime);
+        oscillator.stop(ctx.currentTime + 0.5);
+    }
+
+
 
     showFeedback(buttonIndex, isCorrect) {
         this.answered = true;
