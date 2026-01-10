@@ -349,11 +349,19 @@ class QuizApp {
 
 
         // Reveal button (Flashcard mode)
-        // Show/Hide Reveal Logic (now handled via Flashcard Mode + Flip)
-        if (document.getElementById('reveal-btn')) {
-            document.getElementById('reveal-btn').addEventListener('click', () => {
-                const innerCard = document.getElementById('flashcard-inner');
-                if (innerCard) innerCard.classList.add('is-flipped');
+        // Card Click Logic (Flashcard Mode)
+        const flipCard = document.getElementById('flip-card');
+        if (flipCard) {
+            flipCard.addEventListener('click', (e) => {
+                // Ignore if clicking on buttons inside the card
+                if (e.target.closest('button')) return;
+
+                if (this.mode === 'flashcard') {
+                    const innerCard = document.getElementById('flashcard-inner');
+                    if (innerCard && !innerCard.classList.contains('is-flipped')) {
+                        innerCard.classList.add('is-flipped');
+                    }
+                }
             });
         }
 
@@ -600,7 +608,12 @@ class QuizApp {
 
         if (this.mode === 'flashcard') {
             answersContainer.classList.add('hidden'); // Hide multiple choice on front
-            if (revealContainer) revealContainer.classList.remove('hidden'); // Show reveal button
+            if (revealContainer) revealContainer.classList.add('hidden'); // Legacy container, nice to hide if exists
+
+            // Show hint text if we have one
+            const hintText = document.getElementById('flashcard-hint-text');
+            if (hintText) hintText.classList.remove('hidden');
+
             if (answerContainer) answerContainer.classList.remove('hidden'); // Ensure visible on BACK face
 
             // Set correct answer text (for back face)
