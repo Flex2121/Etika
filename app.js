@@ -552,7 +552,7 @@ class QuizApp {
             const startTime = now + (i * 0.05);
 
             gainNode.gain.setValueAtTime(0, startTime);
-            gainNode.gain.linearRampToValueAtTime(0.6, startTime + 0.05); // Attack (Louder)
+            gainNode.gain.linearRampToValueAtTime(0.25, startTime + 0.05); // Attack (Balanced)
             gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + 0.8); // Long Decay
 
             oscillator.start(startTime);
