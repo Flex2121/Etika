@@ -516,16 +516,23 @@ body::before {
     align-items: center;
     justify-content: center;
     gap: var(--spacing-sm);
-    width: 100%;
-    padding: var(--spacing-md);
-    background: transparent;
-    border: 1px dashed var(--border-color);
-    border-radius: var(--border-radius-sm);
+    width: auto;
+    /* Changed from 100% to auto */
+    margin: 0 auto var(--spacing-md);
+    /* Center it */
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: rgba(240, 147, 251, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 99px;
+    /* Pill shape for cleaner look */
     color: var(--text-secondary);
     font-family: var(--font-family);
     font-size: var(--font-size-sm);
     cursor: pointer;
     transition: all var(--transition-normal);
+    position: relative;
+    z-index: 20;
+    /* Above everything */
 }
 
 .hint-btn:hover {
@@ -541,13 +548,16 @@ body::before {
 
 /* Hint Container */
 .quiz__hint {
-    margin-top: var(--spacing-md);
-    padding: var(--spacing-lg);
-    background: rgba(240, 147, 251, 0.1);
-    border: 1px solid rgba(240, 147, 251, 0.3);
+    margin-bottom: var(--spacing-lg);
+    /* Margin bottom instead of top */
+    padding: var(--spacing-md);
+    background: rgba(240, 147, 251, 0.15);
+    border: 1px solid rgba(240, 147, 251, 0.4);
     border-radius: var(--border-radius-sm);
     color: var(--text-primary);
     font-size: var(--font-size-sm);
+    position: relative;
+    z-index: 20;
     animation: slideDown 0.3s ease;
 }
 
@@ -1256,12 +1266,8 @@ body::before {
 .flip-card {
     background-color: transparent;
     width: 100%;
-    /* Min-height to accommodate content */
-    min-height: 300px;
     perspective: 1000px;
-    position: relative;
-    z-index: 10;
-    /* Ensure card is above hint button */
+    /* Remove z-index that was blocking clicks */
 }
 
 .flip-card-inner {
@@ -1284,51 +1290,41 @@ body::before {
 
 .flip-card-front,
 .flip-card-back {
-    position: absolute;
     width: 100%;
-    height: 100%;
-    /* If content overflows, might need auto. checking. */
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    /* Flex layout to replicate previous .quiz container behavior */
     display: flex;
     flex-direction: column;
 }
 
-/* Front Face (Default) */
+/* Front Face (Default) - ALWAYS visible and clickable in standard mode */
 .flip-card-front {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     padding: var(--spacing-lg);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transform: translateZ(1px);
-    /* Default: visible */
-    opacity: 1;
-    pointer-events: auto;
-    transition: opacity 0.1s ease;
 }
 
-/* FORCE hide front when flipped (opacity is more reliable than visibility on mobile) */
-.flip-card-inner.is-flipped .flip-card-front {
-    opacity: 0 !important;
-    pointer-events: none !important;
-}
 
-/* Back Face (Rotated) */
+/* Back Face (Rotated) - Hidden by default, shown when flipped */
 .flip-card-back {
-    transform: rotateY(180deg) translateZ(1px);
+    display: none;
+    /* Hidden by default */
+    transform: rotateY(180deg);
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     padding: var(--spacing-lg);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    /* Default: hidden */
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.1s ease;
+}
+
+/* Show back only when flipped */
+.flip-card-inner.is-flipped .flip-card-back {
+    display: flex;
+}
+
+/* Hide front when flipped */
+.flip-card-inner.is-flipped .flip-card-front {
+    display: none;
 }
 
 /* FORCE show back only when flipped */
@@ -1347,5 +1343,12 @@ body::before {
 
 /* Ensure standard mode answers are visible/clickable */
 .quiz__answers {
-    z-index: 2;
+    position: relative;
+    z-index: 5;
+}
+
+/* Answer buttons must be clickable */
+.answer-btn {
+    position: relative;
+    z-index: 10;
 }
