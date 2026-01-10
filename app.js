@@ -552,7 +552,7 @@ class QuizApp {
             const startTime = now + (i * 0.05);
 
             gainNode.gain.setValueAtTime(0, startTime);
-            gainNode.gain.linearRampToValueAtTime(0.1, startTime + 0.02); // Attack
+            gainNode.gain.linearRampToValueAtTime(0.6, startTime + 0.05); // Attack (Louder)
             gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + 0.8); // Long Decay
 
             oscillator.start(startTime);
@@ -586,15 +586,15 @@ class QuizApp {
 
         // Pitch drop effect for "drum" realism
         oscillator.frequency.setValueAtTime(freq, startTime);
-        oscillator.frequency.exponentialRampToValueAtTime(freq * 0.5, startTime + 0.3);
+        oscillator.frequency.exponentialRampToValueAtTime(freq * 0.5, startTime + 0.5);
 
         // Percussive envelope
         gainNode.gain.setValueAtTime(0, startTime);
-        gainNode.gain.linearRampToValueAtTime(1.0, startTime + 0.02); // Attack
-        gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + 0.3); // Decay
+        gainNode.gain.linearRampToValueAtTime(1.0, startTime + 0.05); // Attack (Heavy)
+        gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + 0.5); // Decay (Longer sustain)
 
         oscillator.start(startTime);
-        oscillator.stop(startTime + 0.3);
+        oscillator.stop(startTime + 0.5);
 
         // Cleanup after second note
         if (startTime > ctx.currentTime + 0.1) {
