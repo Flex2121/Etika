@@ -1268,6 +1268,8 @@ body::before {
     text-align: center;
     transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
     transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     cursor: pointer;
     /* Interaction hint */
 }
@@ -1300,11 +1302,21 @@ body::before {
 
 /* Back Face (Rotated) */
 .flip-card-back {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translateZ(1px);
+    /* Force layer separation */
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     padding: var(--spacing-lg);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    visibility: hidden;
+}
+
+/* Show back only when flipped */
+.flip-card-inner.is-flipped .flip-card-back {
+    visibility: visible;
+    transition: visibility 0s 0.3s;
 }
 
 /* Content Specifics */

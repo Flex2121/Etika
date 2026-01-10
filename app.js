@@ -566,11 +566,11 @@ class QuizApp {
         document.getElementById('progress-fill').style.width = `${progress}%`;
         document.getElementById('score-display').textContent = `Skóre: ${this.score}`;
 
-        // Update category
-        const categoryEl = document.getElementById('question-category');
-        if (categoryEl) {
-            categoryEl.textContent = question.category || 'Bez kategorie';
-        }
+        // Update category (on all elements if multiple exist, e.g. front/back)
+        const categoryLabels = document.querySelectorAll('.quiz__category');
+        categoryLabels.forEach(el => {
+            el.textContent = question.category || 'Bez kategorie';
+        });
 
         // Update question text
         document.getElementById('question-text').textContent = question.question;
