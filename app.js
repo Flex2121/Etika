@@ -567,7 +567,10 @@ class QuizApp {
         document.getElementById('score-display').textContent = `Skóre: ${this.score}`;
 
         // Update category
-        document.getElementById('question-category').textContent = question.category;
+        const categoryEl = document.getElementById('question-category');
+        if (categoryEl) {
+            categoryEl.textContent = question.category || 'Bez kategorie';
+        }
 
         // Update question text
         document.getElementById('question-text').textContent = question.question;
@@ -611,7 +614,11 @@ class QuizApp {
 
         // Reset Flip State
         const innerCard = document.getElementById('flashcard-inner');
-        if (innerCard) innerCard.classList.remove('is-flipped'); // Always reset to front face
+        if (innerCard) {
+            // Remove animation transition temporarily to prevent flickering if needed?
+            // Usually remove class is enough.
+            innerCard.classList.remove('is-flipped');
+        }
 
         if (this.mode === 'flashcard') {
             answersContainer.classList.add('hidden'); // Hide multiple choice on front
@@ -630,7 +637,7 @@ class QuizApp {
 
             // Populate Back Context Question (Small)
             const backQuestionText = document.getElementById('question-text-back');
-            if (backQuestionText) backQuestionText.innerHTML = question.text;
+            if (backQuestionText) backQuestionText.innerHTML = question.question;
 
         } else {
             answersContainer.classList.remove('hidden');

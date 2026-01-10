@@ -1292,16 +1292,19 @@ body::before {
 
 /* Front Face (Default) */
 .flip-card-front {
-    background-color: transparent;
-    /* Use container bg or explicit? */
-    /* Previous #screen-quiz had no specific bg, inherited body/main */
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
 }
 
 /* Back Face (Rotated) */
 .flip-card-back {
     transform: rotateY(180deg);
-    /* Back face shouldn't just be transparent, needs to cover front? */
-    /* Actually with backface-visibility: hidden, front disappears. */
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
 }
 
 /* Content Specifics */
