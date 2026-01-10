@@ -345,6 +345,15 @@ class QuizApp {
                 }
             });
         }
+
+        // Reveal button (Flashcard mode)
+        const revealBtn = document.getElementById('reveal-btn');
+        if (revealBtn) {
+            revealBtn.addEventListener('click', () => {
+                document.getElementById('answers-container').classList.remove('blur-answers');
+                document.getElementById('flashcard-reveal').classList.add('hidden');
+            });
+        }
     }
 
     showScreen(screenName) {
@@ -393,7 +402,7 @@ class QuizApp {
         }
 
         // Shuffle for random mode or always shuffle
-        if (mode === 'random' || mode === 'practice' || mode === 'test') {
+        if (mode === 'random' || mode === 'practice' || mode === 'test' || mode === 'flashcard') {
             availableQuestions = this.shuffle(availableQuestions);
         }
 
@@ -418,7 +427,7 @@ class QuizApp {
 
         // Show score in practice mode
         const scoreDisplay = document.getElementById('score-display');
-        if (mode === 'practice' || mode === 'failed') {
+        if (mode === 'practice' || mode === 'failed' || mode === 'flashcard') {
             scoreDisplay.classList.remove('hidden');
         } else {
             scoreDisplay.classList.add('hidden');
@@ -474,8 +483,21 @@ class QuizApp {
         document.getElementById('hint-text').textContent = question.hint || 'Žádná nápověda není k dispozici.';
 
         // Hide explanation and actions
+        // Hide explanation and actions
         document.getElementById('explanation-container').classList.add('hidden');
         document.getElementById('quiz-actions').classList.add('hidden');
+
+        // Flashcard Mode UI
+        const answersContainer = document.getElementById('answers-container');
+        const revealContainer = document.getElementById('flashcard-reveal');
+
+        if (this.mode === 'flashcard') {
+            answersContainer.classList.add('blur-answers');
+            if (revealContainer) revealContainer.classList.remove('hidden');
+        } else {
+            answersContainer.classList.remove('blur-answers');
+            if (revealContainer) revealContainer.classList.add('hidden');
+        }
     }
 
     showHint() {

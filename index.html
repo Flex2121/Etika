@@ -62,6 +62,12 @@
                         <span class="mode-btn__title">Neumím</span>
                         <span class="mode-btn__desc">Procvičuj chyby</span>
                     </button>
+
+                    <button class="mode-btn mode-btn--flashcard" data-mode="flashcard">
+                        <span class="mode-btn__icon">🧠</span>
+                        <span class="mode-btn__title">Kartičky</span>
+                        <span class="mode-btn__desc">Active Recall (nejúčinnější)</span>
+                    </button>
                 </div>
 
                 <div class="home__settings">
@@ -132,47 +138,55 @@
                     Text otázky bude zde...
                 </div>
 
-                <div class="quiz__answers" id="answers-container">
-                    <button class="answer-btn" data-index="0">
-                        <span class="answer-btn__letter">A</span>
-                        <span class="answer-btn__text">Odpověď A</span>
-                    </button>
-                    <button class="answer-btn" data-index="1">
-                        <span class="answer-btn__letter">B</span>
-                        <span class="answer-btn__text">Odpověď B</span>
-                    </button>
-                    <button class="answer-btn" data-index="2">
-                        <span class="answer-btn__letter">C</span>
-                        <span class="answer-btn__text">Odpověď C</span>
-                    </button>
-                    <button class="answer-btn" data-index="3">
-                        <span class="answer-btn__letter">D</span>
-                        <span class="answer-btn__text">Odpověď D</span>
-                    </button>
-                </div>
+            </div>
 
-                <button class="hint-btn" id="hint-btn">
-                    <span>💡</span> Nápověda
+            <div class="flashcard-reveal hidden" id="flashcard-reveal">
+                <button class="reveal-btn" id="reveal-btn">
+                    👁️ Okrýt odpovědi
                 </button>
+                <p class="reveal-hint">Zkuste si odpověď vybavit v hlavě</p>
+            </div>
 
-                <div class="quiz__hint hidden" id="hint-container">
-                    <p id="hint-text">Nápověda bude zde...</p>
-                </div>
+            <div class="quiz__answers" id="answers-container">
+                <button class="answer-btn" data-index="0">
+                    <span class="answer-btn__letter">A</span>
+                    <span class="answer-btn__text">Odpověď A</span>
+                </button>
+                <button class="answer-btn" data-index="1">
+                    <span class="answer-btn__letter">B</span>
+                    <span class="answer-btn__text">Odpověď B</span>
+                </button>
+                <button class="answer-btn" data-index="2">
+                    <span class="answer-btn__letter">C</span>
+                    <span class="answer-btn__text">Odpověď C</span>
+                </button>
+                <button class="answer-btn" data-index="3">
+                    <span class="answer-btn__letter">D</span>
+                    <span class="answer-btn__text">Odpověď D</span>
+                </button>
+            </div>
 
-                <div class="quiz__explanation hidden" id="explanation-container">
-                    <h4>Vysvětlení:</h4>
-                    <p id="explanation-text">Vysvětlení bude zde...</p>
-                </div>
+            <button class="hint-btn" id="hint-btn">
+                <span>💡</span> Nápověda
+            </button>
 
-                <div class="quiz__actions hidden" id="quiz-actions"
-                    style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                    <button class="action-btn action-btn--secondary" id="explanation-toggle-btn" style="flex: 1;">
-                        📖 Vysvětlení
-                    </button>
-                    <button class="action-btn action-btn--next" id="next-btn" style="flex: 1;">
-                        Další otázka →
-                    </button>
-                </div>
+            <div class="quiz__hint hidden" id="hint-container">
+                <p id="hint-text">Nápověda bude zde...</p>
+            </div>
+
+            <div class="quiz__explanation hidden" id="explanation-container">
+                <h4>Vysvětlení:</h4>
+                <p id="explanation-text">Vysvětlení bude zde...</p>
+            </div>
+
+            <div class="quiz__actions hidden" id="quiz-actions" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <button class="action-btn action-btn--secondary" id="explanation-toggle-btn" style="flex: 1;">
+                    📖 Vysvětlení
+                </button>
+                <button class="action-btn action-btn--next" id="next-btn" style="flex: 1;">
+                    Další otázka →
+                </button>
+            </div>
             </div>
         </section>
 
