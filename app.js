@@ -630,6 +630,10 @@ class QuizApp {
             answersContainer.classList.remove('blur-answers');
             if (revealContainer) revealContainer.classList.add('hidden');
             if (answerContainer) answerContainer.classList.add('hidden');
+
+            // Hide flashcard hint in standard mode
+            const hintText = document.getElementById('flashcard-hint-text');
+            if (hintText) hintText.classList.add('hidden');
         }
     }
 
