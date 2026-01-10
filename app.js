@@ -508,6 +508,7 @@ class QuizApp {
         } else {
             // Add to failed / Reset count
             this.handleIncorrectAnswer(question.id);
+            this.playErrorSound();
         }
 
         // Visual feedback based on mode
@@ -556,6 +557,38 @@ class QuizApp {
 
             oscillator.start(startTime);
             oscillator.stop(startTime + 1);
+        });
+    }
+
+    playErrorSound() {
+        if (!window.AudioContext && !window.webkitAudioContext) return;
+
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        const ctx = new AudioContext();
+
+        // Dissonant interval (Tritone) or low buzz
+        // E.g. A2 (110Hz) and D#3 (155.56Hz)
+        const frequencies = [110, 155.56]; 
+        const now = ctx.currentTime;
+
+        frequencies.forEach((freq, i) => {
+            const oscillator = ctx.createOscillator();
+            const gainNode = ctx.createGain();
+
+            oscillator.connect(gainNode);
+            gainNode.connect(ctx.destination);
+
+            oscillator.type = 'sawtooth'; // Sawtooth is "buzzier" / harsher
+            oscillator.frequency.value = freq;
+
+            const startTime = now;
+            
+            gainNode.gain.setValueAtTime(0, startTime);
+            gainNode.gain.linearRampToValueAtTime(0.1, startTime + 0.05); // Attack
+            gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + 0.4); // Decay
+
+            oscillator.start(startTime);
+            oscillator.stop(startTime + 0.5);
         });
     }
 
