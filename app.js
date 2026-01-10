@@ -349,11 +349,11 @@ class QuizApp {
 
 
         // Reveal button (Flashcard mode)
-        const revealBtn = document.getElementById('reveal-btn');
-        if (revealBtn) {
-            revealBtn.addEventListener('click', () => {
-                document.getElementById('flashcard-reveal').classList.add('hidden');
-                document.getElementById('flashcard-answer-container').classList.remove('hidden');
+        // Show/Hide Reveal Logic (now handled via Flashcard Mode + Flip)
+        if (document.getElementById('reveal-btn')) {
+            document.getElementById('reveal-btn').addEventListener('click', () => {
+                const innerCard = document.getElementById('flashcard-inner');
+                if (innerCard) innerCard.classList.add('is-flipped');
             });
         }
 
@@ -408,11 +408,11 @@ class QuizApp {
 
             // Flashcard Mode Logic
             if (this.mode === 'flashcard') {
-                const revealContainer = document.getElementById('flashcard-reveal');
-                const isRevealed = revealContainer.classList.contains('hidden');
+                const innerCard = document.getElementById('flashcard-inner');
+                const isFlipped = innerCard && innerCard.classList.contains('is-flipped');
 
-                if (!isRevealed) {
-                    // Phase 1: Reveal
+                if (!isFlipped) {
+                    // Phase 1: Reveal/Flip
                     if (e.code === 'Space' || e.code === 'Enter') {
                         document.getElementById('reveal-btn').click();
                     }
@@ -586,7 +586,6 @@ class QuizApp {
         document.getElementById('hint-text').textContent = question.hint || 'Žádná nápověda není k dispozici.';
 
         // Hide explanation and actions
-        // Hide explanation and actions
         document.getElementById('explanation-container').classList.add('hidden');
         document.getElementById('quiz-actions').classList.add('hidden');
 
@@ -595,14 +594,24 @@ class QuizApp {
         const revealContainer = document.getElementById('flashcard-reveal');
         const answerContainer = document.getElementById('flashcard-answer-container');
 
-        if (this.mode === 'flashcard') {
-            answersContainer.classList.add('hidden'); // Completely hide options
-            if (revealContainer) revealContainer.classList.remove('hidden');
-            if (answerContainer) answerContainer.classList.add('hidden');
+        // Reset Flip State
+        const innerCard = document.getElementById('flashcard-inner');
+        if (innerCard) innerCard.classList.remove('is-flipped'); // Always reset to front face
 
-            // Set correct answer text
+        if (this.mode === 'flashcard') {
+            answersContainer.classList.add('hidden'); // Hide multiple choice on front
+            if (revealContainer) revealContainer.classList.remove('hidden'); // Show reveal button
+            if (answerContainer) answerContainer.classList.remove('hidden'); // Ensure visible on BACK face
+
+            // Set correct answer text (for back face)
             const correctText = question.answers[question.correct];
-            document.getElementById('flashcard-answer-text').textContent = correctText;
+            const answerTextEl = document.getElementById('flashcard-answer-text');
+            if (answerTextEl) answerTextEl.textContent = correctText;
+
+            // Populate Back Context Question (Small)
+            const backQuestionText = document.getElementById('question-text-back');
+            if (backQuestionText) backQuestionText.innerHTML = question.text;
+
         } else {
             answersContainer.classList.remove('hidden');
             answersContainer.classList.remove('blur-answers');

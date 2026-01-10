@@ -132,40 +132,81 @@
                     </div>
                 </div>
 
-                <div class="quiz__category" id="question-category">Tematický blok 1</div>
+                <!-- Flip Card Structure -->
+                <div class="flip-card-container">
+                    <div class="flip-card" id="flip-card">
+                        <div class="flip-card-inner" id="flashcard-inner">
 
-                <div class="quiz__question" id="question-text">
-                    Text otázky bude zde...
-                </div>
+                            <!-- FRONT FACE -->
+                            <div class="flip-card-front">
+                                <div class="quiz__category" id="question-category">Tematický blok 1</div>
 
-                <div class="flashcard-reveal hidden" id="flashcard-reveal">
-                    <button class="reveal-btn" id="reveal-btn">
-                        👁️ Odkrýt odpověď <span class="kbd-hint">[Mezerník]</span>
-                    </button>
-                    <p class="reveal-hint">Zkuste si odpověď vybavit v hlavě</p>
-                </div>
+                                <div class="quiz__question" id="question-text">
+                                    Text otázky bude zde...
+                                </div>
 
-                <div class="flashcard-answer hidden" id="flashcard-answer-container">
-                    <div class="flashcard-answer__text" id="flashcard-answer-text">
-                        Správná odpověď
-                    </div>
-                    <div class="flashcard-eval">
-                        <button class="eval-btn eval-btn--again" id="eval-again">
-                            🔴 Znova <span class="kbd-hint">[1]</span>
-                            <span class="eval-time">&lt; 1 min</span>
-                        </button>
-                        <button class="eval-btn eval-btn--hard" id="eval-hard">
-                            🟠 Těžké <span class="kbd-hint">[2]</span>
-                            <span class="eval-time">~ 2 dny</span>
-                        </button>
-                        <button class="eval-btn eval-btn--good" id="eval-good">
-                            🟢 Dobré <span class="kbd-hint">[3]</span>
-                            <span class="eval-time">~ 4 dny</span>
-                        </button>
-                        <button class="eval-btn eval-btn--easy" id="eval-easy">
-                            🔵 Snadné <span class="kbd-hint">[4]</span>
-                            <span class="eval-time">~ 7 dní</span>
-                        </button>
+                                <!-- Standard Mode Answers (Hidden in Flashcard Mode) -->
+                                <div class="quiz__answers" id="answers-container">
+                                    <button class="answer-btn" onclick="app.selectAnswer(0)">
+                                        <div class="answer-btn__letter">A</div>
+                                        <div class="answer-btn__text">Odpověď A</div>
+                                    </button>
+                                    <button class="answer-btn" onclick="app.selectAnswer(1)">
+                                        <div class="answer-btn__letter">B</div>
+                                        <div class="answer-btn__text">Odpověď B</div>
+                                    </button>
+                                    <button class="answer-btn" onclick="app.selectAnswer(2)">
+                                        <div class="answer-btn__letter">C</div>
+                                        <div class="answer-btn__text">Odpověď C</div>
+                                    </button>
+                                    <button class="answer-btn" onclick="app.selectAnswer(3)">
+                                        <div class="answer-btn__letter">D</div>
+                                        <div class="answer-btn__text">Odpověď D</div>
+                                    </button>
+                                </div>
+
+                                <!-- Flashcard Reveal Prompt (Hidden in Standard Mode) -->
+                                <div class="flashcard-reveal hidden" id="flashcard-reveal">
+                                    <button class="reveal-btn" id="reveal-btn">
+                                        👁️ Odkrýt odpověď <span class="kbd-hint">[Mezerník]</span>
+                                    </button>
+                                    <p class="reveal-hint">Zkuste si odpověď vybavit v hlavě</p>
+                                </div>
+                            </div>
+
+                            <!-- BACK FACE (Flashcard Answer) -->
+                            <div class="flip-card-back">
+                                <div class="quiz__category">Původní otázka</div>
+                                <div class="quiz__question quiz__question--small" id="question-text-back">
+                                    Text otázky (kontext)
+                                </div>
+
+                                <div class="flashcard-answer hidden" id="flashcard-answer-container">
+                                    <!-- removed hidden via CSS later, kept for id ref -->
+                                    <div class="flashcard-answer__text" id="flashcard-answer-text">
+                                        Správná odpověď
+                                    </div>
+                                    <div class="flashcard-eval">
+                                        <button class="eval-btn eval-btn--again" id="eval-again">
+                                            🔴 Znova <span class="kbd-hint">[1]</span>
+                                            <span class="eval-time">&lt; 1 min</span>
+                                        </button>
+                                        <button class="eval-btn eval-btn--hard" id="eval-hard">
+                                            🟠 Těžké <span class="kbd-hint">[2]</span>
+                                            <span class="eval-time">~ 2 dny</span>
+                                        </button>
+                                        <button class="eval-btn eval-btn--good" id="eval-good">
+                                            🟢 Dobré <span class="kbd-hint">[3]</span>
+                                            <span class="eval-time">~ 4 dny</span>
+                                        </button>
+                                        <button class="eval-btn eval-btn--easy" id="eval-easy">
+                                            🔵 Snadné <span class="kbd-hint">[4]</span>
+                                            <span class="eval-time">~ 7 dní</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
