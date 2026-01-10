@@ -1185,3 +1185,22 @@ body::before {
     padding-top: var(--spacing-xs);
     border-top: 1px solid var(--border-color);
 }
+
+/* Keyboard Hints */
+.kbd-hint {
+    display: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    opacity: 0.6;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+@media (min-width: 768px) {
+    .kbd-hint {
+        display: inline-block;
+    }
+}

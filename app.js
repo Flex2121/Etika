@@ -377,6 +377,86 @@ class QuizApp {
         document.getElementById('eval-easy').addEventListener('click', () => {
             this.handleFlashcardResult('easy');
         });
+
+        // Keyboard Shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('screen-quiz').classList.contains('active')) return;
+
+            // Navigation Keys
+            if (e.code === 'ArrowLeft') {
+                e.preventDefault();
+                this.prevQuestion();
+                return;
+            }
+            if (e.code === 'ArrowRight') {
+                e.preventDefault();
+                // If in standard mode and not answered yet, do nothing (wait for input)
+                // Unless in Test mode? Or just act as "Next" if answered?
+                // For Flashcard: Always Skip/Next
+                if (this.mode === 'flashcard' || this.answered) {
+                    this.nextQuestion();
+                } else if (!this.answered && this.mode !== 'flashcard') {
+                    // In standard mode, if not answered, user must answer first (space/right won't skip unassigned)
+                    // But user requested "Right arrow = Skip/Next", so allowing shuffle
+                    this.nextQuestion();
+                }
+                return;
+            }
+
+            // Prevent default scrolling for Space
+            if (e.code === 'Space') e.preventDefault();
+
+            // Flashcard Mode Logic
+            if (this.mode === 'flashcard') {
+                const revealContainer = document.getElementById('flashcard-reveal');
+                const isRevealed = revealContainer.classList.contains('hidden');
+
+                if (!isRevealed) {
+                    // Phase 1: Reveal
+                    if (e.code === 'Space' || e.code === 'Enter') {
+                        document.getElementById('reveal-btn').click();
+                    }
+                } else {
+                    // Phase 2: Evaluation (Numbers only)
+                    switch (e.code) {
+                        case 'Digit1':
+                        case 'Numpad1':
+                            this.handleFlashcardResult('again');
+                            break;
+                        case 'Digit2':
+                        case 'Numpad2':
+                            this.handleFlashcardResult('hard');
+                            break;
+                        case 'Digit3':
+                        case 'Numpad3':
+                            this.handleFlashcardResult('good');
+                            break;
+                        case 'Digit4':
+                        case 'Numpad4':
+                            this.handleFlashcardResult('easy');
+                            break;
+                    }
+                }
+            }
+            // Standard Quiz Mode Logic
+            else {
+                if (!this.answered) {
+                    // Selecting Answer
+                    if (['Digit1', 'Digit2', 'Digit3', 'Digit4'].includes(e.code)) {
+                        const index = parseInt(e.key) - 1;
+                        this.selectAnswer(index);
+                    }
+                } else {
+                    // Next Question (Space/Enter)
+                    if (e.code === 'Space' || e.code === 'Enter') {
+                        const nextBtn = document.getElementById('next-btn');
+                        if (nextBtn && !nextBtn.closest('.quiz__actions').classList.contains('hidden')) {
+                            nextBtn.click();
+                        }
+                    }
+                }
+            }
+        });
     }
 
     showScreen(screenName) {
@@ -602,6 +682,21 @@ class QuizApp {
         setTimeout(() => {
             this.nextQuestion();
         }, 500);
+    }
+
+    prevQuestion() {
+        if (this.currentIndex > 0) {
+            this.currentIndex--;
+            this.showQuestion();
+
+            // Restore answered state if it exists in history
+            // Find history for this specific question ID (complicated in random mode)
+            // Ideally, we'd check if this.currentIndex was already processed.
+            // For simple "viewing", re-showing the question is enough.
+            // If they want to "Change" their answer, it's more complex.
+            // Current User Request: "jen pro prohlížení" -> Show Question is fine.
+            this.stopSpeech();
+        }
     }
 
     showHint() {
