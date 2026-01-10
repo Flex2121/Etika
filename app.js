@@ -843,15 +843,15 @@ class QuizApp {
 
         osc1.type = 'triangle';
         osc1.frequency.setValueAtTime(freq, startTime);
-        osc1.frequency.exponentialRampToValueAtTime(freq * 0.5, startTime + 0.5);
+        osc1.frequency.exponentialRampToValueAtTime(freq * 0.5, startTime + 0.3);
 
-        // High gain (3.0) and instant attack
+        // Lower gain (0.3) for clean sound
         gain1.gain.setValueAtTime(0, startTime);
-        gain1.gain.linearRampToValueAtTime(3.0, startTime + 0.001);
-        gain1.gain.exponentialRampToValueAtTime(0.001, startTime + 0.5);
+        gain1.gain.linearRampToValueAtTime(0.3, startTime + 0.01);
+        gain1.gain.exponentialRampToValueAtTime(0.001, startTime + 0.3);
 
         osc1.start(startTime);
-        osc1.stop(startTime + 0.5);
+        osc1.stop(startTime + 0.3);
 
         // Layer 2: Sine for "Sub-bass" (Bottom end)
         const osc2 = ctx.createOscillator();
@@ -861,21 +861,22 @@ class QuizApp {
 
         osc2.type = 'sine';
         osc2.frequency.setValueAtTime(freq * 0.8, startTime); // Slightly lower
-        osc2.frequency.exponentialRampToValueAtTime(freq * 0.4, startTime + 0.5);
+        osc2.frequency.exponentialRampToValueAtTime(freq * 0.4, startTime + 0.3);
 
+        // Lower gain (0.3)
         gain2.gain.setValueAtTime(0, startTime);
-        gain2.gain.linearRampToValueAtTime(3.0, startTime + 0.001);
-        gain2.gain.exponentialRampToValueAtTime(0.001, startTime + 0.5);
+        gain2.gain.linearRampToValueAtTime(0.3, startTime + 0.01);
+        gain2.gain.exponentialRampToValueAtTime(0.001, startTime + 0.3);
 
         osc2.start(startTime);
-        osc2.stop(startTime + 0.5);
+        osc2.stop(startTime + 0.3);
 
         // Cleanup
         if (startTime > ctx.currentTime + 0.1) {
             osc1.onended = () => {
                 setTimeout(() => {
                     if (ctx.state !== 'closed') ctx.close();
-                }, 100);
+                }, 500); // Give it time to finish tail
             };
         }
     }
