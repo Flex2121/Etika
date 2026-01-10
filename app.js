@@ -308,10 +308,10 @@ class QuizApp {
         });
 
         // Answer buttons
-        document.querySelectorAll('.answer-btn').forEach(btn => {
+        const answerBtns = document.querySelectorAll('.answer-btn');
+        answerBtns.forEach((btn, index) => {
             btn.addEventListener('click', (e) => {
                 if (!this.answered) {
-                    const index = parseInt(e.currentTarget.dataset.index);
                     this.selectAnswer(index);
                 }
             });
