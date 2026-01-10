@@ -826,57 +826,41 @@ class QuizApp {
         const ctx = new AudioContext();
         const now = ctx.currentTime;
 
-        // "Dun... Dun..." effect (Deeper and heavier)
-        // 1st beat: "Dun"
-        this.playDrumNote(ctx, 80, now);
+        // "Knock Knock" effect (Higher pitch, woody)
+        // 1st knock
+        this.playKnockNote(ctx, now);
 
-        // 2nd beat: "Dun" (same pitch, slower interval)
-        this.playDrumNote(ctx, 80, now + 0.25);
+        // 2nd knock
+        this.playKnockNote(ctx, now + 0.15); // Faster interval for a realistic knock
     }
 
-    playDrumNote(ctx, freq, startTime) {
-        // Layer 1: Triangle for "Punch" (Main body)
-        const osc1 = ctx.createOscillator();
-        const gain1 = ctx.createGain();
-        osc1.connect(gain1);
-        gain1.connect(ctx.destination);
+    playKnockNote(ctx, startTime) {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
 
-        osc1.type = 'triangle';
-        osc1.frequency.setValueAtTime(freq, startTime);
-        osc1.frequency.exponentialRampToValueAtTime(freq * 0.5, startTime + 0.3);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
 
-        // Lower gain (0.3) for clean sound
-        gain1.gain.setValueAtTime(0, startTime);
-        gain1.gain.linearRampToValueAtTime(0.3, startTime + 0.01);
-        gain1.gain.exponentialRampToValueAtTime(0.001, startTime + 0.3);
+        // Sine wave for the "body" of the knock, but high pitch
+        osc.type = 'sine';
+        // Pitch envelope: Start high, drop fast (simulates impact)
+        osc.frequency.setValueAtTime(800, startTime);
+        osc.frequency.exponentialRampToValueAtTime(100, startTime + 0.05);
 
-        osc1.start(startTime);
-        osc1.stop(startTime + 0.3);
+        // Amplitude envelope: Very short, percussive
+        gain.gain.setValueAtTime(0, startTime);
+        gain.gain.linearRampToValueAtTime(0.5, startTime + 0.005); // Attack
+        gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.08); // Decay
 
-        // Layer 2: Sine for "Sub-bass" (Bottom end)
-        const osc2 = ctx.createOscillator();
-        const gain2 = ctx.createGain();
-        osc2.connect(gain2);
-        gain2.connect(ctx.destination);
-
-        osc2.type = 'sine';
-        osc2.frequency.setValueAtTime(freq * 0.8, startTime); // Slightly lower
-        osc2.frequency.exponentialRampToValueAtTime(freq * 0.4, startTime + 0.3);
-
-        // Lower gain (0.3)
-        gain2.gain.setValueAtTime(0, startTime);
-        gain2.gain.linearRampToValueAtTime(0.3, startTime + 0.01);
-        gain2.gain.exponentialRampToValueAtTime(0.001, startTime + 0.3);
-
-        osc2.start(startTime);
-        osc2.stop(startTime + 0.3);
+        osc.start(startTime);
+        osc.stop(startTime + 0.1);
 
         // Cleanup
-        if (startTime > ctx.currentTime + 0.1) {
-            osc1.onended = () => {
+        if (startTime > ctx.currentTime + 0.05) {
+            osc.onended = () => {
                 setTimeout(() => {
                     if (ctx.state !== 'closed') ctx.close();
-                }, 500); // Give it time to finish tail
+                }, 200);
             };
         }
     }
