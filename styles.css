@@ -867,43 +867,84 @@ body::before {
 }
 
 .flashcard-eval {
-    display: flex;
-    gap: var(--spacing-md);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
     justify-content: center;
 }
 
+@media (min-width: 600px) {
+    .flashcard-eval {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 .eval-btn {
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: var(--spacing-md);
     border: none;
     border-radius: var(--border-radius);
     font-size: var(--font-size-base);
     font-weight: 600;
     cursor: pointer;
     transition: all var(--transition-normal);
-    flex: 1;
-    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
 }
 
-.eval-btn--wrong {
+.eval-time {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+/* 1. AGAIN (Fail) */
+.eval-btn--again {
     background: rgba(235, 51, 73, 0.1);
     border: 2px solid #eb3349;
     color: #eb3349;
 }
 
-.eval-btn--wrong:hover {
+.eval-btn--again:hover {
     background: #eb3349;
     color: white;
 }
 
-.eval-btn--correct {
+/* 2. HARD (Pass but struggle) */
+.eval-btn--hard {
+    background: rgba(255, 159, 67, 0.1);
+    border: 2px solid #ff9f43;
+    color: #ff9f43;
+}
+
+.eval-btn--hard:hover {
+    background: #ff9f43;
+    color: #0a0a0f;
+}
+
+/* 3. GOOD (Standard Pass) */
+.eval-btn--good {
     background: rgba(56, 239, 125, 0.1);
     border: 2px solid #38ef7d;
     color: #38ef7d;
 }
 
-.eval-btn--correct:hover {
+.eval-btn--good:hover {
     background: #38ef7d;
     color: #0a0a0f;
+}
+
+/* 4. EASY (Mastery) */
+.eval-btn--easy {
+    background: rgba(79, 172, 254, 0.1);
+    border: 2px solid #4facfe;
+    color: #4facfe;
+}
+
+.eval-btn--easy:hover {
+    background: #4facfe;
+    color: white;
 }
 
 

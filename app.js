@@ -358,12 +358,24 @@ class QuizApp {
         }
 
         // Flashcard Evaluation Buttons
-        document.getElementById('eval-correct').addEventListener('click', () => {
-            this.handleFlashcardResult(true);
+        // 1. AGAIN (Fail)
+        document.getElementById('eval-again').addEventListener('click', () => {
+            this.handleFlashcardResult('again');
         });
 
-        document.getElementById('eval-wrong').addEventListener('click', () => {
-            this.handleFlashcardResult(false);
+        // 2. HARD (Struggle)
+        document.getElementById('eval-hard').addEventListener('click', () => {
+            this.handleFlashcardResult('hard');
+        });
+
+        // 3. GOOD (Standard)
+        document.getElementById('eval-good').addEventListener('click', () => {
+            this.handleFlashcardResult('good');
+        });
+
+        // 4. EASY (Mastery)
+        document.getElementById('eval-easy').addEventListener('click', () => {
+            this.handleFlashcardResult('easy');
         });
     }
 
@@ -519,26 +531,43 @@ class QuizApp {
         }
     }
 
-    handleFlashcardResult(isCorrect) {
+    handleFlashcardResult(difficulty) {
         if (this.answered) return;
         this.answered = true;
 
         const question = this.questions[this.currentIndex];
 
-        // Track session history (pseudo-index for answer)
+        // Map difficulty to correctness for history
+        const isCorrect = difficulty !== 'again';
+
+        // Track session history
         this.sessionHistory.push({
             question: question,
-            selectedAnswerIndex: isCorrect ? question.correct : -1, // -1 indicating unknown
-            isCorrect: isCorrect
+            selectedAnswerIndex: isCorrect ? question.correct : -1,
+            isCorrect: isCorrect,
+            difficulty: difficulty
         });
 
         if (isCorrect) {
             this.playSuccessSound();
-            this.score++;
-            this.handleCorrectAnswer(question.id);
+            if (difficulty !== 'hard') {
+                this.score++;
+            }
+
+            // Streak Logic
+            if (difficulty === 'easy') {
+                // Easy = Boost streak (simulate mastery)
+                this.handleCorrectAnswer(question.id); // +1
+                this.handleCorrectAnswer(question.id); // +2
+                this.handleCorrectAnswer(question.id); // +3 (Removes from failed list)
+            } else if (difficulty === 'good') {
+                this.handleCorrectAnswer(question.id); // +1 (Standard)
+            }
+            // 'hard' does not increase streak, keeps it in rotation
+
         } else {
             this.playErrorSound();
-            this.handleIncorrectAnswer(question.id);
+            this.handleIncorrectAnswer(question.id); // Reset streak
         }
 
         // Auto-advance
