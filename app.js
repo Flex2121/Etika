@@ -39,6 +39,9 @@ class QuizApp {
         this.initTTS();
         this.updateStats();
         this.bindEvents();
+
+        // Ensure strictly only Home is visible on potential reload/init
+        this.showScreen('home');
     }
 
     initTTS() {
@@ -422,7 +425,11 @@ class QuizApp {
                 if (!isFlipped) {
                     // Phase 1: Reveal/Flip
                     if (e.code === 'Space' || e.code === 'Enter') {
-                        document.getElementById('reveal-btn').click();
+                        // Trigger flip (same as clicking the card)
+                        const innerCard = document.getElementById('flashcard-inner');
+                        if (innerCard && !innerCard.classList.contains('is-flipped')) {
+                            innerCard.classList.add('is-flipped');
+                        }
                     }
                 } else {
                     // Phase 2: Evaluation (Numbers only)
