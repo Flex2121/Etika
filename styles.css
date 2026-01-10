@@ -1228,6 +1228,13 @@ body::before {
     .setting__select {
         width: 100%;
         max-width: 100%;
+        /* Ensure it wraps/truncates */
+        box-sizing: border-box;
+        /* Include padding in width */
+        overflow: hidden;
+        /* Prevent spillover */
+        text-overflow: ellipsis;
+        /* nice to have */
     }
 
     .setting__label {
