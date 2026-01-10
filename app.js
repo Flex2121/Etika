@@ -576,29 +576,44 @@ class QuizApp {
     }
 
     playDrumNote(ctx, freq, startTime) {
-        const oscillator = ctx.createOscillator();
-        const gainNode = ctx.createGain();
+        // Layer 1: Triangle for "Punch" (Main body)
+        const osc1 = ctx.createOscillator();
+        const gain1 = ctx.createGain();
+        osc1.connect(gain1);
+        gain1.connect(ctx.destination);
 
-        oscillator.connect(gainNode);
-        gainNode.connect(ctx.destination);
+        osc1.type = 'triangle';
+        osc1.frequency.setValueAtTime(freq, startTime);
+        osc1.frequency.exponentialRampToValueAtTime(freq * 0.5, startTime + 0.5);
 
-        oscillator.type = 'triangle';
+        // High gain (3.0) and instant attack
+        gain1.gain.setValueAtTime(0, startTime);
+        gain1.gain.linearRampToValueAtTime(3.0, startTime + 0.001);
+        gain1.gain.exponentialRampToValueAtTime(0.001, startTime + 0.5);
 
-        // Pitch drop effect for "drum" realism
-        oscillator.frequency.setValueAtTime(freq, startTime);
-        oscillator.frequency.exponentialRampToValueAtTime(freq * 0.5, startTime + 0.5);
+        osc1.start(startTime);
+        osc1.stop(startTime + 0.5);
 
-        // Percussive envelope
-        gainNode.gain.setValueAtTime(0, startTime);
-        gainNode.gain.linearRampToValueAtTime(1.0, startTime + 0.05); // Attack (Heavy)
-        gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + 0.5); // Decay (Longer sustain)
+        // Layer 2: Sine for "Sub-bass" (Bottom end)
+        const osc2 = ctx.createOscillator();
+        const gain2 = ctx.createGain();
+        osc2.connect(gain2);
+        gain2.connect(ctx.destination);
 
-        oscillator.start(startTime);
-        oscillator.stop(startTime + 0.5);
+        osc2.type = 'sine';
+        osc2.frequency.setValueAtTime(freq * 0.8, startTime); // Slightly lower
+        osc2.frequency.exponentialRampToValueAtTime(freq * 0.4, startTime + 0.5);
 
-        // Cleanup after second note
+        gain2.gain.setValueAtTime(0, startTime);
+        gain2.gain.linearRampToValueAtTime(3.0, startTime + 0.001);
+        gain2.gain.exponentialRampToValueAtTime(0.001, startTime + 0.5);
+
+        osc2.start(startTime);
+        osc2.stop(startTime + 0.5);
+
+        // Cleanup
         if (startTime > ctx.currentTime + 0.1) {
-            oscillator.onended = () => {
+            osc1.onended = () => {
                 setTimeout(() => {
                     if (ctx.state !== 'closed') ctx.close();
                 }, 100);
