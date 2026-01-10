@@ -639,9 +639,9 @@ class QuizApp {
             const backQuestionText = document.getElementById('question-text-back');
             if (backQuestionText) backQuestionText.innerHTML = question.question;
 
-            // Hide hint button in flashcard mode (not needed)
+            // Hide hint button in flashcard mode (not needed) - use display:none for stronger hiding
             const hintBtn = document.getElementById('hint-btn');
-            if (hintBtn) hintBtn.classList.add('hidden');
+            if (hintBtn) hintBtn.style.display = 'none';
             const hintContainer = document.getElementById('hint-container');
             if (hintContainer) hintContainer.classList.add('hidden');
 
@@ -657,7 +657,7 @@ class QuizApp {
 
             // Show hint button in standard mode
             const hintBtn = document.getElementById('hint-btn');
-            if (hintBtn) hintBtn.classList.remove('hidden');
+            if (hintBtn) hintBtn.style.display = 'block';
         }
     }
 
