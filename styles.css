@@ -357,25 +357,38 @@ body::before {
 }
 
 .progress-info {
-    display: flex;
-    justify-content: center;
-    /* Center the counter */
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    /* Left (empty), Center (counter), Right (score) */
     align-items: center;
-    position: relative;
-    /* Context for absolute score */
     font-size: var(--font-size-sm);
     color: var(--text-secondary);
     margin-top: var(--spacing-xs);
     width: 100%;
-    /* Ensure full width for centering */
 }
 
 .progress-count {
+    grid-column: 2;
+    /* Place in center column */
     font-weight: 500;
     /* Compact layout */
     display: flex;
+    justify-content: center;
     gap: 2px;
     align-items: center;
+}
+
+.progress-info__score {
+    grid-column: 3;
+    /* Place in right column */
+    justify-self: end;
+    /* Align to the right edge */
+    /* Remove absolute positioning */
+    font-weight: 600;
+    background: var(--gradient-success);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .progress-sep {
@@ -383,15 +396,7 @@ body::before {
     margin: 0 1px;
 }
 
-.progress-info__score {
-    position: absolute;
-    right: 0;
-    font-weight: 600;
-    background: var(--gradient-success);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
+
 
 .quiz__category {
     font-size: var(--font-size-xs);
