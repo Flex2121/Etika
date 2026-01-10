@@ -257,31 +257,36 @@ class QuizApp {
     }
 
     populateCategories() {
-        const categorySelect = document.getElementById('category-select');
+        // Initialize Stats
+        this.score = 0;
+        this.answered = false;
+        this.hintUsed = false;
+        this.mode = 'practice'; // Default mode
+
+        // --- TEMPLATE LOGIC: Apply Config if available ---
+        if (typeof APP_CONFIG !== 'undefined') {
+            // Set Page Title
+            if (APP_CONFIG.title) {
+                document.title = APP_CONFIG.title;
+                const headerTitle = document.querySelector('.header__title');
+                if (headerTitle) headerTitle.textContent = APP_CONFIG.title;
+            }
+            // Set Subtitle
+            if (APP_CONFIG.subtitle) {
+                const headerSubtitle = document.querySelector('.header__subtitle');
+                if (headerSubtitle) headerSubtitle.textContent = APP_CONFIG.subtitle;
+            }
+        }
+
+        // --- DYNAMIC CATEGORIES ---
+        // Extract unique categories in order of appearance from the questions data
+        // This removes the need for a hardcoded syllabus list.
         const uniqueCategories = [...new Set(QUESTIONS.map(q => q.category))];
 
-        // Define syllabus order
-        const categoryOrder = [
-            "ÚVOD | PROČ třídíme",
-            "CO třídíme",
-            "ČÍM třídíme I.",
-            "ČÍM třídíme II.",
-            "JAK třídíme I.",
-            "JAK třídíme II.",
-            "Univerzální systémy organizace informací",
-            "Oborové a specializované systémy organizace informací",
-            "JAK s tříděnými informacemi NAKLÁDÁME",
-            "K ČEMU se tříděním DOBÍRÁME",
-            "Minulost, současnost a budoucnost organizace informací"
-        ];
-
-        // Sort categories based on the defined order
-        uniqueCategories.sort((a, b) => {
-            const indexA = categoryOrder.indexOf(a);
-            const indexB = categoryOrder.indexOf(b);
-            // If category is not in the list, put it at the end
-            return (indexA === -1 ? 999 : indexA) - (indexB === -1 ? 999 : indexB);
-        });
+        // Populate Select Dropdown
+        const categorySelect = document.getElementById('category-select');
+        // No sorting needed here, categories will appear in the order they are found in QUESTIONS
+        // If specific order is needed, it should be defined in APP_CONFIG or QUESTIONS data itself.
 
         uniqueCategories.forEach(category => {
             const option = document.createElement('option');

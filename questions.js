@@ -1,6 +1,14 @@
 // Organizace informací - Databáze otázek
 // 246 otázek rozdělených do tématických bloků
 
+// KONFIGURACE APLIKACE (Template Config)
+const APP_CONFIG = {
+    title: "📚 Organizace informací",
+    subtitle: "Kvízová aplikace",
+    author: "Flex2121",
+    version: "1.0"
+};
+
 const QUESTIONS = [
     // Tematický blok 1: Teorie a Základní pojmy (1-5)
     {
