@@ -568,6 +568,34 @@ class QuizApp {
         } else {
             this.playErrorSound();
             this.handleIncorrectAnswer(question.id); // Reset streak
+
+            // Re-queue logic (In-Session Spacing)
+            // Insert question 3-5 spots ahead to keep it in short-term loop
+            if (this.mode !== 'test') {
+                const positionsAhead = Math.floor(Math.random() * 3) + 3; // Random 3-5
+                const insertIndex = Math.min(this.currentIndex + positionsAhead, this.questions.length);
+
+                // Clone question to avoid reference issues
+                const retryQuestion = { ...question, isRetry: true };
+
+                this.questions.splice(insertIndex, 0, retryQuestion);
+
+                // Update Total Count UI to reflect added drill
+                const totalEl = document.getElementById('total-quiz-questions');
+                if (totalEl) {
+                    totalEl.textContent = this.questions.length;
+
+                    // Visual feedback
+                    totalEl.style.transition = "color 0.3s ease";
+                    totalEl.style.color = "#eb3349"; // Red flash
+                    totalEl.style.fontWeight = "bold";
+
+                    setTimeout(() => {
+                        totalEl.style.color = "";
+                        totalEl.style.fontWeight = "";
+                    }, 800);
+                }
+            }
         }
 
         // Auto-advance
