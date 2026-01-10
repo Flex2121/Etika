@@ -346,14 +346,25 @@ class QuizApp {
             });
         }
 
+
+
         // Reveal button (Flashcard mode)
         const revealBtn = document.getElementById('reveal-btn');
         if (revealBtn) {
             revealBtn.addEventListener('click', () => {
-                document.getElementById('answers-container').classList.remove('blur-answers');
                 document.getElementById('flashcard-reveal').classList.add('hidden');
+                document.getElementById('flashcard-answer-container').classList.remove('hidden');
             });
         }
+
+        // Flashcard Evaluation Buttons
+        document.getElementById('eval-correct').addEventListener('click', () => {
+            this.handleFlashcardResult(true);
+        });
+
+        document.getElementById('eval-wrong').addEventListener('click', () => {
+            this.handleFlashcardResult(false);
+        });
     }
 
     showScreen(screenName) {
@@ -490,14 +501,50 @@ class QuizApp {
         // Flashcard Mode UI
         const answersContainer = document.getElementById('answers-container');
         const revealContainer = document.getElementById('flashcard-reveal');
+        const answerContainer = document.getElementById('flashcard-answer-container');
 
         if (this.mode === 'flashcard') {
-            answersContainer.classList.add('blur-answers');
+            answersContainer.classList.add('hidden'); // Completely hide options
             if (revealContainer) revealContainer.classList.remove('hidden');
+            if (answerContainer) answerContainer.classList.add('hidden');
+
+            // Set correct answer text
+            const correctText = question.answers[question.correct];
+            document.getElementById('flashcard-answer-text').textContent = correctText;
         } else {
+            answersContainer.classList.remove('hidden');
             answersContainer.classList.remove('blur-answers');
             if (revealContainer) revealContainer.classList.add('hidden');
+            if (answerContainer) answerContainer.classList.add('hidden');
         }
+    }
+
+    handleFlashcardResult(isCorrect) {
+        if (this.answered) return;
+        this.answered = true;
+
+        const question = this.questions[this.currentIndex];
+
+        // Track session history (pseudo-index for answer)
+        this.sessionHistory.push({
+            question: question,
+            selectedAnswerIndex: isCorrect ? question.correct : -1, // -1 indicating unknown
+            isCorrect: isCorrect
+        });
+
+        if (isCorrect) {
+            this.playSuccessSound();
+            this.score++;
+            this.handleCorrectAnswer(question.id);
+        } else {
+            this.playErrorSound();
+            this.handleIncorrectAnswer(question.id);
+        }
+
+        // Auto-advance
+        setTimeout(() => {
+            this.nextQuestion();
+        }, 500);
     }
 
     showHint() {

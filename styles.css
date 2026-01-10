@@ -848,6 +848,65 @@ body::before {
     transition: all 0.3s ease;
 }
 
+.flashcard-answer {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    animation: fadeIn 0.3s ease;
+}
+
+.flashcard-answer__text {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: var(--bg-secondary);
+    border: 1px solid #38ef7d;
+    border-radius: var(--border-radius);
+    line-height: 1.5;
+}
+
+.flashcard-eval {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+.eval-btn {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    flex: 1;
+    max-width: 200px;
+}
+
+.eval-btn--wrong {
+    background: rgba(235, 51, 73, 0.1);
+    border: 2px solid #eb3349;
+    color: #eb3349;
+}
+
+.eval-btn--wrong:hover {
+    background: #eb3349;
+    color: white;
+}
+
+.eval-btn--correct {
+    background: rgba(56, 239, 125, 0.1);
+    border: 2px solid #38ef7d;
+    color: #38ef7d;
+}
+
+.eval-btn--correct:hover {
+    background: #38ef7d;
+    color: #0a0a0f;
+}
+
+
 
 .setting__checkbox {
     display: none;
