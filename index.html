@@ -8,6 +8,7 @@
     <meta name="description"
         content="Komplexní kvízová aplikace s 246 otázkami o organizaci informací pro přípravu na zkoušku.">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="flashcard.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -142,78 +143,92 @@
                 </div>
 
                 <!-- Flip Card Structure -->
-                <div class="flip-card-container">
+                <!-- Wrapper for purely specific flashcard styling -->
+                <div class="flashcard-wrapper" id="flashcard-wrapper">
                     <div class="flip-card" id="flip-card">
                         <div class="flip-card-inner" id="flashcard-inner">
 
                             <!-- FRONT FACE -->
                             <div class="flip-card-front">
-                                <div class="quiz__category" id="question-category">Tematický blok 1</div>
-
-                                <div class="quiz__question" id="question-text">
-                                    Text otázky bude zde...
+                                <div class="flashcard-header">
+                                    <div class="quiz__category" id="question-category">Tematický blok</div>
                                 </div>
 
-                                <!-- Standard Mode Answers (Hidden in Flashcard Mode) -->
-                                <div class="quiz__answers" id="answers-container">
-                                    <button class="answer-btn" onclick="app.selectAnswer(0)">
-                                        <div class="answer-btn__letter">A</div>
-                                        <div class="answer-btn__text">Odpověď A</div>
-                                    </button>
-                                    <button class="answer-btn" onclick="app.selectAnswer(1)">
-                                        <div class="answer-btn__letter">B</div>
-                                        <div class="answer-btn__text">Odpověď B</div>
-                                    </button>
-                                    <button class="answer-btn" onclick="app.selectAnswer(2)">
-                                        <div class="answer-btn__letter">C</div>
-                                        <div class="answer-btn__text">Odpověď C</div>
-                                    </button>
-                                    <button class="answer-btn" onclick="app.selectAnswer(3)">
-                                        <div class="answer-btn__letter">D</div>
-                                        <div class="answer-btn__text">Odpověď D</div>
-                                    </button>
+                                <div class="flashcard-content">
+                                    <h3 class="flashcard-question" id="flashcard-question-front">
+                                        Text otázky...
+                                    </h3>
                                 </div>
 
-                                <!-- Flashcard Reveal Prompt (Hidden in Standard Mode) -->
-                                <!-- Removed explicit button as per Anki request. Whole card is clickable. -->
-                                <div class="flashcard-hint-text" id="flashcard-hint-text">
-                                    <span class="kbd-hint">[Mezerník]</span> nebo klikněte pro otočení
+                                <div class="flashcard-footer">
+                                    <span class="flashcard-hint">Klikni nebo stiskni Mezerník pro otočení</span>
                                 </div>
                             </div>
 
-                            <!-- BACK FACE (Flashcard Answer) -->
+                            <!-- BACK FACE -->
                             <div class="flip-card-back">
-                                <div class="quiz__category">Původní otázka</div>
-                                <div class="quiz__question quiz__question--small" id="question-text-back">
-                                    Text otázky (kontext)
+                                <div class="flashcard-header">
+                                    <div class="quiz__category">Správná odpověď</div>
                                 </div>
 
-                                <div class="flashcard-answer hidden" id="flashcard-answer-container">
-                                    <!-- removed hidden via CSS later, kept for id ref -->
-                                    <div class="flashcard-answer__text" id="flashcard-answer-text">
-                                        Správná odpověď
+                                <div class="flashcard-content">
+                                    <div class="flashcard-answer-text" id="flashcard-answer-text">
+                                        Správná odpověď...
                                     </div>
-                                    <div class="flashcard-eval">
+                                    <div class="flashcard-context" id="question-text-back">
+                                        (Původní otázka pro kontext)
+                                    </div>
+                                </div>
+
+                                <!-- Evaluation Controls (Inside Back Face) -->
+                                <div class="flashcard-footer">
+                                    <div class="flashcard-controls" id="flashcard-eval-container">
                                         <button class="eval-btn eval-btn--again" id="eval-again">
-                                            🔴 Znova <span class="kbd-hint">[1]</span>
-                                            <span class="eval-time">&lt; 1 min</span>
+                                            <span class="eval-label">Zapomněl</span>
+                                            <span class="eval-key">1</span>
                                         </button>
                                         <button class="eval-btn eval-btn--hard" id="eval-hard">
-                                            🟠 Těžké <span class="kbd-hint">[2]</span>
-                                            <span class="eval-time">~ 2 dny</span>
+                                            <span class="eval-label">Těžké</span>
+                                            <span class="eval-key">2</span>
                                         </button>
                                         <button class="eval-btn eval-btn--good" id="eval-good">
-                                            🟢 Dobré <span class="kbd-hint">[3]</span>
-                                            <span class="eval-time">~ 4 dny</span>
+                                            <span class="eval-label">Dobré</span>
+                                            <span class="eval-key">3</span>
                                         </button>
                                         <button class="eval-btn eval-btn--easy" id="eval-easy">
-                                            🔵 Snadné <span class="kbd-hint">[4]</span>
-                                            <span class="eval-time">~ 7 dní</span>
+                                            <span class="eval-label">Snadné</span>
+                                            <span class="eval-key">4</span>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Standard Quiz Content (Hidden in Flashcard Mode) -->
+                <div id="standard-quiz-container">
+                    <div class="quiz__question" id="question-text">
+                        Text otázky bude zde...
+                    </div>
+
+                    <div class="quiz__answers" id="answers-container">
+                        <button class="answer-btn" onclick="app.selectAnswer(0)">
+                            <div class="answer-btn__letter">A</div>
+                            <div class="answer-btn__text">Odpověď A</div>
+                        </button>
+                        <button class="answer-btn" onclick="app.selectAnswer(1)">
+                            <div class="answer-btn__letter">B</div>
+                            <div class="answer-btn__text">Odpověď B</div>
+                        </button>
+                        <button class="answer-btn" onclick="app.selectAnswer(2)">
+                            <div class="answer-btn__letter">C</div>
+                            <div class="answer-btn__text">Odpověď C</div>
+                        </button>
+                        <button class="answer-btn" onclick="app.selectAnswer(3)">
+                            <div class="answer-btn__letter">D</div>
+                            <div class="answer-btn__text">Odpověď D</div>
+                        </button>
                     </div>
                 </div>
 

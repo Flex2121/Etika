@@ -572,82 +572,80 @@ class QuizApp {
             el.textContent = question.category || 'Bez kategorie';
         });
 
-        // Update question text
-        document.getElementById('question-text').textContent = question.question;
-
-        // TTS
+        // Common TTS
         this.speak(question.question);
 
-        // Shuffle answers
-        const answerIndices = [0, 1, 2, 3];
-        const shuffledIndices = this.shuffle(answerIndices);
+        // UI Mode Switching
+        const flashcardWrapper = document.getElementById('flashcard-wrapper');
+        const standardContainer = document.getElementById('standard-quiz-container');
+        const hintBtn = document.getElementById('hint-btn');
+        const hintContainer = document.getElementById('hint-container');
 
-        // Store correct answer position after shuffle
-        this.correctAnswerIndex = shuffledIndices.indexOf(question.correct);
-
-        // Update answer buttons
-        const answerBtns = document.querySelectorAll('.answer-btn');
-        const letters = ['A', 'B', 'C', 'D'];
-
-        answerBtns.forEach((btn, i) => {
-            const originalIndex = shuffledIndices[i];
-            btn.querySelector('.answer-btn__letter').textContent = letters[i];
-            btn.querySelector('.answer-btn__text').textContent = question.answers[originalIndex];
-            btn.classList.remove('selected', 'correct', 'wrong');
-            btn.disabled = false;
-            btn.dataset.originalIndex = originalIndex;
-        });
-
-        // Reset hint
-        document.getElementById('hint-btn').disabled = false;
-        document.getElementById('hint-container').classList.add('hidden');
+        // Reset Hint
+        hintBtn.disabled = false;
+        hintContainer.classList.add('hidden');
         document.getElementById('hint-text').textContent = question.hint || 'Žádná nápověda není k dispozici.';
 
         // Hide explanation and actions
         document.getElementById('explanation-container').classList.add('hidden');
         document.getElementById('quiz-actions').classList.add('hidden');
 
-        // Flashcard Mode UI
-        const answersContainer = document.getElementById('answers-container');
-        const revealContainer = document.getElementById('flashcard-reveal');
-        const answerContainer = document.getElementById('flashcard-answer-container');
-
-        // Reset Flip State
-        const innerCard = document.getElementById('flashcard-inner');
-        if (innerCard) {
-            // Remove animation transition temporarily to prevent flickering if needed?
-            // Usually remove class is enough.
-            innerCard.classList.remove('is-flipped');
-        }
-
         if (this.mode === 'flashcard') {
-            answersContainer.classList.add('hidden'); // Hide multiple choice on front
-            if (revealContainer) revealContainer.classList.add('hidden'); // Legacy container, nice to hide if exists
+            // --- FLASHCARD MODE ---
+            if (flashcardWrapper) flashcardWrapper.classList.add('active');
+            if (standardContainer) standardContainer.classList.add('hidden');
 
-            // Show hint text if we have one
-            const hintText = document.getElementById('flashcard-hint-text');
-            if (hintText) hintText.classList.remove('hidden');
+            // Hide standard hint button in flashcard mode to keep it clean (optional, or move it)
+            // User requested clean UI. Let's hide the standard hint button.
+            if (hintBtn) hintBtn.classList.add('hidden');
 
-            if (answerContainer) answerContainer.classList.remove('hidden'); // Ensure visible on BACK face
+            // Populate Flashcard Data
+            const frontQuestion = document.getElementById('flashcard-question-front');
+            const backAnswer = document.getElementById('flashcard-answer-text');
+            const backContext = document.getElementById('question-text-back');
 
-            // Set correct answer text (for back face)
-            const correctText = question.answers[question.correct];
-            const answerTextEl = document.getElementById('flashcard-answer-text');
-            if (answerTextEl) answerTextEl.textContent = correctText;
+            if (frontQuestion) frontQuestion.textContent = question.question;
+            if (backAnswer) backAnswer.textContent = question.answers[question.correct];
+            if (backContext) backContext.innerHTML = question.question;
 
-            // Populate Back Context Question (Small)
-            const backQuestionText = document.getElementById('question-text-back');
-            if (backQuestionText) backQuestionText.innerHTML = question.question;
+            // Reset Flip State
+            const innerCard = document.getElementById('flashcard-inner');
+            if (innerCard) {
+                innerCard.classList.remove('is-flipped');
+            }
 
         } else {
-            answersContainer.classList.remove('hidden');
-            answersContainer.classList.remove('blur-answers');
-            if (revealContainer) revealContainer.classList.add('hidden');
-            if (answerContainer) answerContainer.classList.add('hidden');
+            // --- STANDARD MODE ---
+            if (flashcardWrapper) flashcardWrapper.classList.remove('active');
+            if (standardContainer) standardContainer.classList.remove('hidden');
+            if (hintBtn) hintBtn.classList.remove('hidden');
 
-            // Hide flashcard hint in standard mode
-            const hintText = document.getElementById('flashcard-hint-text');
-            if (hintText) hintText.classList.add('hidden');
+            // Populate Standard Question
+            document.getElementById('question-text').textContent = question.question;
+
+            // Prepare Answers (Standard Logic)
+            const answerIndices = [0, 1, 2, 3];
+            const shuffledIndices = this.shuffle(answerIndices);
+            this.correctAnswerIndex = shuffledIndices.indexOf(question.correct);
+
+            const answerBtns = document.querySelectorAll('.answer-btn');
+            const letters = ['A', 'B', 'C', 'D'];
+
+            answerBtns.forEach((btn, i) => {
+                const originalIndex = shuffledIndices[i];
+                btn.querySelector('.answer-btn__letter').textContent = letters[i];
+                btn.querySelector('.answer-btn__text').textContent = question.answers[originalIndex];
+                btn.classList.remove('selected', 'correct', 'wrong');
+                btn.disabled = false;
+                btn.dataset.originalIndex = originalIndex;
+            });
+
+            // Ensure blur/hidden states from previous flashcard sessions are cleared
+            const answersContainer = document.getElementById('answers-container');
+            if (answersContainer) {
+                answersContainer.classList.remove('hidden');
+                answersContainer.classList.remove('blur-answers');
+            }
         }
     }
 

@@ -594,8 +594,8 @@ body::before {
 }
 
 .quiz__explanation p {
-    font-size: var(--font-size-base);
-    line-height: 1.7;
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
     text-align: justify;
 }
 
