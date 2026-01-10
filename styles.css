@@ -358,17 +358,29 @@ body::before {
 
 .progress-info {
     display: flex;
-    justify-content: center; /* Center the counter */
+    justify-content: center;
+    /* Center the counter */
     align-items: center;
-    position: relative; /* Context for absolute score */
+    position: relative;
+    /* Context for absolute score */
     font-size: var(--font-size-sm);
     color: var(--text-secondary);
     margin-top: var(--spacing-xs);
+    width: 100%;
+    /* Ensure full width for centering */
 }
 
 .progress-count {
     font-weight: 500;
-    letter-spacing: 1px;
+    /* Compact layout */
+    display: flex;
+    gap: 2px;
+    align-items: center;
+}
+
+.progress-sep {
+    opacity: 0.5;
+    margin: 0 1px;
 }
 
 .progress-info__score {
