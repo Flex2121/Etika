@@ -1298,6 +1298,16 @@ body::before {
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     padding: var(--spacing-lg);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(1px);
+    /* Force layer separation */
+}
+
+/* Hide front when flipped to prevent any bleedthrough on mobile */
+.flip-card-inner.is-flipped .flip-card-front {
+    visibility: hidden;
+    transition: visibility 0s 0.3s;
 }
 
 /* Back Face (Rotated) */
