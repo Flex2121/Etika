@@ -1259,6 +1259,9 @@ body::before {
     /* Min-height to accommodate content */
     min-height: 300px;
     perspective: 1000px;
+    position: relative;
+    z-index: 10;
+    /* Ensure card is above hint button */
 }
 
 .flip-card-inner {
@@ -1301,32 +1304,37 @@ body::before {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     transform: translateZ(1px);
-    /* Force layer separation */
+    /* Default: visible */
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.1s ease;
 }
 
-/* Hide front when flipped to prevent any bleedthrough on mobile */
+/* FORCE hide front when flipped (opacity is more reliable than visibility on mobile) */
 .flip-card-inner.is-flipped .flip-card-front {
-    visibility: hidden;
-    transition: visibility 0s 0.3s;
+    opacity: 0 !important;
+    pointer-events: none !important;
 }
 
 /* Back Face (Rotated) */
 .flip-card-back {
     transform: rotateY(180deg) translateZ(1px);
-    /* Force layer separation */
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     padding: var(--spacing-lg);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    visibility: hidden;
+    /* Default: hidden */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.1s ease;
 }
 
-/* Show back only when flipped */
+/* FORCE show back only when flipped */
 .flip-card-inner.is-flipped .flip-card-back {
-    visibility: visible;
-    transition: visibility 0s 0.3s;
+    opacity: 1 !important;
+    pointer-events: auto !important;
 }
 
 /* Content Specifics */

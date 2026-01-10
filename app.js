@@ -639,6 +639,12 @@ class QuizApp {
             const backQuestionText = document.getElementById('question-text-back');
             if (backQuestionText) backQuestionText.innerHTML = question.question;
 
+            // Hide hint button in flashcard mode (not needed)
+            const hintBtn = document.getElementById('hint-btn');
+            if (hintBtn) hintBtn.classList.add('hidden');
+            const hintContainer = document.getElementById('hint-container');
+            if (hintContainer) hintContainer.classList.add('hidden');
+
         } else {
             answersContainer.classList.remove('hidden');
             answersContainer.classList.remove('blur-answers');
@@ -648,6 +654,10 @@ class QuizApp {
             // Hide flashcard hint in standard mode
             const hintText = document.getElementById('flashcard-hint-text');
             if (hintText) hintText.classList.add('hidden');
+
+            // Show hint button in standard mode
+            const hintBtn = document.getElementById('hint-btn');
+            if (hintBtn) hintBtn.classList.remove('hidden');
         }
     }
 
