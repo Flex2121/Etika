@@ -2653,6 +2653,568 @@ const QUESTIONS = [
         correct: 0,
         hint: "Umělá inteligence.",
         explanation: "Umělá inteligence je obor informatiky zabývající se tvorbou strojů vykazujících známky inteligence."
+    },
+    // Nové otázky - Dávka 1
+    {
+        id: 247,
+        category: "ÚVOD | PROČ třídíme",
+        question: "Sémiotika se zabývá obecnou teorií:",
+        answers: [
+            "znaků",
+            "jazyka",
+            "sociální komunikace",
+            "vědecké komunikace"
+        ],
+        correct: 0,
+        hint: "Séma = znak.",
+        explanation: "Sémiotika je nauka o znacích a znakových systémech."
+    },
+    {
+        id: 248,
+        category: "ÚVOD | PROČ třídíme",
+        question: "Doplňte třetí vrchol sémantického trojúhelníku, jsou-li první dva JEV a ZNAK:",
+        answers: [
+            "symbol",
+            "atribut",
+            "pojem",
+            "výraz"
+        ],
+        correct: 2,
+        hint: "To, co máme v hlavě (myšlenka).",
+        explanation: "Trojúhelník tvoří: Znak (forma) - Jev (objekt) - Pojem (význam/myšlenka)."
+    },
+    {
+        id: 249,
+        category: "CO třídíme",
+        question: "Určete správné pořadí termínů, mají-li být seřazeny od významově nejobecnějšího k nejspecifičtějšímu:",
+        answers: [
+            "dokument, informační objekt, kniha, monografie",
+            "dokument, informační objekt, monografie, kniha",
+            "kniha, monografie, dokument, informační objekt",
+            "informační objekt, dokument, kniha, monografie"
+        ],
+        correct: 3,
+        hint: "Nejobecnější je IO, nejkonkrétnější typ knihy.",
+        explanation: "Informační objekt > Dokument (zaznamenaný) > Kniha (formát) > Monografie (typ obsahu)."
+    },
+    {
+        id: 250,
+        category: "CO třídíme",
+        question: "Mezi seriálové typy dokumentů nepatří:",
+        answers: [
+            "časopis",
+            "zpravodaj",
+            "festschrift (jubilejní sborník)",
+            "ročenka"
+        ],
+        correct: 2,
+        hint: "Vychází to pravidelně, nebo jednorázově k výročí?",
+        explanation: "Festschrift vychází jednorázově (k výročí), není to periodikum (seriál)."
+    },
+    {
+        id: 251,
+        category: "CO třídíme",
+        question: "Ve čtyřvrstvém konceptu díla podle LRM (Library Reference Model) se pojem MANIFESTATION do češtiny překládá jako:",
+        answers: [
+            "manifestace",
+            "demonstrace",
+            "provedení",
+            "založení"
+        ],
+        correct: 2,
+        hint: "Fyzické ztělesnění výrazu.",
+        explanation: "Manifestation se v modelu LRM/FRBR překládá jako 'provedení'."
+    },
+    {
+        id: 252,
+        category: "ČÍM třídíme I.",
+        question: "Označte obecně platnou charakteristiku selekčního jazyka:",
+        answers: [
+            "je založen na přirozeném jazyce",
+            "je umělým jazykem",
+            "používá se v knihovnách",
+            "používá se pro vyhledávání"
+        ],
+        correct: 1,
+        hint: "Je vytvořen účelově člověkem.",
+        explanation: "Selekční jazyk je formalizovaný, umělý jazyk určený k pořádání a vyhledávání."
+    },
+    {
+        id: 253,
+        category: "ČÍM třídíme I.",
+        question: "Jednou ze složek selekčního jazyka je:",
+        answers: [
+            "selekční obraz dokumentu",
+            "řízený slovník",
+            "sémiotický trojúhelník",
+            "polyhierarchický vztah"
+        ],
+        correct: 1,
+        hint: "Seznam povolených termínů.",
+        explanation: "Řízený slovník je lexikální složkou selekčního jazyka."
+    },
+    {
+        id: 254,
+        category: "ČÍM třídíme I.",
+        question: "V prekoordinovaném selekčním jazyku je obvyklé, že pořádací znak:",
+        answers: [
+            "tvoří pouze jediný výraz",
+            "je vyjádřen pomocí notace",
+            "je nutné kombinovat s jiným pořádacím znakem",
+            "reprezentuje vždy pouze jeden pojem"
+        ],
+        correct: 0,
+        hint: "Spojení proběhlo PŘED vyhledáváním, takže výsledek je hotový celek.",
+        explanation: "Prekoordinovaný znak (např. 327.1) v sobě již zahrnuje složenou informaci, vystupuje jako jeden výraz."
+    },
+    {
+        id: 255,
+        category: "ČÍM třídíme II.",
+        question: "Slova „výše“ a „níže“ jsou:",
+        answers: [
+            "homofona",
+            "synonyma",
+            "pseudosynonyma",
+            "antonyma"
+        ],
+        correct: 3,
+        hint: "Mají opačný význam.",
+        explanation: "Slova s opačným významem jsou antonyma."
+    },
+    {
+        id: 256,
+        category: "ČÍM třídíme I.",
+        question: "Klasifikační systém, který rozděluje každou třídu do dvou podtříd, nazýváme:",
+        answers: [
+            "duální",
+            "dichotomický",
+            "podvojný",
+            "duplicitní"
+        ],
+        correct: 1,
+        hint: "Dělení na dvě části.",
+        explanation: "Dichotomie znamená dělení na dvě vzájemně se vylučující části."
+    },
+    {
+        id: 257,
+        category: "Univerzální systémy organizace informací",
+        question: "Mezi klasifikační znaky desetinného klasifikačního systému patří:",
+        answers: [
+            "A001, B001, C001",
+            "TTb2, TTb3, TTb4",
+            "327.1, 327.8, 957.24",
+            "12/22, 13/23, 14/24"
+        ],
+        correct: 2,
+        hint: "Používá desetinná čísla.",
+        explanation: "Typický formát MDT/DDC je číselný s desetinnou tečkou."
+    },
+    {
+        id: 258,
+        category: "ČÍM třídíme I.",
+        question: "Základem předmětových hesel je:",
+        answers: [
+            "Rogetův tezaurus",
+            "přirozený jazyk",
+            "odborná terminologie",
+            "knihovní klasifikace"
+        ],
+        correct: 1,
+        hint: "Slova, kterými běžně mluvíme.",
+        explanation: "Předmětová hesla vycházejí z přirozeného jazyka (na rozdíl od notací)."
+    },
+    {
+        id: 259,
+        category: "Univerzální systémy organizace informací",
+        question: "Základní prvek původní verze systému UNITERM Mortimera Taubeho měl tuto typickou morfologii:",
+        answers: [
+            "animals\r\n    right",
+            "rights",
+            "animal rights",
+            "rights of animals"
+        ],
+        correct: 0,
+        hint: "Rozklad na elementární jednotky (slova).",
+        explanation: "Unitermy byly založeny na rozkladu na jednotlivá slova (unit terms), která se kombinovala až při vyhledávání."
+    },
+    {
+        id: 260,
+        category: "ČÍM třídíme II.",
+        question: "Prvek tezauru, který se nepoužívá pro indexaci a označuje se také jako nepreferovaná lexikální jednotka, se nazývá:",
+        answers: [
+            "deskriptor",
+            "nedeskriptor",
+            "mikrotezaurus",
+            "fazetový indikátor"
+        ],
+        correct: 1,
+        hint: "Není to ten hlavní termín.",
+        explanation: "Nedeskriptor je zakázaný/nepreferovaný termín, z něhož se odkazuje na deskriptor."
+    },
+    {
+        id: 261,
+        category: "JAK třídíme I.",
+        question: "Se zkratkami MARC, UNIMARC a MARC21 se setkáme v oblasti:",
+        answers: [
+            "ontologií",
+            "metadatových formátů",
+            "bibliometrické analýzy",
+            "měření kvality indexace"
+        ],
+        correct: 1,
+        hint: "Formáty pro záznamy v knihovnách.",
+        explanation: "MARC (Machine Readable Cataloging) jsou standardy pro metadatové formáty."
+    },
+    {
+        id: 262,
+        category: "JAK třídíme I.",
+        question: "Základem pro obsahovou analýzu je v ideálním případě:",
+        answers: [
+            "plný text dokumentu",
+            "abstrakt dokumentu",
+            "nakladatelská anotace",
+            "název dokumentu"
+        ],
+        correct: 0,
+        hint: "Co obsahuje nejvíce informací?",
+        explanation: "Nejkvalitnější analýzu lze provést přímo z plného textu."
+    },
+    {
+        id: 263,
+        category: "JAK třídíme I.",
+        question: "K výsledkům sémantické redukce dokumentu v podobě přirozeného jazyka nepatří:",
+        answers: [
+            "resumé",
+            "abstrakt",
+            "extrakt",
+            "selekční obraz dokumentu"
+        ],
+        correct: 3,
+        hint: "Co je v umělém jazyce (kódech/heslech)?",
+        explanation: "Selekční obraz je výsledkem překladu do selekčního (umělého) jazyka, ostatní jsou v přirozeném."
+    },
+    {
+        id: 264,
+        category: "JAK třídíme I.",
+        question: "Dokument označený pořádacím znakem „národní podnik“ byl zpracován systémem:",
+        answers: [
+            "předmětovým",
+            "systematickým",
+            "fazetovým",
+            "typu unitermů"
+        ],
+        correct: 0,
+        hint: "Používá se slovní spojení.",
+        explanation: "Použití slovních hesel (jako 'národní podnik') je typické pro předmětové systémy."
+    },
+    {
+        id: 265,
+        category: "JAK třídíme I.",
+        question: "Konzistence indexace se určuje jako míra shody:",
+        answers: [
+            "selekčního obrazu dokumentu a výrazů řízeného slovníku",
+            "selekčního obrazu dokumentu a skutečného obsahu dokumentu",
+            "různých popisů téhož dokumentu",
+            "popisu dokumentů s katalogizační politikou instituce"
+        ],
+        correct: 2,
+        hint: "Shoda dvou indexátorů nad stejným textem.",
+        explanation: "Konzistence měří, nakolik se shodují různí indexátoři (nebo jeden v čase) při popisu téhož dokumentu."
+    },
+    {
+        id: 266,
+        category: "JAK třídíme I.",
+        question: "Plnotextové vyhledávání ve srovnání s vyhledáváním pomocí řízeného slovníku je lepší v případě:",
+        answers: [
+            "dlouhých dokumentů",
+            "neologismů",
+            "synonymních výrazů",
+            "vícejazyčnosti"
+        ],
+        correct: 1,
+        hint: "Nová slova, která ještě nejsou ve slovníku.",
+        explanation: "Fulltext najde i nová slova (neologismy), která řízený slovník ještě nemusí obsahovat."
+    },
+    // Nové otázky - Dávka 2 (Test F)
+    {
+        id: 267,
+        category: "ÚVOD | PROČ třídíme",
+        question: "V angličtině se pro oblast „organizace informací“ obvykle používá termín:",
+        answers: [
+            "knowledge management",
+            "data mining",
+            "knowledge organization",
+            "information retrieval"
+        ],
+        correct: 2,
+        hint: "Organizace znalostí.",
+        explanation: "Anglický ekvivalent je Knowledge Organization (KO)."
+    },
+    {
+        id: 268,
+        category: "ÚVOD | PROČ třídíme",
+        question: "Popperova teorie tří světů se od konceptu sémantického trojúhelníku liší tím, že:",
+        answers: [
+            "zohledňuje triádu data–informace–znalost",
+            "objekt chápe v nominalistickém smyslu",
+            "zahrnuje hledisko subjektu",
+            "odlišuje pojmy význam a smysl"
+        ],
+        correct: 2,
+        hint: "Sémantický trojúhelník potřebuje 'mysl' (subjekt), Popperův Svět 3 je objektivní.",
+        explanation: "Zásadním rozdílem je role subjektu – sémantický trojúhelník popisuje vznik významu v mysli subjektu, Popperův Svět 3 existuje nezávisle."
+    },
+    {
+        id: 269,
+        category: "JAK s tříděnými informacemi NAKLÁDÁME",
+        question: "Zkratka GLAM v souvislosti se sbírkovými institucemi reprezentuje:",
+        answers: [
+            "4 způsoby uspořádání sbírek",
+            "4 typy hlavních institucí",
+            "4 základní geografické oblasti",
+            "4 odborníky, kteří nejvíce přispěli k teoretickému vyjasnění pojmu „sbírka“"
+        ],
+        correct: 1,
+        hint: "Galleries, Libraries, Archives, Museums.",
+        explanation: "Jde o akronym pro 4 typy paměťových institucí."
+    },
+    {
+        id: 270,
+        category: "ÚVOD | PROČ třídíme",
+        question: "Informační zdroj je:",
+        answers: [
+            "synonymum pro informační objekt",
+            "informační objekt dokumentové povahy",
+            "informační objekt, který zahrnuje informace relevantní pro určitý účel",
+            "dokument s vysokým impact faktorem"
+        ],
+        correct: 2,
+        hint: "Zdroj se stává zdrojem až užitím (účelem).",
+        explanation: "Informační zdroj je definován relevancí (užitečností) pro daný informační problém/účel."
+    },
+    {
+        id: 271,
+        category: "ČÍM třídíme II.",
+        question: "Doplňte, který český termín chybí ve čtyřvrstvém konceptu díla podle LRM (Library Reference Model): DÍLO | ... | PROVEDENÍ | JEDNOTKA:",
+        answers: [
+            "vyjádření",
+            "koncepce",
+            "překlad",
+            "realizace"
+        ],
+        correct: 0,
+        hint: "Expression.",
+        explanation: "Pořadí je: Dílo (Work) - Vyjádření (Expression) - Provedení (Manifestation) - Jednotka (Item)."
+    },
+    {
+        id: 272,
+        category: "ČÍM třídíme I.",
+        question: "Vyberte nejpřesnější obecnou charakteristiku umělého jazyka:",
+        answers: [
+            "dovoluje vyjádřit pouze některé skutečnosti",
+            "slovník i gramatika jsou stanoveny předem",
+            "je používán úzkou odbornou komunitou",
+            "lexikum je vytvořeno pomocí kódů"
+        ],
+        correct: 1,
+        hint: "Pravidla jsou fixní a daná a priori.",
+        explanation: "Umělý jazyk má na rozdíl od přirozeného přesně definovanou (uzavřenou) slovní zásobu a pravidla předem."
+    },
+    {
+        id: 273,
+        category: "ČÍM třídíme I.",
+        question: "Výhodou prekoordinovaného systému je:",
+        answers: [
+            "omezení počtu pořádacích znaků",
+            "snadná správa řízeného slovníku",
+            "zachování vztahu mezi dílčími pojmovými jednotkami",
+            "využití principu fazet"
+        ],
+        correct: 2,
+        hint: "Vztah je fixován v hotovém znaku.",
+        explanation: "Díky pevnému spojení (koordinaci) předem je vztah mezi částmi pojmu jednoznačně zachován a nemůže být špatně interpretován uživatelem."
+    },
+    {
+        id: 274,
+        category: "ČÍM třídíme I.",
+        question: "Pořádací znak klasifikačního systému se nazývá:",
+        answers: [
+            "třídník",
+            "notace",
+            "klasifikátor",
+            "klasifikační znak"
+        ],
+        correct: 1,
+        hint: "Kód složený ze znaků.",
+        explanation: "U klasifikačních systémů se znak nazývá notace."
+    },
+    {
+        id: 275,
+        category: "ČÍM třídíme II.",
+        question: "Označte prvek tezauru, který se obvykle používá pro indexaci:",
+        answers: [
+            "mikrotezaurus",
+            "fazeta",
+            "deskriptor",
+            "nedeskriptor"
+        ],
+        correct: 2,
+        hint: "Ten preferovaný termín.",
+        explanation: "K indexaci se používají pouze deskriptory (preferované termíny)."
+    },
+    {
+        id: 276,
+        category: "ČÍM třídíme II.",
+        question: "Tezaury jsou obvykle koncipovány jako systémy:",
+        answers: [
+            "fazetové",
+            "univerzální",
+            "enumerativní",
+            "oborové"
+        ],
+        correct: 3,
+        hint: "Zaměřené na konkrétní oblast.",
+        explanation: "Tezaury jsou nejčastěji oborové (speciální) selekční jazyky."
+    },
+    {
+        id: 277,
+        category: "ČÍM třídíme II.",
+        question: "Vztah mezi pojmy „dveře“ a „klika“ označíme jako vztah:",
+        answers: [
+            "partitivní",
+            "ekvivalentní",
+            "antonymní",
+            "generický"
+        ],
+        correct: 0,
+        hint: "Klika je součástí dveří.",
+        explanation: "Jde o vztah celek-část (partitivní)."
+    },
+    {
+        id: 278,
+        category: "ČÍM třídíme I.",
+        question: "Klasifikační znak na třetí úrovni má notaci „A30“, jemu podřazený znak „A30.1“, znak na páté úrovni „A30.1b“. O takové notaci můžeme říci, že je:",
+        answers: [
+            "rozvinutá",
+            "expanzivní",
+            "hierarchická",
+            "kategorická"
+        ],
+        correct: 2,
+        hint: "Odráží strukturu stromu.",
+        explanation: "Notace vyjadřující úroveň zanoření je hierarchická (expressive notation)."
+    },
+    {
+        id: 279,
+        category: "Univerzální systémy organizace informací",
+        question: "Mortimer Taube vytvořil systém UNITERM; nazýval se tak proto, že:",
+        answers: [
+            "zařazené lexikální jednotky byly unifikované",
+            "měl ambici sjednotit věcný popis v angloamerickém prostředí",
+            "šlo o první systém realizovaný na počítači",
+            "lexikální jednotky byly tvořeny jediným výrazem"
+        ],
+        correct: 3,
+        hint: "Unit term.",
+        explanation: "Název vychází z 'Unit terms' - elementárních jednoslovných jednotek."
+    },
+    {
+        id: 280,
+        category: "JAK třídíme I.",
+        question: "Termínem „klíčové slovo“ pravděpodobně neoznačíme:",
+        answers: [
+            "pořádací znak systematického selekčního jazyka",
+            "výraz z názvu dokumentu",
+            "termín z plného textu dokumentu",
+            "sousloví, které vyjadřuje obsah dokumentu"
+        ],
+        correct: 0,
+        hint: "Systematický jazyk používá kódy.",
+        explanation: "Systematický jazyk používá notace (kódy), nikoliv slova."
+    },
+    {
+        id: 281,
+        category: "ČÍM třídíme I.",
+        question: "Je-li dokument označen pořádacím znakem „636.12“, znamená to, že pro jeho zpracování byl použit selekční jazyk:",
+        answers: [
+            "předmětový",
+            "systematický",
+            "fazetový",
+            "univerzální"
+        ],
+        correct: 1,
+        hint: "Číselný kód.",
+        explanation: "Číselná notace je typická pro systematické jazyky (klasifikace)."
+    },
+    {
+        id: 282,
+        category: "JAK třídíme I.",
+        question: "Pro obsahovou analýzu v informačněvědním slova smyslu používáme anglický termín:",
+        answers: [
+            "content analysis",
+            "table of content",
+            "subject analysis",
+            "text analysis"
+        ],
+        correct: 2,
+        hint: "Analýza předmětu/tématu.",
+        explanation: "V angloamerické literatuře se používá termín 'Subject analysis' (věcná analýza). Content analysis bývá spíše kvantitativní metoda v sociologii."
+    },
+    {
+        id: 283,
+        category: "JAK třídíme I.",
+        question: "Selekční obraz dokumentu se od redukovaného textu liší tím, že:",
+        answers: [
+            "je kratší",
+            "je vytvořen na základě umělého jazyka",
+            "jej sestavil informační profesionál",
+            "lépe vyjadřuje obsah dokumentu"
+        ],
+        correct: 1,
+        hint: "Kódy nebo deskriptory.",
+        explanation: "Selekční obraz je vyjádřen v selekčním (umělém) jazyce."
+    },
+    {
+        id: 284,
+        category: "JAK třídíme I.",
+        question: "Konzistentní indexace znamená, že:",
+        answers: [
+            "většina dokumentů v databázi je indexována kvalitně",
+            "lexikální jednotky jsou používány v souladu se svým významem",
+            "dokumenty jsou označeny alespoň dvěma pořádacími znaky",
+            "všechny dokumenty se shodným obsahem mají shodný selekční obraz"
+        ],
+        correct: 3,
+        hint: "Stejný vstup = stejný výstup.",
+        explanation: "Konzistence znamená, že stejný obsah je vždy popsán stejně (v čase i různými lidmi)."
+    },
+    {
+        id: 285,
+        category: "JAK třídíme I.",
+        question: "Pro vyhledávání dokumentů pomocí specifických výrazů a neologismů je nejvhodnější:",
+        answers: [
+            "rejstřík KWIC",
+            "systém fazetového typu",
+            "plnotextové vyhledávání",
+            "řízený slovník"
+        ],
+        correct: 2,
+        hint: "Hledání přesných slov v textu.",
+        explanation: "Fulltext umožňuje najít jakékoliv slovo vyskytující se v dokumentu."
+    },
+    {
+        id: 286,
+        category: "JAK třídíme I.",
+        question: "Přesnost vyhledávání (precision) se vypočte jako podíl:",
+        answers: [
+            "nalezených relevantních dokumentů a všech nalezených dokumentů",
+            "nalezených relevantních dokumentů a všech dokumentů v databázi",
+            "nalezených a nenalezených nerelevantních dokumentů",
+            "všech nalezených dokumentů a všech relevantních dokumentů v databázi"
+        ],
+        correct: 0,
+        hint: "Kolik z toho, co jsem našel, je dobré?",
+        explanation: "Precision = Relevantní nalezené / Všechny nalezené."
     }
 ];
 

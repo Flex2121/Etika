@@ -565,31 +565,45 @@ class QuizApp {
 
         const AudioContext = window.AudioContext || window.webkitAudioContext;
         const ctx = new AudioContext();
-
-        // Dissonant interval (Tritone) or low buzz
-        // E.g. A2 (110Hz) and D#3 (155.56Hz)
-        const frequencies = [110, 155.56]; 
         const now = ctx.currentTime;
 
-        frequencies.forEach((freq, i) => {
-            const oscillator = ctx.createOscillator();
-            const gainNode = ctx.createGain();
+        // "Du-dum" effect
+        // 1st beat: "Du"
+        this.playDrumNote(ctx, 110, now);
 
-            oscillator.connect(gainNode);
-            gainNode.connect(ctx.destination);
+        // 2nd beat: "Dum" (slightly lower, slightly later)
+        this.playDrumNote(ctx, 90, now + 0.15);
+    }
 
-            oscillator.type = 'sawtooth'; // Sawtooth is "buzzier" / harsher
-            oscillator.frequency.value = freq;
+    playDrumNote(ctx, freq, startTime) {
+        const oscillator = ctx.createOscillator();
+        const gainNode = ctx.createGain();
 
-            const startTime = now;
-            
-            gainNode.gain.setValueAtTime(0, startTime);
-            gainNode.gain.linearRampToValueAtTime(0.1, startTime + 0.05); // Attack
-            gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + 0.4); // Decay
+        oscillator.connect(gainNode);
+        gainNode.connect(ctx.destination);
 
-            oscillator.start(startTime);
-            oscillator.stop(startTime + 0.5);
-        });
+        oscillator.type = 'sine';
+
+        // Pitch drop effect for "drum" realism
+        oscillator.frequency.setValueAtTime(freq, startTime);
+        oscillator.frequency.exponentialRampToValueAtTime(freq * 0.5, startTime + 0.15);
+
+        // Percussive envelope
+        gainNode.gain.setValueAtTime(0, startTime);
+        gainNode.gain.linearRampToValueAtTime(0.8, startTime + 0.01); // Attack
+        gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + 0.15); // Decay
+
+        oscillator.start(startTime);
+        oscillator.stop(startTime + 0.15);
+
+        // Cleanup after second note (approx check)
+        if (startTime > ctx.currentTime + 0.1) {
+            oscillator.onended = () => {
+                setTimeout(() => {
+                    if (ctx.state !== 'closed') ctx.close();
+                }, 100);
+            };
+        }
     }
 
 
