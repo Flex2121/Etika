@@ -33,18 +33,21 @@ body:not(:has(.flashcard-wrapper.active)) .flashcard-wrapper {
 .flip-card {
     background-color: transparent;
     width: 100%;
-    max-width: 480px;
-    /* Constrained width */
-    aspect-ratio: 4/3;
-    /* Standard card ratio */
-    min-height: 360px;
-    /* Fallback height */
-    perspective: 1000px;
-    cursor: pointer;
-    position: relative;
-    /* "Stack" effect bottom shadow */
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
-    border-radius: var(--border-radius);
+    margin: 0 auto;
+    /* Centering */
+}
+
+/* Tablet/Desktop Tweaks for Flashcard */
+@media (min-width: 768px) {
+    .flip-card {
+        max-width: 600px; /* Larger card on tablets */
+        aspect-ratio: 16/9; /* Widescreen ratio */
+    }
+}
+@media (min-width: 1024px) {
+    .flip-card {
+        max-width: 700px; /* Even larger on desktop */
+    }
 }
 
 .flip-card-inner {

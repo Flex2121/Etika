@@ -33,9 +33,6 @@ class QuizApp {
     init() {
         this.loadFailedQuestions();
         this.populateCategories();
-        this.updateStats();
-        this.loadFailedQuestions();
-        this.populateCategories();
         this.initTTS();
         this.updateStats();
         this.bindEvents();
@@ -285,6 +282,8 @@ class QuizApp {
 
         // Populate Select Dropdown
         const categorySelect = document.getElementById('category-select');
+        // Reset to avoid duplication
+        categorySelect.innerHTML = '<option value="all">Všechny kategorie</option>';
         // No sorting needed here, categories will appear in the order they are found in QUESTIONS
         // If specific order is needed, it should be defined in APP_CONFIG or QUESTIONS data itself.
 
@@ -891,7 +890,8 @@ class QuizApp {
 
         // Show feedback (don't show explanation automatically)
         document.getElementById('explanation-text').textContent = question.explanation;
-        document.getElementById('explanation-container').classList.add('hidden'); // Ensure hidden initially
+        document.getElementById('explanation-container').classList.remove('hidden'); // Show automatically as requested
+        document.getElementById('explanation-container').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
         // Update score display
         document.getElementById('score-display').textContent = `Skóre: ${this.score}`;
