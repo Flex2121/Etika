@@ -775,19 +775,18 @@ class QuizApp {
         }
 
         // Visual feedback based on mode
+        // User Request: Show feedback (colors + explanation) in ALL modes (Practice, Random, Test)
+        // Previously, 'test' and 'random' skipped this. Now we unify it.
+        this.showFeedback(buttonIndex, isCorrect);
+
+        // Old logic for reference (now removed/merged):
+        /*
         if (this.mode === 'practice' || this.mode === 'failed') {
             this.showFeedback(buttonIndex, isCorrect);
         } else {
-            // Test mode - just mark selected and move on
-            selectedBtn.classList.add('selected');
-            this.answered = true;
-
-            // Auto-advance after short delay
-            setTimeout(() => {
-                this.nextQuestion();
-            }, 300);
-            this.stopSpeech();
+            // ... auto-advance logic ...
         }
+        */
     }
 
     playSuccessSound() {
